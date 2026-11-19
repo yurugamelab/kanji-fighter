@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#fdf6e3">
+<title>漢字ファイター</title>
+<meta name="description" content="好きな漢字1文字が武器になる、新感覚の格闘ゲーム。無料＆インストール不要、スマホですぐ遊べます。">
+<!-- SNS でURLを貼ったときのカード（OGP） -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="漢字ファイター">
+<meta property="og:title" content="漢字ファイター｜漢字1文字で戦う格闘ゲーム">
+<meta property="og:description" content="好きな漢字1文字が武器になる、新感覚の格闘ゲーム。無料＆インストール不要、スマホですぐ遊べます。">
+<meta property="og:url" content="https://yurugamelab.github.io/kanji-fighter/">
+<meta property="og:image" content="https://yurugamelab.github.io/kanji-fighter/img/ogp.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="漢字ファイター｜漢字1文字で戦う格闘ゲーム">
+<meta name="twitter:description" content="好きな漢字1文字が武器になる、新感覚の格闘ゲーム。無料＆インストール不要、スマホですぐ遊べます。">
+<meta name="twitter:image" content="https://yurugamelab.github.io/kanji-fighter/img/ogp.jpg">
+<!-- アイコン（ブラウザのタブ・スマホのホーム画面） -->
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
+<link rel="icon" type="image/png" sizes="512x512" href="img/icon-512.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Noto+Sans+JP:wght@900&family=Yuji+Boku&family=Anton&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="wrap">
+  <canvas id="game"></canvas>
+
+  <!-- タイトル -->
+  <!-- 英語のときは data-en の中身に差し替える（i18n.js） -->
+  <section id="screen-title" class="screen waiting">
+    <h1><canvas id="logo" role="img" aria-label="漢字ファイター" data-en-aria="Kanji Fighter"></canvas></h1>
+    <p class="sub" data-en="Fight with your favorite kanji.">好きな漢字で、殴り合え。</p>
+    <div class="title-buttons">
+      <button id="btn-start" class="btn" data-en="Play solo">ひとりで遊ぶ</button>
+      <button id="btn-versus" class="btn btn-sub" data-en="2-player battle">ふたりで対戦</button>
+      <button id="btn-dex" class="btn btn-sub" data-en="Kanjidex">漢字図鑑</button>
+    </div>
+    <button id="btn-lang" class="link-btn lang-btn" aria-label="言語 / Language">English</button>
+    <!-- 起動時：タップすると音が鳴らせるようになり、タイトルの曲が始まる -->
+    <button id="tap-start" class="tap-start"><span class="tap-big">TAP TO START</span><span class="tap-small" data-en="Sound on 🔊">タップしてスタート 🔊</span></button>
+  </section>
+
+  <!-- 漢字図鑑 -->
+  <section id="screen-dex" class="screen hidden">
+    <h2 data-en="Kanjidex">漢字図鑑</h2>
+    <p id="dex-count" class="dex-count"></p>
+    <p class="dex-tip" data-en="Tap a ? to see its hint">「？」をタップでヒント</p>
+    <div id="dex-info" class="dex-info hidden" aria-live="polite">
+      <canvas id="dex-char" class="dex-char" width="180" height="180"></canvas>
+      <div class="dex-detail">
+        <p id="dex-name" class="dex-name"></p>
+        <p id="dex-text" class="dex-text"></p>
+        <p id="dex-meta" class="dex-meta"></p>
+      </div>
+    </div>
+    <div id="dex-grid" class="dex-grid"></div>
+    <p id="dex-seal" class="hint"></p>
+    <button id="btn-dex-back" class="btn btn-sub" data-en="Back">もどる</button>
+  </section>
+
+  <!-- 勝ち抜き：次の相手の前 -->
+  <section id="screen-next" class="screen hidden">
+    <canvas id="next-title" class="result-title" role="img" aria-label=""></canvas>
+    <p id="next-news" class="result-news hidden"></p>
+    <p id="next-info" class="sub"></p>
+    <button id="btn-next" class="btn" data-en="Next opponent">次の相手へ</button>
+    <button id="btn-quit" class="btn btn-sub" data-en="Stop here">ここでやめる</button>
+  </section>
+
+  <!-- 2人対戦：スマホを渡す -->
+  <section id="screen-pass" class="screen hidden">
+    <p class="pass-big" data-en="1P has chosen!">1Pの字が決まった！</p>
+    <p class="sub" data-en="Hand the phone to 2P<br>(2P, don't show your kanji to 1P)">スマホを2Pに渡してね<br>（2Pの字は1Pに見せないこと）</p>
+    <button id="btn-pass" class="btn" data-en="2P picks a kanji">2Pが字を選ぶ</button>
+  </section>
+
+  <!-- 漢字入力 -->
+  <section id="screen-input" class="screen hidden">
+    <h2 id="input-title">武器にする漢字を１文字</h2>
+    <div id="mode-switch" class="mode-switch" role="group" aria-label="遊び方" data-en-aria="Mode">
+      <button class="seg" data-kind="cpu" aria-pressed="true" data-en="Single match">1回勝負</button>
+      <button class="seg" data-kind="survival" aria-pressed="false" data-en="Survival">勝ち抜き</button>
+    </div>
+    <p id="best-record" class="hint hidden"></p>
+    <input id="kanji-input" type="text" maxlength="4" autocomplete="off" autocapitalize="off" enterkeyhint="go" placeholder="炎">
+    <p id="input-hint" class="hint hidden" data-en="Type a kanji, or an English word like <b>fire</b> or <b>cat</b>"></p>
+    <p id="input-error" class="error"></p>
+    <div id="word-results" class="word-results hidden" aria-live="polite"></div>
+    <div class="picks">
+      <span class="picks-label" data-en="Try:">迷ったら</span>
+      <button class="chip" data-ch="炎">炎</button>
+      <button class="chip" data-ch="鬱">鬱</button>
+      <button class="chip" data-ch="一">一</button>
+      <button class="chip" data-ch="猫">猫</button>
+      <button class="chip" data-ch="麺">麺</button>
+      <button id="btn-random" class="chip chip-random" data-en="Random">ランダム</button>
+    </div>
+    <div id="preview" class="preview hidden">
+      <canvas id="preview-char" class="preview-char" width="300" height="300"></canvas>
+      <table class="stats">
+        <tr id="st-meaning-row" class="hidden"><th data-en="Meaning">意味</th><td id="st-meaning"></td></tr>
+        <tr><th data-en="Strokes">画数</th><td id="st-strokes"></td></tr>
+        <tr><th data-en="Power">攻撃力</th><td id="st-power"></td></tr>
+        <tr><th data-en="Speed">速さ</th><td id="st-speed"></td></tr>
+        <tr><th data-en="Reach">リーチ</th><td id="st-reach"></td></tr>
+        <tr><th data-en="Effect">効果</th><td id="st-effect"></td></tr>
+      </table>
+    </div>
+    <button id="btn-fight" class="btn" disabled>この字で戦う</button>
+    <button id="found-hint" class="link-btn">特別な漢字 発見 0／100　図鑑を見る ›</button>
+    <button id="btn-input-back" class="link-btn" data-en="← Title">← タイトルへ</button>
+  </section>
+
+  <!-- 結果 -->
+  <section id="screen-result" class="screen hidden">
+    <div id="result-fx" class="result-fx" aria-hidden="true"></div>
+    <canvas id="result-title" class="result-title" role="img" aria-label=""></canvas>
+    <p id="result-rank" class="result-rank hidden"><span class="rank-label" data-en="TITLE">称号</span><b id="result-rank-name"></b></p>
+    <p id="result-news" class="result-news hidden"></p>
+    <img id="result-card" class="result-card" alt="">
+    <div class="result-buttons">
+      <button id="btn-again" class="btn wide" data-en="Again with the same kanji">同じ字でもう一回</button>
+      <button id="btn-change" class="btn btn-sub">漢字を変える</button>
+      <button id="btn-title" class="btn btn-sub" data-en="Title">タイトルへ</button>
+      <button id="btn-save" class="btn btn-sub" data-en="Save image">画像を保存</button>
+      <a id="btn-share" class="btn btn-x" href="https://x.com/intent/post" target="_blank" rel="noopener" data-en="Share on 𝕏">𝕏 でシェア</a>
+    </div>
+    <button id="btn-result-dex" class="link-btn" data-en="Open Kanjidex ›">漢字図鑑を見る ›</button>
+  </section>
+
+  <!-- 画像の保存（アーティファクトの中ではダウンロードできないので、長押しで保存してもらう） -->
+  <div id="save-overlay" class="save-overlay hidden" role="dialog" aria-label="結果の画像を保存" data-en-aria="Save the result image">
+    <div class="save-box">
+      <img id="save-img" class="save-img" alt="結果の画像">
+      <p class="save-hint" data-en="Long-press the image (right-click on PC) to save it<br>Attach this image when you post on X">画像を長押し（PCは右クリック）して保存してね<br>Xに投稿するときは、この画像を添付してね</p>
+      <button id="btn-save-close" class="btn btn-sub" data-en="Close">閉じる</button>
+    </div>
+  </div>
+
+  <button id="btn-sound" class="sound-btn" aria-label="音を消す">🔊</button>
+</div>
+
+<script src="i18n.js"></script>
+<script src="sound.js"></script>
+<script src="kanji-data.js"></script>
+<script src="kanji-meanings.js"></script>
+<script src="kanji-shapes.js"></script>
+<script src="weapon.js"></script>
+<script src="texture.js"></script>
+<script src="game.js"></script>
+<script type="module" src="char3d.js"></script>
+</body>
+</html>

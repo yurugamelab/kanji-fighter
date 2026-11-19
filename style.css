@@ -1,0 +1,306 @@
+* { box-sizing: border-box; }
+html, body {
+  margin: 0; height: 100%; overflow: hidden;
+  background: #fdf6e3; color: #222;
+  font-family: "Hiragino Maru Gothic ProN", "Hiragino Sans", "Yu Gothic", "Meiryo", sans-serif;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* 画面いっぱい。キャンバスは縦横比を保って中央に収める */
+#wrap { position: fixed; inset: 0; }
+#game { display: block; width: 100%; height: 100%; object-fit: contain; }
+
+.screen {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 1.1em;
+  padding: max(16px, env(safe-area-inset-top)) 16px max(16px, env(safe-area-inset-bottom));
+  overflow-y: auto;
+  background: rgba(253, 246, 227, 0.95);
+  text-align: center;
+}
+.hidden { display: none !important; }
+
+h1 { margin: 0; line-height: 0; }
+#logo { display: block; width: min(640px, 100%); height: auto; margin: 0 auto; }   /* 横長の画面でも真ん中に */
+/* タイトル画面：赤（愛）と青（金）がぶつかる絵を敷き、その上にロゴ。
+   横長（PC）はキャラが左右の端、真ん中にロゴとボタン。真ん中を少し暗くして文字を読みやすく */
+#screen-title {
+  background: radial-gradient(ellipse at center, rgba(8, 4, 12, 0.6), rgba(8, 4, 12, 0) 60%), url(img/title_wide.jpg) center / cover, #08040c;
+}
+/* 縦長（スマホ）：上にキャラ、真ん中にロゴ、下にボタン（キャラとロゴ・ボタンが重ならないように下から積む） */
+@media (orientation: portrait) {
+  #screen-title { background: url(img/title_tall.jpg) top center / cover, #08040c; justify-content: flex-end; padding-bottom: max(5vh, env(safe-area-inset-bottom)); }
+  #screen-title.waiting { justify-content: center; }      /* 起動時の「TAP TO START」ではロゴを真ん中に */
+}
+/* 背の低いスマホ：ロゴを小さくし、説明の一文を省いて、キャラにかからないように */
+@media (orientation: portrait) and (max-height: 760px) {
+  #screen-title #logo { width: min(270px, 72vw); }
+  #screen-title .sub { display: none; }
+  #screen-title { gap: 0.8em; }
+}
+#screen-title .sub { color: #fff3d6; text-shadow: 0 2px 0 rgba(0, 0, 0, 0.6); }
+h2 { margin: 0; font-size: clamp(22px, 4vw, 40px); }
+.sub { margin: 0; font-size: clamp(15px, 2vw, 20px); line-height: 1.6; }
+.hint { margin: 0; font-size: 13px; color: #666; }
+.error { margin: 0; min-height: 1.4em; color: #d33; font-weight: bold; }
+.row { display: flex; gap: 0.8em; flex-wrap: wrap; justify-content: center; }
+
+.btn {
+  font: inherit; font-size: clamp(18px, 2.2vw, 22px); font-weight: bold;
+  min-height: 52px; padding: 0.5em 1.6em; border: 3px solid #222; border-radius: 999px;
+  background: #ffd84d; color: #222; cursor: pointer;
+  box-shadow: 0 4px 0 #222;
+}
+.btn:active { transform: translateY(3px); box-shadow: 0 1px 0 #222; }
+.btn:disabled { background: #ddd; color: #999; cursor: not-allowed; }
+
+#kanji-input {
+  width: 3.2em; font-size: clamp(56px, 8vw, 72px); text-align: center;
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+  border: 3px solid #222; border-radius: 14px; padding: 0.05em;
+  background: #fff;
+}
+
+.preview { display: flex; align-items: center; gap: 1.2em; }
+.preview-char { width: clamp(110px, 18vw, 150px); height: auto; }
+.stats { border-collapse: collapse; text-align: left; font-size: clamp(14px, 1.8vw, 18px); }
+.stats th { padding: 2px 12px 2px 0; color: #666; font-weight: normal; white-space: nowrap; }
+.stats td { padding: 2px 0; font-weight: bold; }
+
+/* おすすめ・ランダム */
+.picks { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px; max-width: 420px; }
+.picks-label { font-size: 13px; color: #666; width: 100%; }
+.chip {
+  font: inherit; font-size: 22px; font-weight: bold; line-height: 1;
+  min-width: 48px; min-height: 48px; padding: 0 10px;
+  border: 2px solid #222; border-radius: 12px; background: #fff; color: #222; cursor: pointer;
+  box-shadow: 0 3px 0 #222;
+}
+.chip:active { transform: translateY(2px); box-shadow: 0 1px 0 #222; }
+.chip[data-ch] { font-family: "Hiragino Mincho ProN", "Yu Mincho", serif; }
+.chip-random { font-size: 16px; background: #ffd84d; padding: 0 16px; }
+.preview-char.bump { animation: bump 0.25s ease-out; }
+/* 英語版：英単語から探した漢字の候補 */
+.word-results { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; max-width: 420px; }
+.word-results.hidden { display: none; }
+.word-chip { display: flex; flex-direction: column; align-items: center; gap: 3px; padding: 6px 8px; min-width: 60px; }
+.word-chip b { font-family: "Hiragino Mincho ProN", "Yu Mincho", serif; font-size: 26px; }
+.word-chip small { font-size: 10px; font-weight: normal; color: #666; max-width: 72px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.word-chip.special { background: #fff1c2; }
+.link-btn.lang-btn {
+  margin-top: 4px; padding: 6px 16px; border-radius: 999px; text-decoration: none;
+  background: rgba(255, 255, 255, 0.85); color: #222; border: 2px solid #222; font-weight: bold;
+}
+@keyframes bump { 0% { transform: scale(0.7); } 60% { transform: scale(1.12); } 100% { transform: scale(1); } }
+
+/* 新発見のお知らせ */
+.result-news {
+  margin: 0; padding: 6px 16px; border: 2px solid #222; border-radius: 999px;
+  background: #ffd84d; font-weight: bold; font-size: clamp(14px, 1.8vw, 17px);
+  animation: bump 0.4s ease-out;
+}
+.result-news.unlock { background: #c0392b; color: #fff; border-radius: 14px; }
+
+/* ---------- 結果画面 ---------- */
+#screen-result { gap: 0.7em; overflow-x: hidden; }
+#screen-result > :not(.result-fx) { position: relative; z-index: 1; }
+.result-title { display: block; width: min(420px, 82%); height: auto; }
+/* 勝ち抜きの称号 */
+.result-rank {
+  margin: 0; display: flex; flex-direction: column; align-items: center; gap: 2px;
+  padding: 8px 22px 10px; border: 3px solid #f5c542; border-radius: 16px;
+  background: #1f1a14; color: #fff; box-shadow: 0 4px 0 rgba(0,0,0,0.25);
+  animation: bump 0.5s ease-out 0.3s both;
+}
+.result-rank.hidden { display: none; }
+.rank-label { font-size: 12px; font-weight: bold; letter-spacing: 0.3em; color: #f5c542; }
+.result-rank b { font-family: 'Dela Gothic One', sans-serif; font-weight: 400; font-size: clamp(20px, 6vw, 30px); line-height: 1.2; }
+.result-card {
+  display: block; width: min(640px, 100%); height: auto; aspect-ratio: 16 / 9;
+  border: 3px solid #222; border-radius: 12px; box-shadow: 0 6px 0 #222; background: #fff;
+}
+.result-buttons { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; width: min(400px, 100%); }
+.result-buttons .btn { width: 100%; padding-left: 0.6em; padding-right: 0.6em; }
+.result-buttons .wide { grid-column: 1 / -1; }
+@media (orientation: landscape) and (min-width: 700px) {
+  .result-buttons { width: min(640px, 100%); }
+}
+/* タイトル */
+.title-buttons { display: grid; gap: 12px; width: min(300px, 100%); }
+.title-buttons .btn { width: 100%; }
+/* 2人対戦：スマホを渡す画面 */
+#screen-pass { background: linear-gradient(#2c1a10, #4a2c18); color: #fff3d6; }
+.pass-big { margin: 0; font-size: clamp(28px, 8vw, 44px); font-weight: bold; }
+/* 1回勝負／勝ち抜き */
+.mode-switch { display: inline-flex; border: 2px solid #222; border-radius: 999px; overflow: hidden; background: #fff; }
+.seg { font: inherit; font-size: 16px; font-weight: bold; min-height: 40px; padding: 0 18px; border: none; background: transparent; color: #222; cursor: pointer; }
+.seg[aria-pressed="true"] { background: #222; color: #ffd84d; }
+/* 勝ち抜き：次の相手の前 */
+#screen-next { background: radial-gradient(circle at 50% 30%, #fffbe0 0%, #ffe066 45%, #f5a623 100%); }
+/* 漢字図鑑 */
+#screen-dex { justify-content: flex-start; background: #f6ecd6; }
+.dex-count { margin: 0; font-weight: bold; font-size: 18px; }
+.dex-tip { margin: -4px 0 0; font-size: 14px; font-weight: bold; color: #8a1c14; }
+.dex-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(48px, 1fr)); gap: 6px;
+  width: min(640px, 100%);
+}
+.dex-cell {
+  aspect-ratio: 1; padding: 0; border: 2px solid #3a2a14; border-radius: 10px; cursor: pointer;
+  background: #2b1d10; color: #fff; display: flex; align-items: center; justify-content: center;
+}
+.dex-cell canvas { width: 100%; height: 100%; display: block; }
+.dex-cell.unknown { background: #e4d6b8; color: #8a7a5c; font-size: 24px; font-weight: bold; border-style: dashed; }
+.dex-cell.on { outline: 3px solid #c8211a; outline-offset: 1px; }
+.dex-cell.divine { border-color: #f5c542; background: radial-gradient(circle, #5a3a00, #1f1404); box-shadow: 0 0 10px rgba(255, 210, 80, 0.8); }
+
+/* ---------- 図鑑に登録される演出 ---------- */
+.dexr {
+  position: fixed; inset: 0; z-index: 30; display: flex; align-items: center; justify-content: center; overflow: hidden;
+  padding: max(16px, env(safe-area-inset-top)) 16px max(16px, env(safe-area-inset-bottom));
+  background: rgba(30, 20, 10, 0.93); opacity: 0;
+}
+.dexr-fx { position: absolute; inset: 0; pointer-events: none; z-index: 2; }
+.dexr-box {
+  position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; gap: 10px;
+  width: min(560px, 100%); max-height: 100%; text-align: center; color: #fff3d6;
+}
+.dexr-head { margin: 0; font-family: 'Dela Gothic One', sans-serif; font-size: clamp(26px, 8vw, 40px); color: #ffd84d; text-shadow: 0 3px 0 #000; opacity: 0; }
+.dexr-sub { margin: 0; font-size: 15px; font-weight: bold; opacity: 0; }
+.dexr-head.show, .dexr-sub.show { opacity: 1; animation: bump 0.45s ease-out; }
+.dexr-stage { position: relative; height: min(34vh, 220px); width: 100%; display: flex; align-items: center; justify-content: center; }
+.dexr-big { position: relative; z-index: 3; width: min(34vh, 220px); height: auto; aspect-ratio: 1; }
+.dexr .dexr-grid, .dexr .dexr-bar, .dexr .dexr-count { opacity: 0; transition: opacity 0.35s; }
+.dexr.grid-on .dexr-grid, .dexr.grid-on .dexr-bar, .dexr.grid-on .dexr-count { opacity: 1; }
+.dexr-grid {
+  display: grid; grid-template-columns: repeat(10, 1fr); gap: 3px; width: 100%;
+  padding: 6px; border-radius: 12px; background: rgba(0, 0, 0, 0.35); overflow-y: auto; min-height: 0; max-height: 40vh;
+}
+.dexr-cell {
+  aspect-ratio: 1; border-radius: 6px; border: 1px solid #5a4020; background: #2b1d10;
+  display: flex; align-items: center; justify-content: center; font-size: 11px; color: #8a7a5c; font-weight: bold;
+}
+.dexr-cell canvas { width: 100%; height: 100%; display: block; }
+.dexr-cell.unknown { background: rgba(228, 214, 184, 0.15); border-style: dashed; }
+.dexr-cell.unknown { cursor: pointer; }
+.dexr-cell.unknown.on { border-color: #ffd84d; border-style: solid; color: #ffd84d; }
+.dexr-cell.secret { grid-column: 1 / -1; aspect-ratio: auto; height: 44px; font-size: 18px; color: #f5c542; border: 2px dashed #f5c542; }
+.dexr-cell.secret canvas { width: 44px; height: 44px; }
+.dexr-cell.divine { border: 2px solid #f5c542; background: radial-gradient(circle, #5a3a00, #1f1404); box-shadow: 0 0 12px rgba(255, 210, 80, 0.9); }
+.dexr-cell.stamp { animation: stamp 0.6s cubic-bezier(.2,1.6,.4,1); position: relative; z-index: 2; }
+@keyframes stamp { 0% { transform: scale(2.2); box-shadow: 0 0 0 6px #fff6c0; } 100% { transform: scale(1); } }
+.dexr-bar { width: 100%; height: 12px; border-radius: 999px; background: rgba(255, 255, 255, 0.15); overflow: hidden; }
+.dexr-bar i { display: block; height: 100%; width: 0; background: linear-gradient(90deg, #ffb52e, #ffe36a); transition: width 0.8s cubic-bezier(.2,.8,.3,1); }
+.dexr-count { margin: 0; font-weight: bold; font-size: 18px; }
+.dexr-count.bump { animation: bump 0.5s ease-out; }
+.dexr-next { margin: 0; font-size: 14px; line-height: 1.5; opacity: 0; }
+.dexr-next.show { opacity: 1; transition: opacity 0.4s; }
+.dexr-btns { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; opacity: 0; pointer-events: none; }
+.dexr-btns.show { opacity: 1; pointer-events: auto; transition: opacity 0.4s; }
+.dexr-spark { position: fixed; width: 9px; height: 9px; border-radius: 50%; box-shadow: 0 0 10px currentColor; pointer-events: none; }
+/* 神・龘：封印解放 */
+.dexr.divine { background: #000; }
+.dexr.divine::before {                                   /* 回る後光 */
+  content: ""; position: absolute; z-index: 0; left: 50%; top: 32%; width: 240vmax; height: 240vmax; margin: -120vmax 0 0 -120vmax;
+  background: repeating-conic-gradient(rgba(255, 226, 120, 0.5) 0deg 6deg, rgba(255, 226, 120, 0) 6deg 15deg);
+  opacity: 0; transition: opacity 1.6s; animation: spin 30s linear infinite;
+}
+.dexr.divine::after {                                    /* 天からの光 */
+  content: ""; position: absolute; z-index: 0; inset: 0;
+  background: radial-gradient(ellipse at 50% 30%, rgba(255, 246, 200, 0.95) 0%, rgba(255, 200, 80, 0.45) 30%, rgba(80, 40, 0, 0) 65%);
+  opacity: 0; transition: opacity 1.6s;
+}
+.dexr.divine.rays::before, .dexr.divine.rays::after { opacity: 1; }
+.dexr.divine .dexr-head { font-size: clamp(36px, 12vw, 64px); color: #fff6c8; letter-spacing: 0.2em; text-shadow: 0 0 18px #ffcc33, 0 0 40px #ff9900, 0 3px 0 #5a3a00; }
+.dexr.divine .dexr-sub { color: #fff; text-shadow: 0 2px 6px #000; }
+.dexr.divine .dexr-big.glow { filter: drop-shadow(0 0 18px #ffe680) drop-shadow(0 0 40px #ffb300); animation: halo 1.6s ease-in-out infinite; }
+@keyframes halo { 50% { filter: drop-shadow(0 0 30px #fff6c0) drop-shadow(0 0 70px #ffcc33); } }
+.dexr-flash { position: absolute; inset: 0; z-index: 4; background: #fffbe6; pointer-events: none; }
+.dexr.divine .dexr-grid { background: rgba(40, 24, 0, 0.75); box-shadow: 0 0 24px rgba(255, 200, 80, 0.5); }
+.dexr.divine .dexr-next { color: #ffe680; font-weight: bold; font-size: 16px; }
+@media (prefers-reduced-motion: reduce) { .dexr.divine::before { animation: none; } }
+.dex-info {
+  position: sticky; top: 0; z-index: 2; display: flex; align-items: center; gap: 12px; text-align: left;
+  width: min(640px, 100%); padding: 10px 14px; border: 2px solid #222; border-radius: 14px; background: #fffaf0;
+  box-shadow: 0 4px 0 #222;
+}
+.dex-char { flex: none; width: 96px; height: 96px; }
+.dex-detail { min-width: 0; }
+.dex-name { margin: 0 0 4px; font-weight: bold; font-size: 18px; }
+.dex-text { margin: 0 0 4px; font-size: 15px; line-height: 1.5; }
+.dex-meta { margin: 0; font-size: 13px; color: #666; white-space: pre-line; }
+.link-btn { font: inherit; font-size: 14px; color: #555; background: none; border: none; text-decoration: underline; cursor: pointer; padding: 8px; }
+.btn-x { background: #111; color: #fff; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; }
+.btn-sub { font-size: clamp(15px, 1.8vw, 18px); min-height: 46px; background: #fff; }
+
+/* 勝ち・負けで背景の演出を変える */
+.result-fx { position: fixed; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
+#screen-result.win  { background: radial-gradient(circle at 50% 28%, #fffbe0 0%, #ffe066 38%, #f5a623 100%); }
+#screen-result.lose { background: linear-gradient(#232a36, #3d4757 60%, #4b5566); }
+#screen-result.draw { background: rgba(253, 246, 227, 0.97); }
+/* 勝ち：回る集中線と紙吹雪 */
+.sunburst {
+  position: absolute; left: 50%; top: 28%; width: 260vmax; height: 260vmax; margin: -130vmax 0 0 -130vmax;
+  background: repeating-conic-gradient(rgba(255,255,255,0.45) 0deg 7deg, rgba(255,255,255,0) 7deg 18deg);
+  animation: spin 24s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+.confetti { position: absolute; top: -20px; width: 10px; height: 16px; border-radius: 2px; animation: fall linear infinite; }
+@keyframes fall { to { transform: translateY(110vh) rotate(720deg); } }
+/* 負け：降りしきる雨 */
+.rain {
+  position: absolute; inset: -20% 0 0 0;
+  background: repeating-linear-gradient(100deg, rgba(200,215,240,0.16) 0 2px, transparent 2px 22px);
+  animation: rain 0.6s linear infinite;
+}
+@keyframes rain { from { background-position: 0 0; } to { background-position: -40px 120px; } }
+/* タイトルの出かた */
+.win .result-title { animation: pop 0.6s cubic-bezier(.2,1.6,.4,1) both; }
+.lose .result-title { animation: droop 1.2s ease-out both; }
+@keyframes pop { from { transform: scale(0.3); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+@keyframes droop { 0% { transform: translateY(-40px); opacity: 0; } 60% { transform: translateY(6px) rotate(-4deg); opacity: 1; } 100% { transform: translateY(0) rotate(-6deg); } }
+.lose .result-card { box-shadow: 0 6px 0 #111; }
+@media (prefers-reduced-motion: reduce) {
+  .sunburst, .confetti, .rain, .win .result-title, .lose .result-title { animation: none; }
+}
+
+/* 画像の保存 */
+.save-overlay {
+  position: fixed; inset: 0; z-index: 20; display: flex; align-items: center; justify-content: center;
+  padding: max(16px, env(safe-area-inset-top)) 16px max(16px, env(safe-area-inset-bottom));
+  background: rgba(0,0,0,0.75);
+}
+.save-box { display: flex; flex-direction: column; align-items: center; gap: 12px; width: min(720px, 100%); }
+.save-img { display: block; width: 100%; height: auto; border-radius: 10px; -webkit-touch-callout: default; user-select: auto; }
+.save-hint { margin: 0; color: #fff; font-size: 14px; line-height: 1.6; text-align: center; }
+
+/* 音のオン・オフ */
+.sound-btn {
+  position: fixed; z-index: 10;
+  right: calc(10px + env(safe-area-inset-right, 0px)); bottom: calc(10px + env(safe-area-inset-bottom, 0px));
+  width: 44px; height: 44px; border: 2px solid #222; border-radius: 50%;
+  background: rgba(255,255,255,0.85); font-size: 20px; line-height: 1; cursor: pointer; padding: 0;
+}
+
+/* スマホ縦向き */
+@media (orientation: portrait) {
+  #screen-input { justify-content: flex-start; padding-top: max(32px, env(safe-area-inset-top)); }
+  .row { flex-direction: column; width: min(320px, 100%); }
+  .row .btn { width: 100%; }
+}
+
+/* 起動時の「タップしてスタート」：画面のどこを押してもよい */
+#screen-title.waiting .sub, #screen-title.waiting .title-buttons, #screen-title.waiting .lang-btn { display: none; }
+.tap-start { display: none; }
+#screen-title.waiting .tap-start {
+  display: flex; flex-direction: column; align-items: center; justify-content: flex-end; gap: 8px;
+  position: absolute; inset: 0; padding-bottom: 22vh;
+  background: none; border: none; cursor: pointer; font: inherit; color: #fff3d6;
+}
+.tap-big { font-family: "Dela Gothic One", sans-serif; font-size: clamp(26px, 8vw, 40px); letter-spacing: 0.06em; text-shadow: 0 3px 0 #000, 0 0 18px rgba(255, 180, 60, 0.7); animation: tap-blink 1.2s ease-in-out infinite; }
+.tap-small { font-size: 14px; opacity: 0.85; }
+@keyframes tap-blink { 50% { opacity: 0.35; transform: scale(0.96); } }
+@media (prefers-reduced-motion: reduce) { .tap-big { animation: none; } }
