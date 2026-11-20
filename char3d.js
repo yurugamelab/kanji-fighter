@@ -190,7 +190,7 @@ function pose(rig, o) {
     B.head.quaternion.copy(_q2.invert().multiply(wq));
     B.head.updateMatrixWorld(true);
   }
-  rig.root.rotation.y = YAW;
+  rig.root.rotation.y = YAW + (o.spin || 0);                                    // spin：体ごと回す（屁でお尻を向けるとき π）
   rig.root.updateMatrixWorld(true);
 }
 

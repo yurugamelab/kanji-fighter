@@ -5,7 +5,30 @@
   try { muted = localStorage.getItem('kf-muted') === '1'; } catch (e) {}
   const lastAt = {};
 
+  // iPhone：マナーモード（消音スイッチ）のままだと、Web Audio の音はスピーカーから出ない（イヤフォンだけ鳴る）。
+  // 「音楽の再生」扱いにして、マナーモードでも鳴るようにする。
+  //   iOS 17 以降：navigator.audioSession で指定できる
+  //   それより前：無音の <audio> を1回再生すると、同じ扱いに切り替わる
+  let sessionSet = false;
+  function playbackSession() {
+    if (sessionSet) return;
+    sessionSet = true;
+    try {
+      if (navigator.audioSession) { navigator.audioSession.type = 'playback'; return; }
+      // 0.1秒の無音の WAV をその場で作って鳴らす（タップの中で呼ぶこと）
+      const n = 800, buf = new ArrayBuffer(44 + n), v = new DataView(buf);
+      const str = (o, s) => { for (let i = 0; i < s.length; i++) v.setUint8(o + i, s.charCodeAt(i)); };
+      str(0, 'RIFF'); v.setUint32(4, 36 + n, true); str(8, 'WAVE'); str(12, 'fmt ');
+      v.setUint32(16, 16, true); v.setUint16(20, 1, true); v.setUint16(22, 1, true); v.setUint32(24, 8000, true);
+      v.setUint32(28, 8000, true); v.setUint16(32, 1, true); v.setUint16(34, 8, true); str(36, 'data'); v.setUint32(40, n, true);
+      for (let i = 0; i < n; i++) v.setUint8(44 + i, 128);
+      const el = new Audio(URL.createObjectURL(new Blob([buf], { type: 'audio/wav' })));
+      el.setAttribute('playsinline', ''); el.volume = 0.01;
+      const p = el.play(); if (p && p.catch) p.catch(() => { sessionSet = false; });
+    } catch (e) {}
+  }
   function ensure() {
+    playbackSession();
     if (!ac) {
       const AC = window.AudioContext || window.webkitAudioContext;
       if (!AC) return null;

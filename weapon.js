@@ -149,7 +149,7 @@
     '運': { effect: 'luck',     text: 'ダメージが毎回0〜3倍のおみくじ' },
     '鉄': { effect: 'pierce',   text: '相手のガードを無視してダメージが通る' },
     '斬': { effect: 'crit',     text: '30%でクリティカル（2.5倍）' },
-    '拳': { effect: 'fist',     text: 'リーチは短いが、とんでもない連打',
+    '拳': { effect: 'fist',     text: 'リーチは短いが、当たるたびにジャブの連打が入る',
             mod: { size: 0.75, startup: 0.4, recovery: 0.35, power: 1.15 } },
     // 防御・移動
     '跳': { effect: 'hop',      text: 'ずっと跳ねていて当たりにくい', mod: { power: 2.0 } },
@@ -159,15 +159,15 @@
     '罠': { effect: 'trap',     text: '地面に罠を置く。踏んだ相手は動けない' },
     // 武器変化
     '巨': { effect: 'grow',     text: '試合中に武器がどんどん大きくなる' },
-    '影': { effect: 'shadow',   text: '影が少し遅れて追撃する' },
+    '影': { effect: 'shadow',   text: '影武者。攻撃を受けると、ときどき黒い影が身代わりになる' },
     // 遠距離（弱攻撃が飛び道具になる）
     '弓': { effect: 'arrow',    text: '離れた所から矢を撃つ', ranged: true, mod: { power: 0.8, recovery: 1.15 } },
     '竜': { effect: 'breath',   text: '口から炎を吐く', ranged: true, mod: { recovery: 1.15 } },
     '砲': { effect: 'cannon',   text: '遠くから大砲を一発', ranged: true, mod: { startup: 1.8, recovery: 1.6 } },
     // ネタ
     '猫': { effect: 'cat',      text: '気まぐれでサボる。当たると引っかき連撃' },
-    '酒': { effect: 'drunk',    text: 'フラフラ変な動きをするが、攻撃1.5倍', mod: { power: 1.5 } },
-    '光': { effect: 'flash',    text: '画面が光り、相手の攻撃がしばらく当たらない', mod: { power: 0.85 } },
+    '酔': { effect: 'drunk',    text: 'フラフラ変な動きをするが、攻撃1.5倍', mod: { power: 1.5 } },
+    '光': { effect: 'lightspeed', text: '光の速さで動き回り、ときどき光になって一瞬で詰め寄る', mod: { move: 2.0, power: 1.3 } },
     '闇': { effect: 'dark',     text: '画面が暗くなり、相手がでたらめに動く' },
 
     // ---- 100字に向けて追加した64字 ----
@@ -184,9 +184,9 @@
     '鋼': { effect: 'steel',    text: '受けるダメージが大きく減る。そのかわり遅い', armor: 0.75, mod: { power: 0.85, move: 0.7, startup: 1.2 } },
     '癒': { effect: 'regen',    text: '自分のHPがじわじわ回復する', mod: { power: 0.9 } },
     '魔': { effect: 'magic',    text: '毎回ランダムで炎・氷・雷のどれかの魔法が出る', mod: { power: 0.8 } },
-    '屁': { effect: 'fart',     text: 'おならをして加速する' },
+    '屁': { effect: 'fart',     text: 'くさい屁をこく。においをかいだ相手は混乱して、左右が逆になる' },
     '忍': { effect: 'shuriken', text: '手裏剣を飛ばして攻撃する', ranged: true },
-    '侍': { effect: 'iai',      text: 'じっと構え、近づいた相手を一撃で斬る', mod: { startup: 0.3, power: 1.6, recovery: 2.2 } },
+    '侍': { effect: 'iai',      text: '近づく相手を一撃で斬る。遠いと踏み込み、飛び道具は斬り落とす', mod: { startup: 0.3, power: 1.6, recovery: 2.2 } },
     // 自然
     '水': { effect: 'slip',     text: '当たった相手が濡れて滑る', mod: { power: 1.5 } },
     '雪': { effect: 'snow',     text: '当たった相手が雪だるまになって転がる' },
@@ -195,7 +195,6 @@
     '砂': { effect: 'sand',     text: '目つぶし。相手の攻撃が外れやすくなる', mod: { power: 1.3 } },
     '震': { effect: 'quakeT',   text: 'ときどき地震を起こし、地面にいる相手が転ぶ', mod: { power: 1.4 } },
     '波': { effect: 'wave',     text: 'ときどき大波を出して相手を押し流す' },
-    '雲': { effect: 'fly',      text: '雲に乗って浮いて戦う', cloud: true, mod: { power: 1.3 } },
     '花': { effect: 'flower',   text: '当たった相手に花が咲き、しばらく攻撃しない' },
     // 生き物
     '蛇': { effect: 'coil',     text: '巻きついて動きを止める' },
@@ -203,7 +202,7 @@
     '虫': { effect: 'bugs',     text: '虫がたかって、相手のHPが少しずつ減る' },
     '牛': { effect: 'rush',     text: 'ときどき端から端まで突進する', mod: { power: 1.3 } },
     '馬': { effect: 'swift',    text: '足がとても速い', mod: { move: 1.9, power: 1.45 } },
-    '象': { effect: 'stomp',    text: '上から踏みつけて相手をぺちゃんこにする', sig: 'smash' },
+    '象': { effect: 'stomp',    text: 'ときどき大ジャンプして、上から相手を踏みつぶす', sig: 'smash' },
     '獣': { effect: 'beast',    text: '当てるたびに興奮して、攻撃がどんどん速くなる' },
     '狼': { effect: 'howl',     text: 'HPが減ると遠吠えして速くなる', mod: { power: 1.3 } },
     // からだ・食べ物
@@ -213,18 +212,16 @@
     '麺': { effect: 'slurp',    text: '麺がズルズル伸びて離れた相手にも届き、当たると引き寄せる', stretch: 0.8, mod: { power: 1.1, recovery: 0.9 } },
     // トリック
     '鏡': { effect: 'mirror',   text: '攻撃や飛び道具を跳ね返す', mod: { power: 0.75 } },
-    '幻': { effect: 'illusion', text: '分身が相手の攻撃を引きつける' },
-    '分': { effect: 'split',    text: '攻撃が当たるたびに字が分裂して増える', mod: { power: 1.3 } },
+    '幻': { effect: 'illusion', text: '攻撃を受けると、ときどき蜃気楼のように消えて背後に現れる' },
     '謎': { effect: 'mystery',  text: '毎回ランダムな効果が出る', mod: { power: 0.85 } },
     // 人物・道具
     '鐘': { effect: 'bell',     text: 'ゴーンと鳴って相手がひるむ' },
-    '傘': { effect: 'umbrella', text: '飛び道具を防ぐ', mod: { power: 1.4 } },
     '鎧': { effect: 'armor',    text: '受けるダメージが減る', armor: 0.8, mod: { power: 0.8 } },
     '網': { effect: 'net',      text: '網で相手を捕まえる', mod: { power: 0.85 } },
     '盗': { effect: 'steal',    text: '当てるたびに相手の必殺ゲージを盗む。たまにHPも' },
     // ネタ
     '呪': { effect: 'curse',    text: '相手のHPを少しずつ吸い取る', mod: { power: 0.85 } },
-    '滅': { effect: 'doom',     text: 'ごく低い確率で一撃KO', mod: { power: 1.3 } },
+    '滅': { effect: 'doom',     text: '当たるたびに「〇〇すぎて滅！」。ごく低い確率で一撃KO', mod: { power: 1.3 } },
     '薔': { effect: 'thorn',    text: 'トゲがある。殴ってきた相手にチクッと少しダメージを返す' },
     // ネット・流行語など
     '草': { effect: 'laugh',    text: '当たると相手が笑い転げて動けない（www）' },
@@ -248,6 +245,10 @@
     '鎌': { effect: 'reap',     text: 'HPが3割以下の相手には大ダメージ（刈り取り）', sig: 'slash' },
     '霊': { effect: 'ghost',    text: 'ときどき体が透けて、攻撃をすり抜ける' },
     '蹴': { effect: 'kick',     text: 'ときどき字をボールのように蹴って飛ばす' },
+    // ---- 2026-11 の入れ替えで追加した字 ----
+    '法': { effect: 'law',      text: '3回当てると起訴して大ダメージ。相手の攻撃を「異議あり！」で消す' },
+    '透': { effect: 'vanish',   text: 'ときどき透明になり、攻撃が当たらない' },
+    '球': { effect: 'pitch',    text: 'ときどき球を投げる。球は壁ではね返って、何度も当たる' },
   };
   // 英語版の効果説明
   const EN_TEXT = {
@@ -258,35 +259,35 @@
     '毒': 'Poisons the enemy for a long, slow drain', '眠': 'Sometimes puts the enemy to sleep. A hit wakes them up', '愛': 'Enemy falls head over heels and stops attacking',
     '時': 'Sometimes stops the enemy\'s time', '辛': 'Enemy breathes fire and runs around screaming',
     '怒': 'The lower your HP, the harder you hit (up to 2x)', '運': 'Every hit is a fortune draw: 0x to 3x damage', '鉄': 'Damage goes right through guard', '斬': '30% chance of a critical (2.5x)',
-    '拳': 'Short reach, absurd punch spam', '跳': 'Never stops bouncing. Hard to hit',
+    '拳': 'Short reach, but every hit adds a flurry of jabs', '跳': 'Never stops bouncing. Hard to hit',
     '磁': 'Slowly pulls the enemy closer', '風': 'Weak hits, but blows the enemy to the edge of the screen',
     '嵐': 'Summons a tornado that launches the enemy straight up', '罠': 'Lays traps. Step on one and you\'re stuck',
-    '巨': 'Your weapon keeps growing during the fight', '影': 'A shadow follows up a moment later',
+    '巨': 'Your weapon keeps growing during the fight', '影': 'Shadow double. Sometimes a black shadow takes the hit for you',
     '弓': 'Shoots arrows from far away', '竜': 'Breathes fire', '砲': 'One big cannon shot from far away',
-    '猫': 'Slacks off on a whim. Hits become a scratch combo', '酒': 'Wobbly drunk moves, but 1.5x attack',
-    '光': 'Blinding flash. Enemy attacks miss for a while', '闇': 'Lights out. The enemy flails around randomly',
+    '猫': 'Slacks off on a whim. Hits become a scratch combo', '酔': 'Wobbly drunk moves, but 1.5x attack',
+    '光': 'Moves at light speed and sometimes flashes right up to the enemy', '闇': 'Lights out. The enemy flails around randomly',
     '剣': 'Classic. A 3-hit sword combo', '矛': 'A long thrust that breaks guards and staggers (even more vs 盾)', '槍': 'Super long-reach stab',
     '薙': 'A wide horizontal slash that blows the enemy away', '𰻞': 'Stretches like a biangbiang noodle when attacking',
     '鎖': 'Chains wrap the enemy up and yank them close', '銃': 'Three-round burst of tiny bullets',
     '金': 'Coins fly everywhere on hit. Damage is a gamble', '鋼': 'Takes much less damage. But slow',
-    '癒': 'Slowly heals your HP', '魔': 'Casts a random spell each time: fire, ice or thunder', '屁': 'Farts for a speed boost',
-    '忍': 'Throws shuriken', '侍': 'Waits in stance, then cuts down anyone who gets close in one strike',
+    '癒': 'Slowly heals your HP', '魔': 'Casts a random spell each time: fire, ice or thunder', '屁': 'Lets one rip. Anyone who smells it gets confused and mixes up left and right',
+    '忍': 'Throws shuriken', '侍': 'Cuts down anyone who gets close. Dashes in from afar and slices projectiles',
     '水': 'Soaks the enemy so they slip around', '雪': 'Turns the enemy into a rolling snowball',
     '星': 'Makes the enemy see stars', '岩': 'Sometimes hurls a rock',
     '砂': 'Pocket sand! Enemy attacks miss more', '震': 'Sometimes causes an earthquake that trips grounded enemies',
-    '波': 'Sometimes summons a huge wave that washes the enemy away', '雲': 'Rides a cloud and fights from the air',
+    '波': 'Sometimes summons a huge wave that washes the enemy away',
     '花': 'Flowers bloom on the enemy and they stop attacking for a while',
     '蛇': 'Coils around the enemy and holds them', '蜂': 'The second sting does huge damage',
     '虫': 'Bugs swarm the enemy and nibble their HP', '牛': 'Sometimes charges from one end to the other',
-    '馬': 'Super fast feet', '象': 'Stomps the enemy flat as a pancake',
+    '馬': 'Super fast feet', '象': 'Sometimes leaps high and stomps the enemy flat from above',
     '獣': 'Gets more excited each hit and attacks faster and faster', '狼': 'Howls and speeds up when HP gets low',
     '牙': 'A chomping combo', '爪': 'A 3-hit scratch combo', '蘇': 'Comes back once with 1 HP after being KO\'d', '麺': 'Noodles stretch to reach far enemies and slurp them in',
     '鏡': 'Reflects attacks and projectiles',
-    '幻': 'A decoy draws the enemy\'s attacks',
-    '分': 'The kanji splits and multiplies every hit', '謎': 'A random effect every time',
-    '鐘': 'BONNNG! The enemy flinches', '傘': 'Blocks projectiles', '鎧': 'Takes less damage',
+    '幻': 'Sometimes fades like a mirage when hit and reappears behind the enemy',
+    '謎': 'A random effect every time',
+    '鐘': 'BONNNG! The enemy flinches', '鎧': 'Takes less damage',
     '網': 'Catches the enemy in a net', '盗': 'Steals the enemy\'s super gauge every hit. Sometimes HP too',
-    '呪': 'Slowly sucks away the enemy\'s HP', '滅': 'A tiny chance of a one-hit KO',
+    '呪': 'Slowly sucks away the enemy\'s HP', '滅': 'Every hit: "Too ___. DOOM!" A tiny chance of a one-hit KO',
     '薔': 'Thorny. Pricks anyone who hits it',
     '草': 'Enemy can\'t stop laughing and can\'t move (lol)', '尊': 'Enemy collapses going "too precious…"',
     '推': 'Fan cheers fly in. The more support, the stronger you get', '沼': 'Makes a swamp underfoot. Once stuck, no escape',
@@ -298,7 +299,9 @@
     '罰': 'When the enemy whiffs an attack, a little bolt of karma strikes them', '悪': 'Sometimes warps behind the enemy for a sneak attack',
     '魂': 'Will-o\'-wisps circle you and burn anyone who gets close', '乙': 'Attacks with a polite "Good work today!" The enemy bows back and freezes',
     '鎌': 'Huge damage to enemies under 30% HP (reap)', '霊': 'Sometimes turns see-through and attacks pass right through',
-    '蹴': 'Sometimes kicks the kanji like a soccer ball', '龘': 'Breathes 3x the fire of 竜',
+    '蹴': 'Sometimes kicks the kanji like a soccer ball',
+    '法': 'Three hits and you are charged: big damage. "Objection!" cancels attacks',
+    '透': 'Sometimes turns invisible so attacks pass through', '球': 'Sometimes throws a ball that bounces off the walls and hits again and again', '龘': 'Breathes 3x the fire of 竜',
   };
   EN_TEXT['龍'] = EN_TEXT['竜'];
 

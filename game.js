@@ -132,18 +132,18 @@
   // 未発見の字のヒント（字の仲間ごと）
   const DEX_HINTS = [
     [L('火や熱に関係する字', 'Something about fire or heat'), '炎爆辛'],
-    [L('天気や空に関係する字', 'Something about weather or the sky'), '雷風嵐雪雲星光'],
+    [L('天気や空に関係する字', 'Something about weather or the sky'), '雷風嵐雪星光'],
     [L('自然の中にあるもの', 'Something found in nature'), '氷水岩砂震波花闇薔'],
     [L('生き物', 'A living creature'), '犬猫蛇蜂虫牛馬象獣狼竜'],
     [L('からだの一部', 'A body part'), '拳牙爪筋'],
     [L('武器や防具', 'A weapon or armor'), '剣矛槍薙銃弓砲盾鎧鋼鉄鎖斬鎌'],
     [L('人や職業', 'A person or a job'), '忍侍神盗母'],
     [L('気持ちに関係する字', 'Something about feelings'), '怒愛恋尊鬱叫'],
-    [L('食べ物・飲み物', 'Food or drink'), '酒麺𰻞鮨'],
-    [L('身のまわりの道具', 'An everyday object'), '鐘傘網鏡金磁罠'],
+    [L('食べ物・飲み物', 'Food or drink'), '麺𰻞鮨'],
+    [L('身のまわりの道具', 'An everyday object'), '鐘網鏡金磁罠球'],
     [L('不思議な力', 'A mysterious power'), '魔呪幻謎影蘇癒滅運時無霊魂'],
-    [L('動きやようす', 'A movement or a state'), '跳重巨眠分覇蹴'],
-    [L('世の中のきまり', 'How society works'), '税罰悪'],
+    [L('動きやようす', 'A movement or a state'), '跳重巨眠覇蹴酔透'],
+    [L('世の中のきまり', 'How society works'), '税罰悪法'],
     [L('ネットでよく使う言葉', 'Japanese internet slang'), '草推沼卍乙'],
     [L('体に悪いもの', 'Something bad for your body'), '毒'],
     [L('からだから出るもの', 'Something that comes out of your body'), '屁'],
@@ -180,7 +180,7 @@
     "竜": ["火を吹いて空を飛ぶ伝説の生き物。干支の一つ", "A legendary fire-breathing beast that flies; one of the zodiac animals"],
     "砲": ["お城や戦艦にある、大きな弾を「ドーン」と撃つ筒", "The tube on castles and battleships that fires big shells with a boom"],
     "猫": ["「ニャー」と鳴き、こたつで丸くなる気まぐれなペット", "The fickle pet that says \"meow\" and curls up under the heated table"],
-    "酒": ["大人だけが飲める。飲むと顔が赤くなり、酔っぱらう", "Only grown-ups can drink it. It turns faces red and makes you tipsy"],
+    "酔": ["お酒を飲みすぎると、顔が赤くなってこうなる。乗り物でなる人もいる", "Too much to drink and your face turns red. Some people get it on car rides, too"],
     "光": ["太陽や電球から出て、まわりを明るくする", "It comes from the sun and light bulbs and brightens things up"],
     "闇": ["明かりがひとつもない、真っ暗な状態", "Total darkness with not a single light on"],
     "剣": ["勇者や騎士が持つ、両側に刃のついたまっすぐな刀", "A straight, double-edged blade carried by heroes and knights"],
@@ -204,7 +204,6 @@
     "砂": ["浜辺や公園の遊び場にある、さらさらした細かい粒", "The fine, silky grains at the beach or in a playground box"],
     "震": ["地面がグラグラ揺れること。スマホがブルブルすることも", "The ground shaking hard; also your phone buzzing"],
     "波": ["海で寄せては返すもの。サーファーが乗る", "What rolls in and out at the sea; surfers ride it"],
-    "雲": ["空に浮かぶ白いふわふわ。雨を降らせることもある", "The white fluffy stuff floating in the sky; sometimes it brings rain"],
     "花": ["春に咲いて、ミツバチがやってくる色あざやかなもの", "The colorful thing that blooms in spring and draws bees"],
     "蛇": ["手足がなく、にょろにょろ進む長い生き物。干支の一つ", "A long, legless creature that slithers; one of the zodiac animals"],
     "蜂": ["黄色と黒のしまもようで、おしりの針で刺す虫", "A yellow-and-black striped insect that stings with its tail"],
@@ -220,10 +219,8 @@
     "麺": ["ラーメンやうどんのように、細長くてズルズルすする食べ物", "Long, thin food you slurp, like ramen or udon"],
     "鏡": ["顔を映して見る、つるつるの板。洗面所にある", "The smooth glass you see your face in, found by the bathroom sink"],
     "幻": ["本当はないのに見えてしまうもの。砂漠のオアシスなど", "Something you see that isn't really there, like a desert oasis"],
-    "分": ["一つのものを、いくつかに切ってわけること", "Splitting one thing into several parts"],
     "謎": ["答えがわからない、ふしぎなこと。名探偵が解く", "A puzzling thing with no answer yet, for a great detective to solve"],
     "鐘": ["お寺にある大きな金属の鳴り物。大みそかに108回つく", "The big metal bell at a temple, struck 108 times on New Year's Eve"],
-    "傘": ["雨の日に広げて、頭の上にさす道具", "What you open and hold over your head on rainy days"],
     "鎧": ["昔の武士や騎士が、戦で体を守るために着た金属の服", "The metal suit warriors and knights wore to protect themselves in battle"],
     "網": ["糸を編んですき間を作った道具。魚や虫をとるのに使う", "A tool of knotted string full of holes, used to catch fish or bugs"],
     "盗": ["人のものを、だまってこっそり持っていくこと。泥棒がする", "Quietly taking someone else's things without asking; what a thief does"],
@@ -250,6 +247,9 @@
     "鎌": ["草や稲を刈る三日月形の刃の道具。死神も持っている", "A crescent-bladed tool for cutting grass and rice; the Grim Reaper carries one"],
     "霊": ["死んだ人のたましい。夜に出るお化けのこと", "The soul of someone who died; ghosts and phantoms"],
     "蹴": ["足で強く打つこと。サッカーでボールにすること", "Striking hard with your foot, like a soccer ball"],
+    "法": ["国のきまりをまとめたもの。破ると罰を受ける。弁護士や裁判官が使う", "The rules of a country. Break them and you're punished. Lawyers and judges live by them"],
+    "透": ["ガラスや澄んだ水のように、向こう側が見えること", "Being see-through, like glass or clear water"],
+    "球": ["ボールのこと。投げたり打ったり蹴ったりする、まるいもの", "A ball: the round thing you throw, hit or kick"],
   };
   const hintOf = (ch) => {
     const h = DEX_HINTS.find(([, s]) => s.includes(ch)), d = DEX_DEF[ch];
@@ -288,10 +288,10 @@
     explode: '爆発', bite: '噛みつき', god: '神の力', nothing: '無', poison: '毒', sleep: '眠り', laugh: '笑い', charm: 'メロメロ',
     timestop: '時間停止', spicy: '激辛', rage: '怒り', luck: 'おみくじ', double: '倍々パワー', pierce: 'ガード無視',
     crit: 'クリティカル', fist: '連打', hop: 'ぴょんぴょん', fly: '空中戦', magnet: '磁力', wind: '突風', storm: '嵐',
-    trap: '罠', grow: '巨大化', shadow: '影の追撃', arrow: '矢', breath: '炎の息', cannon: '大砲', cat: '引っかき',
+    trap: '罠', grow: '巨大化', shadow: '影武者', arrow: '矢', breath: '炎の息', cannon: '大砲', cat: '引っかき',
     drunk: '酔っぱらいパワー', flash: '目くらまし', dark: '暗闇',
     combo3: '3段斬り', bleed: '出血', spear: '長槍', mow: '横一閃', stretch: '伸びる字', chain: '鎖の引き寄せ', gun: '3連射',
-    gold: '成金パンチ', steel: '鋼の体', regen: '自然回復', magic: '魔法', fart: 'おなら加速', shuriken: '手裏剣', iai: '居合',
+    gold: '成金パンチ', steel: '鋼の体', regen: '自然回復', magic: '魔法', fart: 'くさい屁', shuriken: '手裏剣', iai: '居合',
     slip: 'ツルツル', snow: '雪だるま', dizzy: 'ピヨり', rock: '岩の硬さ', sand: '目つぶし', quakeT: '地震', wave: '大波',
     flower: 'お花畑', coil: '巻きつき', sting: '二度刺し', bugs: '虫', rush: '突進', swift: '俊足', stomp: '踏みつけ',
     dive: '急降下', flop: 'ビチビチ', howl: '遠吠え', fangs: '噛みつき連打', claw: '引っかき3連', revive: '復活',
@@ -301,6 +301,7 @@
     swamp: '沼', gloom: '鬱', beast: '野生', boomerang: 'ブーメラン', love: '恋', shout: '叫び', haki: '覇気', breath3: '三倍ブレス', hoko: 'ガード崩し', steal: '盗み',
     nag: '小言', pump: 'パンプアップ', sushi: '寿司投げ', tax: '課税', punish: '小さな天罰', sneak: '不意打ち', souls: '人魂',
     otsu: 'お疲れ様', reap: '刈り取り', ghost: 'すり抜け', kick: 'シュート', rockthrow: '投石',
+    lightspeed: '光速', law: '法の裁き', pitch: '投球',
   };
 
 const EFFECT_NAME_EN = {
@@ -308,10 +309,10 @@ const EFFECT_NAME_EN = {
   explode: 'explosion', bite: 'bite', god: 'divine power', nothing: 'nothingness', poison: 'poison', sleep: 'sleep', laugh: 'laughter', charm: 'crush',
   timestop: 'time stop', spicy: 'spice', rage: 'rage', luck: 'fortune', double: 'doubling power', pierce: 'guard break',
   crit: 'critical', fist: 'punch spam', hop: 'bouncing', fly: 'air combat', magnet: 'magnetism', wind: 'gust', storm: 'tornado',
-  trap: 'trap', grow: 'growth', shadow: 'shadow strike', arrow: 'arrows', breath: 'fire breath', cannon: 'cannon', cat: 'scratching',
+  trap: 'trap', grow: 'growth', shadow: 'shadow double', arrow: 'arrows', breath: 'fire breath', cannon: 'cannon', cat: 'scratching',
   drunk: 'drunken power', flash: 'blinding flash', dark: 'darkness',
   combo3: '3-hit combo', bleed: 'bleeding', spear: 'long spear', mow: 'wide slash', stretch: 'stretchy kanji', chain: 'chain yank', gun: 'triple shot',
-  gold: 'money punch', steel: 'steel body', regen: 'regeneration', magic: 'magic', fart: 'fart boost', shuriken: 'shuriken', iai: 'quickdraw',
+  gold: 'money punch', steel: 'steel body', regen: 'regeneration', magic: 'magic', fart: 'stink', shuriken: 'shuriken', iai: 'quickdraw',
   slip: 'slipperiness', snow: 'snowball', dizzy: 'dizziness', rock: 'rock hardness', sand: 'pocket sand', quakeT: 'earthquake', wave: 'big wave',
   flower: 'flower power', coil: 'coiling', sting: 'double sting', bugs: 'bugs', rush: 'charge', swift: 'speed', stomp: 'stomp',
   dive: 'dive bomb', flop: 'flopping', howl: 'howl', fangs: 'chomp combo', claw: 'triple scratch', revive: 'revival',
@@ -321,6 +322,7 @@ const EFFECT_NAME_EN = {
   swamp: 'swamp', gloom: 'gloom', beast: 'wildness', boomerang: 'boomerang', love: 'love', shout: 'scream', haki: 'aura', breath3: 'triple breath', hoko: 'guard crush', steal: 'pickpocket',
   nag: 'nagging', pump: 'pump-up', sushi: 'sushi toss', tax: 'taxation', punish: 'little karma', sneak: 'sneak attack', souls: 'wisps',
   otsu: 'good work today', reap: 'reaping', ghost: 'phasing', kick: 'kick shot', rockthrow: 'rock toss',
+  lightspeed: 'light speed', law: 'the law', pitch: 'pitching',
 };
 const effectName = (e) => (EN ? EFFECT_NAME_EN[e] : EFFECT_NAME[e]);
 
@@ -331,7 +333,9 @@ const effectName = (e) => (EN ? EFFECT_NAME_EN[e] : EFFECT_NAME[e]);
     'bleed', 'slip', 'snow', 'bound', 'sticky', 'slowT', 'curse', 'swoon', 'invis', 'dizzy', 'flower', 'bugs', 'squash',
     'fartT', 'rushT', 'inSwamp', 'hitFlash', 'mu',
     // 入れ替えで追加した字で使う状態（税の課税、乙のお辞儀、魂の人魂の間隔）
-    'tax', 'bow', 'soulCd', 'thrownSuper', 'kickT'];
+    'tax', 'bow', 'soulCd', 'thrownSuper', 'kickT',
+    // 2026-11 の調整で使う状態（屁のにおい、影武者・異議ありの間隔、屁で吹き飛んで壁に激突）
+    'stink', 'shadowCd', 'objCd', 'wallSlam', 'buttT'];
 
   // ---------- 技 ----------
   // make: 武器の性能から、出だし(su)・当たっている時間(act)・スキ(rec)・威力(pow)・吹っ飛ばし倍率(kb) を作る
@@ -418,7 +422,7 @@ const effectName = (e) => (EN ? EFFECT_NAME_EN[e] : EFFECT_NAME[e]);
       this.st = { dealt: 0, direct: 0, hits: 0, best: 0, procs: 0, naps: 0, misses: 0, kyo: 0 };
       // 追加の字で使う数
       this.grass = 0; this.stings = 0; this.splits = 0; this.gloom = 0; this.sighT = 0; this.sighCd = 0; this.oshi = 1;
-      this.frenzy = 0;
+      this.frenzy = 0; this.lawN = 0; this.stompT = 0; this.dashAt = -999;
       this.dust = 0;                       // 負けたあと砂になって消えていく進み具合
       this.sp = 0; this.spUsed = 0;        // 必殺ゲージ（0〜100）と使った回数
       this.sinkDepth = 0;                  // 砂の必殺技で砂に沈んでいる深さ（見た目だけ）
@@ -496,6 +500,7 @@ const effectName = (e) => (EN ? EFFECT_NAME_EN[e] : EFFECT_NAME[e]);
         if (this.drunkFlip) inp = { ...inp, left: inp.right, right: inp.left };
         if (this.t % 150 === 0) popText(this.x, this.y - 170, 'ヒック', '#b06', 22);
       }
+      if (this.stink > 0) inp = { ...inp, left: inp.right, right: inp.left };   // 屁：くさくて混乱し、左右が逆になる
       if (this.charm > 0) inp = { ...inp, weak: false, strong: false, move: null };
       return inp;
     }
@@ -539,6 +544,7 @@ const effectName = (e) => (EN ? EFFECT_NAME_EN[e] : EFFECT_NAME[e]);
       if (this.nap === 1) this.snoozing = false;
       for (const s of STATUS) if (this[s] > 0) this[s]--;
       if (this.dizzy > 0 && this.t % 10 === 0) spark(this.x, this.y - 165, '#e0b000', 1, 1.5, { g: 0, ch: '★' });
+      if (this.stink > 0 && this.t % 12 === 0) spark(this.x + rand(-20, 20), this.y - 150, '#8a9a2a', 1, 0.6, { vy: -1.2, g: -0.02, ch: '〜' });
       if (this.flower > 0 && this.t % 14 === 0) spark(this.x + rand(-20, 20), this.y - 150, '#ff7eb6', 1, 1, { vy: -1, g: -0.02, ch: '✿' });
       // 状態の見た目
       if (this.sleep > 0 && this.t % 25 === 0) spark(this.x + 20, this.y - 150, '#557', 1, 0.5, { vy: -1, g: -0.02, ch: 'Z' });
@@ -547,9 +553,20 @@ const effectName = (e) => (EN ? EFFECT_NAME_EN[e] : EFFECT_NAME[e]);
       if (this.spicy > 0 && this.t % 3 === 0) spark(this.x + this.spicyDir * 22, this.y - 118, '#ff4b1f', 2, 2, { vx: this.spicyDir * 3, g: 0 });
 
       if (this.busy()) {
-        this.atk = null; this.guarding = false; this.comboNext = null;
+        this.atk = null; this.guarding = false; this.comboNext = null; this.stompT = 0;
         if (this.onGround) this.vx *= this.snow > 0 ? 0.99 : 0.85;        // 雪だるまは転がり続ける
         this.physics(); return;
+      }
+      // 屁：屁をこくあいだは、相手にお尻を向けて止まる
+      if (this.buttT > 0) { this.facing = opp.x >= this.x ? 1 : -1; this.vx *= 0.7; this.physics(); return; }   // 向きは相手のまま、体を半回転して描く（drawCapsuleBody）
+      // 象：大ジャンプ中は、上りのあいだ相手の真上をねらい、落ちたら踏みつぶす
+      if (this.stompT > 0) {
+        this.stompT--;
+        if (this.vy < 0) this.stompX = opp.x;
+        this.vx = (this.stompX - this.x) * 0.09;
+        this.physics();
+        if (this.onGround) landStomp(this, opp);
+        return;
       }
       // 屁・牛：一定時間、前へ突っ込む
       if (this.fartT > 0 || this.rushT > 0) {
@@ -592,6 +609,9 @@ const effectName = (e) => (EN ? EFFECT_NAME_EN[e] : EFFECT_NAME[e]);
         this.vx = this.slip > 0 && this.onGround ? this.vx * 0.96 + target * 0.05 : target;
         if (pressed('up') && this.onGround && this.canJump()) { this.vy = -15; this.onGround = false; }
         if (this.fx === 'hop' && this.onGround) { this.vy = -8; this.onGround = false; }
+        if (this.fx === 'lightspeed' && Math.abs(this.vx) > 3 && this.t % 2 === 0) {          // 光：動くと光の尾を引く
+          for (let i = 0; i < 2; i++) particles.push({ x: this.x - sign(this.vx) * rand(10, 40) - 20, y: this.y - rand(15, 150), vx: 0, vy: 0, g: 0, life: 9, color: 'rgba(255,236,140,0.85)', r: 2, streak: true });
+        }
       } else if (this.onGround) this.vx *= this.slip > 0 ? 0.97 : 0.7;
 
       // 出す技を決める（弱・強のボタン、またはAIが技の名前で指示）
@@ -674,6 +694,12 @@ const effectName = (e) => (EN ? EFFECT_NAME_EN[e] : EFFECT_NAME[e]);
         } else this.onGround = false;
       }
       this.x = Math.max(40, Math.min(W - 40, this.x));
+      if (this.wallSlam > 0 && (this.x <= 40 || this.x >= W - 40)) {   // 屁の必殺技：吹き飛んで画面の端に激突
+        this.wallSlam = 0; this.vx = -sign(this.vx) * 3; this.damage(4, '屁');
+        shake = Math.max(shake, 22); hitstop = Math.max(hitstop, 6); sfx('boom');
+        spark(this.x, this.y - 80, '#c9a36b', 26, 8); addFx('ring', this.x, this.y - 80, { color: '#ffffff', life: 18, big: true });
+        popText(this.x + (this.x < W / 2 ? 60 : -60), this.y - 170, L('ドーン!!', 'SLAM!!'), '#6b4a2b', 40);
+      }
     }
     tryHit(opp) {
       if (opp.untouchable() || this.thrown) return;   // 武器を投げている間は殴れない
@@ -812,6 +838,10 @@ const effectName = (e) => (EN ? EFFECT_NAME_EN[e] : EFFECT_NAME[e]);
       if (p.kind === 'fire' && Math.random() < 0.6) spark(p.x, p.y, '#ff9a1f', 1, 1, { g: -0.05 });
       if (p.kind === 'wave' && Math.random() < 0.7) spark(p.x + rand(-20, 20), GROUND - rand(0, 50), '#5aa0e0', 1, 2, { g: 0.1 });
       if (p.kind === 'rock' && p.y >= GROUND - 14) { p.life = 0; spark(p.x, GROUND - 8, '#8a7a6a', 14, 5); shake = Math.max(shake, 5); continue; }   // 岩は地面で砕ける
+      if (p.kind === 'bouncer') {                                   // 球：壁と地面ではね返る
+        if (p.x < 34 || p.x > W - 34) { p.x = Math.max(34, Math.min(W - 34, p.x)); p.vx = -p.vx * 0.92; spark(p.x, p.y, '#ffffff', 6, 3); sfx('hit', 3, 30); }
+        if (p.y >= GROUND - 14) { p.y = GROUND - 14; p.vy = -Math.max(5, Math.abs(p.vy) * 0.72); }
+      }
       if ((p.kind === 'sushi' || p.kind === 'kickball') && p.y >= GROUND - 10) { p.y = GROUND - 10; p.vy = -Math.abs(p.vy) * 0.5; p.vx *= 0.8; }   // 地面で弾む
       // 卍：持ち主の所まで戻ってきたら消える
       if (p.kind === 'boomer' && sign(p.vx) === sign(p.ax)) {     // 速さの向きが引き戻す向きと同じ＝帰り道
@@ -824,8 +854,10 @@ const effectName = (e) => (EN ? EFFECT_NAME_EN[e] : EFFECT_NAME[e]);
       if (t.untouchable() || p.cool > 0) { if ((p.x < -40 || p.x > W + 40) && p.kind !== 'boomer') p.life = 0; continue; }
       const nx = Math.max(hb.x, Math.min(p.x, hb.x + hb.w)), ny = Math.max(hb.y, Math.min(p.y, hb.y + hb.h));
       if ((p.x - nx) ** 2 + (p.y - ny) ** 2 <= p.r * p.r) {
-        if (t.fx === 'umbrella' && p.kind !== 'wave' && Math.random() < 0.75) {      // 傘：飛び道具を防ぐ
-          p.life = 0; popText(t.x, t.y - 160, 'パッ', '#357', 26); sfx('guard');
+        if (t.fx === 'iai' && p.kind !== 'wave' && !t.busy() && Math.random() < 0.45) {   // 侍：飛び道具を斬り落とす
+          p.life = 0; t.st.procs++;
+          addFx('crescent', p.x, p.y, { life: 12, dir: -sign(p.vx) || 1, size: 0.8, rot: rand(-0.5, 0.5) });
+          popText(t.x, t.y - 165, L('斬!', 'SLICE!'), '#c00', 28); sfx('slash');
           continue;
         }
         if (t.fx === 'mirror' && !p.reflected && Math.random() < 0.4) {                                       // 鏡：跳ね返す
@@ -834,6 +866,7 @@ const effectName = (e) => (EN ? EFFECT_NAME_EN[e] : EFFECT_NAME[e]);
           continue;
         }
         if (p.kind === 'boomer') p.cool = ++p.hits < 2 ? 25 : 9999;                   // 卍は行きと帰りで2回まで当たる。当たっても消えずに持ち主の手元へ戻る
+        else if (p.kind === 'bouncer') { p.vx = -p.vx * 0.85; p.vy = -7; p.cool = 30; if (++p.hits >= 3) p.life = Math.min(p.life, 20); }   // 球：相手に当たってもはね返る（3回まで）
         else p.life = 0;
         onHit(p.owner, t, { type: p.kind === 'ball' || p.kind === 'kickball' || p.kind === 'rock' ? 'strong' : 'weak', power: p.dmg, charge: 0, proj: p.kind, kb: p.kind === 'bullet' ? 0.25 : undefined }, nx, ny);
       } else if (p.kind === 'ball' && p.y >= GROUND) {
@@ -845,6 +878,72 @@ const effectName = (e) => (EN ? EFFECT_NAME_EN[e] : EFFECT_NAME[e]);
     projectiles = projectiles.filter((p) => p.life > 0);
     for (const f of [m.p, m.c]) if (f.thrown && !projectiles.includes(f.thrown)) f.thrown = null;   // 戻ってきたら（消えたら）また手に持つ
   }
+
+  // 屁：においの雲（相手のほうへ流れていき、ふれた相手は混乱して左右が逆になる）
+  let stinks = [];
+  function fart(f, o) {
+    f.buttT = 26; f.vx = 0;                                       // くるっと後ろを向いて、お尻を相手に向ける
+    f.later(9, () => {
+      if (f.hp <= 0) return;
+      const d = o.x >= f.x ? 1 : -1;
+      stinks.push({ x: f.x + d * 20, y: f.y - 60, vx: d * 6, owner: f, life: 170, hit: false });
+      popText(f.x + d * 30, f.y - 80, L('プゥ〜', 'PFFT~'), '#8a8a3a', 28); sfx('swing', 20);
+      for (let i = 0; i < 10; i++) spark(f.x + d * 20, f.y - 55, '#9aa04a', 1, 2, { vx: d * rand(1, 4), g: -0.03 });
+    });
+  }
+  function updateStinks(m) {
+    for (const s of stinks) {
+      s.x += s.vx; s.vx *= 0.97; s.life--;
+      const v = s.owner === m.p ? m.c : m.p;
+      if (!s.hit && v.hp > 0 && !v.untouchable() && Math.abs(v.x - s.x) < 75) {
+        s.hit = true; v.stink = 170; v.stunned = Math.max(v.stunned, 20); v.damage(s.owner.weapon.power * 0.75, s.owner.weapon.ch); s.owner.st.procs++;
+        popText(v.x, v.y - 170, L('くさっ!!', 'STINKY!!'), '#8a8a3a', 32);
+      }
+    }
+    stinks = stinks.filter((s) => s.life > 0);
+  }
+  function drawStinks() {
+    for (const s of stinks) {
+      ctx.save(); ctx.globalAlpha = Math.min(1, s.life / 40) * 0.75;
+      for (let i = 0; i < 6; i++) {
+        const a = i * 1.1 + s.life * 0.03, r = 26 + (i % 3) * 9;
+        ctx.fillStyle = i % 2 ? 'rgba(170,180,70,0.45)' : 'rgba(140,155,50,0.4)';
+        ctx.beginPath(); ctx.arc(s.x + Math.cos(a) * 30, s.y + Math.sin(a) * 22, r, 0, TAU); ctx.fill();
+      }
+      ctx.strokeStyle = 'rgba(110,120,30,0.8)'; ctx.lineWidth = 3; ctx.lineCap = 'round';
+      for (let k = -1; k <= 1; k++) {                              // くさいにおいの線
+        ctx.beginPath();
+        for (let j = 0; j <= 8; j++) { const y = s.y - 40 - j * 6, x = s.x + k * 22 + Math.sin(j * 0.9 + s.life * 0.2 + k) * 6; j ? ctx.lineTo(x, y) : ctx.moveTo(x, y); }
+        ctx.stroke();
+      }
+      ctx.restore();
+    }
+  }
+  // 象：大ジャンプから着地。真下にいる相手を踏みつぶす
+  function landStomp(f, o) {
+    f.stompT = 0;
+    shake = Math.max(shake, 18); sfx('boom');
+    spark(f.x, GROUND - 6, '#c9a36b', 24, 7); cracks.push({ x: f.x, life: 90, seed: Math.random() * 1000 });
+    popText(f.x, f.y - 190, L('ドスーン!!', 'KA-THOOM!!'), '#6b4a2b', 36);
+    if (Math.abs(o.x - f.x) < 75 && !o.untouchable() && o.hp > 0 && o.fx !== 'fly') {
+      onHit(f, o, { name: 'stomp', type: 'strong', pow: f.weapon.power * 1.8, kb: 0.4, charge: 0 }, o.x, o.y - 40);
+      if (o.hp > 0) { o.down = 40; o.downMax = 40; o.atk = null; }
+      f.st.procs++;
+    }
+  }
+  // 球：球を投げる
+  function throwBall(f) {
+    const w = f.weapon;
+    projectiles.push({ owner: f, kind: 'bouncer', x: f.x + f.facing * 34, y: f.y - 115, vx: f.facing * 13, vy: -3, grav: 0.3, r: 15, dmg: w.power * 0.55, life: 240, hits: 0 });
+    popText(f.x, f.y - 180, L('投げた!', 'PITCH!'), '#555', 22); sfx('swing', w.size);
+  }
+  // 滅：「〇〇すぎて滅！」
+  const DOOM_JA = ['強すぎて', '尊すぎて', '眠すぎて', '速すぎて', '好きすぎて', 'お腹すきすぎて', '暑すぎて', '寒すぎて', '月曜日すぎて', '推しが尊すぎて'];
+  const DOOM_EN = ['Too strong', 'Too precious', 'Too sleepy', 'Too fast', 'Too hungry', 'Too hot', 'Too cold', 'Too Monday', 'Too much love'];
+  const doomLine = () => L(DOOM_JA[Math.floor(Math.random() * DOOM_JA.length)] + '滅!', DOOM_EN[Math.floor(Math.random() * DOOM_EN.length)] + '. DOOM!');
+  // 法：読み上げる罪状
+  const LAW_CRIMES = ['暴行罪!', '傷害罪!', '器物損壊罪!', '公務執行妨害!', '威力業務妨害!'];
+  const LAW_CRIMES_EN = ['ASSAULT!', 'BATTERY!', 'VANDALISM!', 'OBSTRUCTION!', 'DISTURBING THE PEACE!'];
 
   // ---------- 一定時間ごとに起きる効果（f が字の持ち主、o が相手）----------
   let swamps = [];
@@ -861,13 +960,46 @@ const effectName = (e) => (EN ? EFFECT_NAME_EN[e] : EFFECT_NAME[e]);
         if (f.mu > 0) {
           // 状態異常をすべて消す
           for (const s of ['frozen', 'stunned', 'sleep', 'laugh', 'charm', 'timestop', 'spicy', 'blind', 'confused', 'burn', 'poison',
-                           'bleed', 'slip', 'snow', 'bound', 'sticky', 'slowT', 'curse', 'swoon', 'dizzy', 'hitstun', 'down', 'squash', 'inSwamp', 'tax', 'bow']) f[s] = 0;
+                           'bleed', 'slip', 'snow', 'bound', 'sticky', 'slowT', 'curse', 'swoon', 'dizzy', 'hitstun', 'down', 'squash', 'inSwamp', 'tax', 'bow', 'stink']) f[s] = 0;
           f.gloom = 0;
           if (f.t % 8 === 0) spark(f.x + rand(-30, 30), f.y - rand(10, 150), '#ffffff', 1, 0.6, { vy: -1, g: -0.02 });
         }
         break;
-      case 'fart':                                    // 屁：おならで前へ加速
-        if (every(170) && free) { f.fartT = 22; f.fartHit = false; popText(f.x - f.facing * 20, f.y - 60, 'プゥ〜', '#8a8a3a', 26); }
+      case 'fart':                                    // 屁：くさい屁をこく。においの雲が相手のほうへ流れていく
+        if (every(130) && free && dist < 330) fart(f, o);
+        break;
+      case 'stomp':                                   // 象：ときどき大ジャンプして、相手の真上から踏みつぶす
+        if (every(150) && free && f.onGround && ok() && dist > 60 && dist < 420) {
+          f.vy = -20; f.onGround = false; f.y -= 1; f.stompT = 70; f.stompX = o.x;
+          popText(f.x, f.y - 180, L('パオーン!', 'PAOOO!'), '#6b4a2b', 30); sfx('swing', 90);
+        }
+        break;
+      case 'iai':                                     // 侍：離れていると、ときどき一瞬で踏み込んで斬る
+        if (f.t - f.dashAt > 150 && free && f.onGround && ok() && dist > f.reach() + 30 && dist < 560 && Math.random() < 0.02) {
+          f.dashAt = f.t;
+          const from = f.x, d = o.x >= f.x ? 1 : -1;
+          f.x = Math.max(40, Math.min(W - 40, o.x - d * f.reach() * 0.75)); f.facing = d;
+          for (let j = 0; j < 16; j++) particles.push({ x: from + (f.x - from) * Math.random(), y: f.y - rand(10, 150), vx: 0, vy: 0, g: 0, life: 14, color: 'rgba(255,255,255,0.85)', r: 2, streak: true });
+          spark(f.x, f.y - 4, '#c9a36b', 12, 4);
+          popText(f.x, f.y - 185, L('踏み込み!', 'DASH-IN!'), '#c00', 26);
+          f.atk = makeAttack(f, 'weak'); f.atk.su = 2; f.st.procs++;
+        }
+        break;
+      case 'lightspeed':                              // 光：ときどき光の線になって、一瞬で相手の目の前か背後へ
+        if (every(160) && free && f.onGround && ok() && dist > 110 && dist < 700) {
+          const from = f.x, behind = Math.random() < 0.5;
+          let nx = o.x + (behind ? 1 : -1) * (o.x >= f.x ? 1 : -1) * f.reach() * 0.7;
+          nx = Math.max(40, Math.min(W - 40, nx));
+          f.x = nx; f.facing = o.x >= f.x ? 1 : -1;
+          addFx('lightdash', from, f.y - 90, { life: 12, x2: f.x }); sfx('zap');
+          popText(f.x, f.y - 185, L('ピカッ', 'FLASH!'), '#d0a000', 28);
+          f.atk = makeAttack(f, 'weak'); f.atk.su = 2; f.st.procs++;
+        }
+        if (Math.abs(f.vx) > 2.5 && f.t % 4 === 0) { f.lightTrail = (f.lightTrail || []).concat([{ x: f.x, y: f.y, d: f.facing }]).slice(-3); }
+        else if (f.t % 6 === 0 && f.lightTrail && f.lightTrail.length) f.lightTrail.shift();
+        break;
+      case 'pitch':                                   // 球：ときどき球を投げる（壁ではね返って何度も当たる）
+        if (every(150) && free && dist > 110 && ok() && !projectiles.some((p) => p.owner === f && p.kind === 'bouncer')) throwBall(f);
         break;
       case 'rush':                                    // 牛：突進
         if (every(160) && free && f.onGround && dist > 110) { f.rushT = 40; popText(f.x, f.y - 170, 'モー!', '#6b4a2b', 30); }
@@ -1000,6 +1132,7 @@ const effectName = (e) => (EN ? EFFECT_NAME_EN[e] : EFFECT_NAME[e]);
       }
       periodic(m, f, o);
     }
+    updateStinks(m);
     // 沼：はまっている間は遅く、跳べない
     for (const s of swamps) {
       s.life--;
@@ -1117,10 +1250,34 @@ const effectName = (e) => (EN ? EFFECT_NAME_EN[e] : EFFECT_NAME[e]);
       hitstop = 2;
       return;
     }
+    // 影：黒い影が身代わりになる
+    if (def.fx === 'shadow' && a.type !== 'super' && !(def.shadowCd > 0) && def.hp > 0 && Math.random() < 0.3) {
+      def.shadowCd = 90; def.st.procs++;
+      addFx('shadowsub', def.x, def.y, { life: 34, f: def, d: def.facing });
+      burst(def.x, def.y - 80, '#1a1a22', 18, 4, null, -0.03);
+      popText(def.x, def.y - 175, L('影武者!', 'SHADOW DOUBLE!'), '#222', 28); sfx('guard');
+      def.x = Math.max(40, Math.min(W - 40, def.x + att.facing * 80));
+      hitstop = 4;
+      return;
+    }
+    // 法：「異議あり!」で攻撃を打ち消す
+    if (def.fx === 'law' && a.type !== 'super' && !(def.objCd > 0) && def.hp > 0 && Math.random() < 0.15) {
+      def.objCd = 120; def.st.procs++;
+      popText(def.x, def.y - 180, L('異議あり!', 'OBJECTION!'), '#c0392b', 36); sfx('clang');
+      att.stunned = Math.max(att.stunned, 18); att.atk = null; att.vx = -att.facing * 6;
+      spark(hx, hy, '#ffffff', 14, 6); addFx('ring', hx, hy, { color: '#ffffff', life: 14 });
+      hitstop = 6;
+      return;
+    }
     // 幻：分身が攻撃を引きつける / 鏡：近接攻撃をはね返す
-    if (def.fx === 'illusion' && Math.random() < 0.3) {
-      burst(def.x, def.y - 80, '#c8c0d8', 22, 4, null, -0.04); popText(def.x, def.y - 160, 'ドロン（分身）', '#7a5ab0', 24);
-      def.x = Math.max(40, Math.min(W - 40, def.x - att.facing * 60));
+    if (def.fx === 'illusion' && a.type !== 'super' && Math.random() < 0.3) {
+      addFx('mirage', def.x, def.y, { life: 30, f: def, d: def.facing });       // 元の場所の姿が、ゆらゆら揺れて消える
+      popText(def.x, def.y - 170, L('ゆらり…', 'SHIMMER…'), '#7a5ab0', 26); def.st.procs++;
+      const bx = Math.max(40, Math.min(W - 40, att.x + att.facing * 70));
+      def.x = Math.abs(bx - att.x) < 30 ? Math.max(40, Math.min(W - 40, att.x - att.facing * 90)) : bx;
+      def.facing = att.x >= def.x ? 1 : -1; def.vx = 0; def.hitstun = 0;
+      burst(def.x, def.y - 80, '#d8ccff', 16, 3, null, -0.04);
+      hitstop = 4;
       return;
     }
     if (def.fx === 'mirror' && !a.proj && Math.random() < 0.1) {
@@ -1250,13 +1407,6 @@ const effectName = (e) => (EN ? EFFECT_NAME_EN[e] : EFFECT_NAME[e]);
       case 'pierce': popText(hx, hy - 50, 'ゴン', '#555', 30); break;
       case 'crit': if (crit) { popText(hx, hy - 55, 'ズバッ!', '#c00', 40); hitstop += 4; } break;
       case 'wind': popText(def.x, top, 'ビュオー', '#5a8', 30); def.vx = att.facing * 22; break;
-      case 'shadow':
-        att.later(14, () => {
-          if (Math.abs(def.x - att.x) < att.reach() + 40) {
-            def.damage(w.power * 0.5, w.ch); spark(def.x, def.y - 80, '#334', 12, 4); popText(def.x, def.y - 150, 'シャッ', '#334', 26);
-          }
-        });
-        break;
       case 'arrow': popText(def.x, top, 'グサッ', '#555', 26); break;
       case "breath": def.burn = Math.max(def.burn, 25); def.burnBy = w.ch; break;
       case 'cannon': spark(hx, hy, '#555', 30, 9); shake = Math.max(shake, 18); break;
@@ -1268,6 +1418,14 @@ const effectName = (e) => (EN ? EFFECT_NAME_EN[e] : EFFECT_NAME[e]);
 
       // ---- 100字に向けて追加した64字 ----
       case 'combo3': followUp(att, def, 9, 0.35, 'ザン', '#555'); followUp(att, def, 18, 0.35, 'ザン!', '#c00'); break;
+      case 'fist':                                    // 拳：当たるたびに、すばやいジャブが2〜3発追加で入る
+        if (a.type === 'super' || a.proj) break;
+        for (let i = 0; i < (Math.random() < 0.5 ? 2 : 3); i++) {
+          const t = 5 + i * 5;
+          followUp(att, def, t, 0.18, L('シュッ', 'JAB'), '#c0392b');
+          att.later(t, () => { if (def.hp > 0) addFx('jab', def.x - att.facing * 26, def.y - rand(80, 120), { life: 7, d: att.facing, side: att.side }); });
+        }
+        break;
       case 'bleed': def.bleed = 300; def.bleedBy = w.ch; popText(def.x, top, '出血', '#c0392b', 28); break;
       case 'spear': popText(hx, hy - 40, 'ズドッ', '#555', 28); break;
       case 'mow': popText(def.x, top, 'ザシュッ', '#555', 30); break;
@@ -1300,7 +1458,7 @@ const effectName = (e) => (EN ? EFFECT_NAME_EN[e] : EFFECT_NAME[e]);
         else popText(def.x, top, 'チクッ', '#c80', 24);
         break;
       case 'bugs': def.poison = Math.max(def.poison, 300); def.bugs = 300; popText(def.x, top, 'ワサワサ', '#333', 26); break;
-      case 'stomp': def.squash = 40; popText(def.x, top, 'ぺちゃんこ', '#6b4a2b', 30); break;
+      case 'stomp': def.squash = 40; if (a.name !== 'stomp') popText(def.x, top, 'ぺちゃんこ', '#6b4a2b', 30); break;
       case 'rush': popText(def.x, top, 'ドドドッ', '#6b4a2b', 30); break;
       case 'beast':                                  // 獣：当てるたびに興奮して速くなる
         if (att.frenzy < 3) att.frenzy++;
@@ -1318,7 +1476,10 @@ const effectName = (e) => (EN ? EFFECT_NAME_EN[e] : EFFECT_NAME[e]);
       case 'bell': def.stunned = Math.max(def.stunned, 30); def.hitstun = 0; popText(def.x, top, 'ゴーン', '#b08a2a', 34); sfx('clang'); break;
       case 'curse': def.curse = 420; def.curseBy = att; popText(def.x, top, 'うらめしや〜', '#5b2a86', 26); break;
       case 'doom':
-        if (Math.random() < 0.03) { def.damage(def.hp, w.ch); popText(W / 2, GROUND * 0.35, '滅', '#000', 120); shake = 30; hitstop += 10; m.mono = 45; }
+        if (Math.random() < 0.03) {
+          def.damage(def.hp, w.ch); popText(W / 2, GROUND * 0.35, '滅', '#000', 120); shake = 30; hitstop += 10; m.mono = 45;
+          popText(W / 2, GROUND * 0.35 - 110, doomLine(), '#7a0000', 46);
+        } else popText(def.x, top, doomLine(), '#7a0000', 24);
         break;
       case 'slow': def.slowT = 200; popText(def.x, top, 'のろ〜', '#777', 26); break;
       case 'grass':
@@ -1346,6 +1507,21 @@ const effectName = (e) => (EN ? EFFECT_NAME_EN[e] : EFFECT_NAME[e]);
         if (Math.random() < 0.4 && def.fx !== 'otsu') { def.stunned = Math.max(def.stunned, 30); def.bow = 30; def.hitstun = 0; popText(def.x, top, L('あ、お疲れ様です…', 'Oh, you too…'), '#557', 20); }
         break;
       case 'reap': if (reaped) { popText(def.x, top - 10, L('刈り取り!!', 'REAPED!!'), '#3a1a4a', 36); hitstop += 5; spark(hx, hy, '#5a1a6a', 20, 7); } break;
+      case 'law': {                                   // 法：罪状を読み上げ、3回目で起訴して大ダメージ
+        def.lawN = (def.lawN || 0) + 1;
+        popText(def.x, top, L(LAW_CRIMES[Math.floor(Math.random() * LAW_CRIMES.length)], LAW_CRIMES_EN[Math.floor(Math.random() * LAW_CRIMES_EN.length)]), '#2a3a6a', 26);
+        if (def.lawN >= 3) {
+          def.lawN = 0;
+          att.later(12, () => {
+            if (def.hp <= 0) return;
+            def.damage(w.power * 1.3, w.ch); def.stunned = Math.max(def.stunned, 25); def.hitFlash = 4;
+            popText(def.x, def.y - 200, L('起訴します!!', 'YOU ARE CHARGED!!'), '#c0392b', 36);
+            spark(def.x, def.y - 100, '#ffffff', 16, 7); shake = Math.max(shake, 12); sfx('clang');
+          });
+        }
+        break;
+      }
+      case 'pitch': if (a.proj === 'bouncer') popText(def.x, top, L('デッドボール!', 'BEANED!'), '#c0392b', 26); break;
       case 'kick': if (a.proj === 'kickball') { def.burn = Math.max(def.burn, 40); def.burnBy = w.ch; popText(def.x, top, L('ゴール!!', 'GOAL!!'), '#e40', 30); } break;
     }
     hitFx(att, def, fx, hx, hy);                   // 当たった瞬間の絵
@@ -1371,38 +1547,39 @@ const effectName = (e) => (EN ? EFFECT_NAME_EN[e] : EFFECT_NAME[e]);
     '毒': ['poison', '猛毒噴霧', 'TOXIC FOG'], '眠': ['rain:Z', '睡魔子守唄', 'SANDMAN LULLABY'],
     '愛': ['heartdrop', '重愛圧殺', 'CRUSHING HEAVY LOVE'], '時': ['time', '時空支配', 'TIME DOMINION'], '辛': ['fire', '激辛煉獄', 'SPICY HELL'],
     '怒': ['explode', '怒髪衝天', 'RAGE OVERDRIVE'], '運': ['omikuji', '大開運', 'MEGA FORTUNE'],
-    '鉄': ['ironfist', '鉄拳制裁', 'IRON FIST JUSTICE'], '斬': ['slash', '一刀両断', 'CLEAN CUT IN TWO'], '拳': ['barrage', '拳撃百烈', 'HUNDRED FIST FLURRY'],
-    '跳': ['drop', '天上跳躍', 'SKY-HIGH STOMP'], '磁': ['pierce', '電磁加速砲', 'RAILGUN'],
+    '鉄': ['ironfist', '鉄拳制裁', 'IRON FIST JUSTICE'], '斬': ['slash', '一刀両断', 'CLEAN CUT IN TWO'], '拳': ['fistrush', '拳撃百烈', 'HUNDRED FIST FLURRY'],
+    '跳': ['pinball', '天上跳躍', 'SKY-HIGH STOMP'], '磁': ['pierce', '電磁加速砲', 'RAILGUN'],
     '風': ['wind', '神風烈破', 'DIVINE WIND'], '嵐': ['wind', '暴嵐竜巻', 'MEGA TORNADO'], '罠': ['earth', '奈落大罠', 'BOTTOMLESS PIT'],
-    '巨': ['drop', '超巨大化', 'GIGANTIFY'], '影': ['dark', '黒影縫止', 'SHADOW STITCH'], '弓': ['arrows', '天弓千矢', 'THOUSAND ARROWS'],
+    '巨': ['drop', '超巨大化', 'GIGANTIFY'], '影': ['shadowclone', '黒影縫止', 'SHADOW STITCH'], '弓': ['arrows', '天弓千矢', 'THOUSAND ARROWS'],
     '竜': ['fire', '竜王咆哮', "DRAGON'S ROAR"], '龍': ['fire', '昇龍烈火', 'RISING DRAGON FLAME'], '龘': ['fire', '三龍滅却', 'TRIPLE DRAGON ANNIHILATION'],
-    '砲': ['explode', '天撃一斉砲', 'FULL BARRAGE'], '猫': ['barrage', '猫拳百連撃', '100 CAT PUNCHES'], '酒': ['barrage', '酩酊千鳥拳', 'DRUNKEN FRENZY'],
-    '光': ['holy', '極光閃', 'BLINDING FLASH'], '闇': ['dark', '漆黒深淵', 'PITCH-BLACK ABYSS'], '剣': ['slash', '奥義三連斬', 'SECRET TRIPLE SLASH'],
+    '砲': ['explode', '天撃一斉砲', 'FULL BARRAGE'], '猫': ['barrage', '猫拳百連撃', '100 CAT PUNCHES'], '酔': ['barrage', '酩酊千鳥拳', 'DRUNKEN FRENZY'],
+    '光': ['lightspeed', '極光閃', 'BLINDING FLASH'], '闇': ['dark', '漆黒深淵', 'PITCH-BLACK ABYSS'], '剣': ['slash', '奥義三連斬', 'SECRET TRIPLE SLASH'],
     '矛': ['pierce', '破天神矛', 'HEAVEN-SPLITTING PIKE'], '槍': ['pierce', '天穿一閃', 'HEAVEN-PIERCING SPEAR'], '薙': ['slash', '横一文字', 'HORIZON SLASH'],
     '𰻞': ['pierce', '𰻞𰻞無双', 'BIANGBIANG UNLEASHED'], '鎖': ['chainbind', '獄鎖縛陣', 'CHAIN HELL'], '銃': ['barrage', '千発弾幕', 'SWISS CHEESE'],
     '金': ['money', '札束乱打', 'CASH SLAP'], '鋼': ['heavy', '鋼鉄鉄槌', 'STEEL HAMMER'], '癒': ['heal', '天恵大回復', 'FULL HEAL'],
     '魔': ['magic', '禁断魔法', 'FORBIDDEN MAGIC'],
-    '屁': ['poison', '最終屁器', 'ULTIMATE WEAPON'], '忍': ['barrage', '忍法手裏剣', 'SHURIKEN STORM'], '侍': ['slash', '居合一閃', 'FINAL QUICKDRAW'],
-    '水': ['water', '蒼海洪水', 'GREAT FLOOD'], '雪': ['ice', '白魔雪崩', 'AVALANCHE'], '星': ['rain:★', '流星群', 'METEOR SHOWER'],
+    '屁': ['bigfart', '最終屁器', 'ULTIMATE WEAPON'], '忍': ['shuriken', '忍法手裏剣', 'SHURIKEN STORM'], '侍': ['slash', '居合一閃', 'FINAL QUICKDRAW'],
+    '水': ['water', '蒼海洪水', 'GREAT FLOOD'], '雪': ['ice', '白魔雪崩', 'AVALANCHE'], '星': ['meteor', '流星群', 'METEOR SHOWER'],
     '岩': ['rockfall', '巨岩崩落', 'BOULDER COLLAPSE'], '砂': ['antlion', '無限蟻地獄', 'ENDLESS ANTLION PIT'], '震': ['earth', '大地震撼', 'MEGA QUAKE'],
-    '波': ['water', '海神怒濤', 'TIDAL WAVE'], '雲': ['thunder', '天雷暗雲', 'THUNDERCLOUD'], '花': ['bloom', '百花繚乱', 'FLOWER FRENZY'],
-    '蛇': ['beast', '大蛇縛鎖', 'GIANT SERPENT SQUEEZE'], '蜂': ['barrage', '万蜂襲来', 'KILLER BEE SWARM'], '虫': ['poison', '蟲毒大群', 'BUG APOCALYPSE'],
+    '波': ['water', '海神怒濤', 'TIDAL WAVE'], '花': ['bloom', '百花繚乱', 'FLOWER FRENZY'],
+    '蛇': ['serpent', '大蛇縛鎖', 'GIANT SERPENT SQUEEZE'], '蜂': ['bees', '万蜂襲来', 'KILLER BEE SWARM'], '虫': ['poison', '蟲毒大群', 'BUG APOCALYPSE'],
     '牛': ['stampede', '猛牛突進', 'RAMPAGING BULL'], '馬': ['stampede', '暴走天馬', 'WILD STALLION'], '象': ['stampede', '巨象大行進', 'ELEPHANT PARADE'],
     '盗': ['steal', '怪盗参上', 'PHANTOM THIEF'], '獣': ['beast', '野生解放', 'UNLEASH THE BEAST'], '狼': ['beast', '月下狼哮', 'MOONLIGHT HOWL'],
     '牙': ['beast', '千牙噛砕', 'BONE CRUSHER'], '爪': ['beast', '三爪連斬', 'TRIPLE CLAW RIPPER'], '蘇': ['fire', '鳳凰転生', 'PHOENIX'],
     '麺': ['barrage', '無限替玉', 'ENDLESS REFILLS'], '鏡': ['mirror', '無限鏡回廊', 'INFINITE MIRROR'],
-    '幻': ['clone', '幻影乱舞', 'PHANTOM DANCE'],
-    '分': ['clone', '分身乱舞', 'CLONE FRENZY'], '謎': ['magic', '謎秘奥義', '???'], '鐘': ['bell', '百八煩悩鐘', '108 BELL TOLLS'],
-    '傘': ['wind', '唐傘旋風', 'UMBRELLA CYCLONE'], '鎧': ['shield', '重鎧突撃', 'FULL-ARMOR TACKLE'], '網': ['net', '一網打尽', "CATCH 'EM ALL"],
+    '幻': ['phantom', '幻影乱舞', 'PHANTOM DANCE'],
+    '謎': ['magic', '謎秘奥義', '???'], '鐘': ['bell', '百八煩悩鐘', '108 BELL TOLLS'],
+    '鎧': ['shield', '重鎧突撃', 'FULL-ARMOR TACKLE'], '網': ['net', '一網打尽', "CATCH 'EM ALL"],
     '呪': ['dark', '丑刻呪詛', 'VOODOO DOLL'], '滅': ['doom', '天誅滅却', 'ANNIHILATE'],
     '薔': ['petals', '薔薇吹雪', 'ROSE BLIZZARD'],
-    '草': ['rain:w', '爆笑大草原', 'ROFL MEGA PRAIRIE'], '尊': ['holy', '尊光降臨', 'PRECIOUS LIGHT DESCENDS'], '推': ['rain:♡', '全霊推活', 'ALL-IN STAN'],
+    '草': ['prairie', '爆笑大草原', 'ROFL MEGA PRAIRIE'], '尊': ['holy', '尊光降臨', 'PRECIOUS LIGHT DESCENDS'], '推': ['rain:♡', '全霊推活', 'ALL-IN STAN'],
     '沼': ['earth', '無底泥沼', 'BOTTOMLESS SWAMP'], '鬱': ['dark', '憂鬱螺旋', 'SPIRAL OF GLOOM'], '卍': ['manji', '卍字大旋風', 'MEGA MANJI SPIN'],
     '恋': ['rain:♥', '恋慕暴走', 'LOVE RAMPAGE'], '叫': ['explode', '魂魄絶叫', 'SOUL SCREAM'], '覇': ['holy', '覇王威圧', "CONQUEROR'S AURA"],
     '母': ['negi', '千本葱舞', 'THOUSAND LEEK DANCE'], '筋': ['muscle', '筋肉感謝祭', 'MUSCLE FESTIVAL'], '鮨': ['sushi', '無限寿司地獄', 'ENDLESS SUSHI HELL'],
     '税': ['tax', '増税地獄', 'TAX HIKE HELL'], '罰': ['punish', '天罰覿面', 'INSTANT KARMA'], '悪': ['evil', '極悪非道', 'PURE EVIL'],
     '魂': ['souls', '魂魄解放', 'SOUL RELEASE'], '乙': ['otsu', '定時退勤', 'CLOCKING OUT AT FIVE'], '鎌': ['reaper', '死神大鎌', 'GRIM REAPER'],
     '霊': ['ghosts', '百鬼夜行', 'NIGHT PARADE OF 100 GHOSTS'], '蹴': ['kickshot', '必殺蹴球', 'SUPER SHOT'],
+    '法': ['lawbook', '六法圧殺', 'LAW BOOK CRUSH'], '透': ['dark', '透明奇襲', 'INVISIBLE AMBUSH'], '球': ['fastball', '火球剛速', 'FIREBALL FASTBALL'],
   };
   // ふつうの字は「巨大化した字を振り回す」
   function superOf(w) {
@@ -1426,7 +1603,7 @@ const effectName = (e) => (EN ? EFFECT_NAME_EN[e] : EFFECT_NAME[e]);
   const bigOpening = (o) => o.stunned > 0 || o.frozen > 0 || o.sleep > 0 || o.laugh > 0 || o.timestop > 0 || o.bound > 0
     || o.charm > 0 || o.swoon > 0 || o.nap > 0 || (o.atk && !o.atk.hit && o.atk.t >= o.atk.su + o.atk.act);
   // 近づいて殴る技か（飛び道具・天から降る技は、見切って避けることができない）
-  const REMOTE = ['antlion', 'bloom', 'rockfall', 'negi', 'muscle', 'sushi', 'tax', 'punish', 'evil', 'souls', 'reaper', 'ghosts', 'kickshot', 'ironfist', 'arrows', 'rain', 'heartdrop', 'divine', 'manji', 'thunder', 'holy', 'dark', 'time', 'heal', 'magic', 'earth', 'net', 'mirror', 'bell', 'gravity'];
+  const REMOTE = ['shuriken', 'prairie', 'lightspeed', 'bigfart', 'bees', 'shadowclone', 'phantom', 'meteor', 'serpent', 'lawbook', 'fastball', 'antlion', 'bloom', 'rockfall', 'negi', 'muscle', 'sushi', 'tax', 'punish', 'evil', 'souls', 'reaper', 'ghosts', 'kickshot', 'ironfist', 'arrows', 'rain', 'heartdrop', 'divine', 'manji', 'thunder', 'holy', 'dark', 'time', 'heal', 'magic', 'earth', 'net', 'mirror', 'bell', 'gravity'];
   const meleeSuper = (f, sup) => !f.weapon.ranged && !REMOTE.includes(sup.theme.split(':')[0]);
   function startSuper(f, o) {
     if (f.thrown) { f.thrown.life = 0; f.thrown = null; }   // 投げた卍は手元に戻す
@@ -1599,10 +1776,13 @@ const effectName = (e) => (EN ? EFFECT_NAME_EN[e] : EFFECT_NAME[e]);
         for (let i = 1; i <= 6; i++) sl(38 + i, () => { f.giant = 3.1 - 2.1 * i / 6; });   // 技が終わったら元の大きさに
         break;
       }
-      case 'doom':                                           // 滅：赤黒い闇の中に、巨大な「滅」が叩きつけられる
+      case 'doom':                                           // 滅：画面が暗くなり、巨大な「滅」が叩きつけられて大爆発
+        addFx('tint', W / 2, H / 2, { life: 26, color: '25,0,0', a: 0.55 });   // 決めの光の前に明るさを戻す（灰色に見えないように）
         addFx('vignette', ox, oy - 90, { life: 70, color: '70,0,0' }); sfx('zap');
         addFx('bigdrop', ox, oy, { life: 46, w });
         sl(14, () => {
+          addFx('explosion', ox, oy - 80, { life: 50, r: 230 }); sfx('boom');
+          popText(ox, oy - 280, doomLine(), '#7a0000', 40);
           finish(1.1, 6); addFx('ring', ox, oy - 60, { color: '#c0392b', life: 22, big: true }); addFx('ring', ox, oy - 60, { color: '#000000', life: 30, big: true });
           cracks.push({ x: ox - 60, life: 120, seed: Math.random() * 1000 }); cracks.push({ x: ox + 60, life: 120, seed: Math.random() * 1000 });
           if (o.fx !== 'fly') { T.down = 60; T.downMax = 60; }
@@ -1743,6 +1923,141 @@ const effectName = (e) => (EN ? EFFECT_NAME_EN[e] : EFFECT_NAME[e]);
         for (let i = 0; i < 8; i++) sl(8 + i * 2, () => { if (i % 2 === 0) { sfx('boom'); shake = Math.max(shake, 8); } hit(0.05, 0.5); });
         sl(26, () => addFx('bigobj', ox, oy - 60, { life: 50, obj: 'rock', s: 6.5, seed: 3.3, rot: 0.1 }));
         sl(33, () => { finish(1.1, 4); if (o.fx !== 'fly') { T.squash = 60; T.down = 60; T.downMax = 60; } cracks.push({ x: ox - 60, life: 120, seed: Math.random() * 1000 }); cracks.push({ x: ox + 60, life: 120, seed: Math.random() * 1000 }); });
+        break;
+      // ---- 2026-11 に作り直した必殺技 ----
+      case 'prairie':                                        // 草：画面いっぱいに草原が広がり、「草」が地面から次々に生えて笑わせ続ける
+        addFx('meadow', ox, GROUND, { life: 110, back: true }); sfx('proc');
+        for (let i = 0; i < 14; i++) sl(i * 1.2, () => { const d = (i % 2 ? 1 : -1) * (70 + Math.floor(i / 2) * 75); addFx('sprout', ox + d + rand(-12, 12), GROUND + 4, { life: 92 - i * 2, s: rand(0.8, 1.15), back: true, wshape: i % 3 === 1 }); });
+        for (let i = 0; i < 8; i++) sl(4 + i * 2.5, () => { popText(ox + rand(-70, 70), oy - rand(150, 230), 'w'.repeat(3 + (i % 4)), '#2a8a2a', 26 + i * 2); hit(0.06, 0); if (landed) T.laugh = Math.max(o.laugh, 30); });
+        sl(24, () => addFx('sprout', ox, GROUND + 4, { life: 50, s: 2.6, pop: true }));
+        sl(30, () => { finish(1, 6); m.flash = 3; T.laugh = Math.max(o.laugh || 0, 160); popText(ox, oy - 270, L('大草原!!', 'ROFL!!'), '#2a8a2a', 46); });
+        break;
+      case 'lightspeed': {                                   // 光：光の線になって画面の左右を何十回も往復し、通るたびに当たる。最後に閃光
+        const side = f.x < ox ? -1 : 1; let px = f.x;
+        f.invis = 60; sfx('zap');
+        for (let i = 0; i < 14; i++) sl(i * 1.2, () => {
+          const nx = i % 2 ? 40 : W - 40, y = oy - 90 + rand(-70, 50);
+          addFx('lightdash', px, y, { life: 12, x2: nx }); px = nx; f.x = nx; f.invis = Math.max(f.invis, 4);
+          if (i % 3 === 0) sfx('zap');
+          spark(ox, y, '#fff6c0', 6, 6); hit(0.035, 0);
+        });
+        sl(19, () => {
+          f.invis = 0; f.x = Math.max(40, Math.min(W - 40, ox + side * 100)); f.facing = -side;
+          addFx('pillar', ox, oy, { color: '255,245,180', life: 30, wide: 1.6 }); m.flash = Math.max(m.flash, 14);
+          finish(1, 10); T.blind = Math.max(o.blind || 0, 120);
+        });
+        break;
+      }
+      case 'bigfart': {                                      // 屁：巨大な屁で画面が黄緑に染まり、相手が画面の端まで吹き飛んで激突
+        const d = ox >= f.x ? 1 : -1;
+        f.buttT = 44;                                        // お尻を相手に向ける（体を半回転して描く）
+        popText(f.x, f.y - 210, L('ふんっ…!', 'HNNNGH…!'), '#8a8a3a', 30);
+        sl(10, () => {
+          popText(f.x, f.y - 230, L('ブッッッ!!!', 'BRRRAAAP!!!'), '#7a8a1a', 60); sfx('boom'); shake = Math.max(shake, 26);
+          addFx('tint', W / 2, H / 2, { life: 80, color: '170,200,50', a: 0.4 });
+          addFx('cloud', f.x + d * 70, oy - 80, { life: 100, color: '154,170,60', big: true });
+          for (let i = 0; i < 40; i++) particles.push({ x: f.x + d * rand(10, 120), y: f.y - rand(20, 120), vx: d * rand(8, 20), vy: rand(-2, 2), g: 0, life: 30, color: 'rgba(150,170,50,0.85)', r: 4, streak: true });
+          hit(0.4, null);
+          if (landed && o.fx !== 'fly') { T.vx = d * 32; T.vy = -9; T.onGround = false; o.y -= 1; T.wallSlam = 50; T.hitstun = 60; T.stink = 200; }
+        });
+        sl(26, () => { f.buttT = 0; finish(0.7, null); });
+        break;
+      }
+      case 'fistrush':                                       // 拳：拳の残像が何十本にも見える連打（1発ごとに小さな爆発）。最後は巨大な爆裂パンチ
+        for (let i = 0; i < 24; i++) sl(i * 0.9, () => {
+          const y = oy - rand(50, 150);
+          addFx('fistline', f.x + f.facing * rand(10, 50), y + rand(-25, 25), { life: 7, x2: ox - f.facing * 15, y2: y, side: f.side });
+          addFx('explosion', ox + rand(-25, 25), y, { life: 12, r: 36 });
+          if (i % 2 === 0) { sfx('hit', 6, w.size); hit(0.025, 0.4); }
+        });
+        sl(23, () => addFx('bigfist', ox - f.facing * 420, oy - 100, { life: 18, x2: ox - f.facing * 40, d: f.facing, side: f.side }));
+        sl(28, () => { addFx('explosion', ox, oy - 90, { life: 46, r: 210 }); sfx('boom'); popText(ox, oy - 260, L('ドカーン!!', 'KABOOM!!'), '#e30', 48); finish(0.9, 26); });
+        break;
+      case 'bees':                                           // 蜂：画面の左右から蜂の大群が飛んできて、相手にたかって刺す
+        addFx('bees', ox, oy - 90, { life: 70, n: 36, ref: landed ? o : null });
+        popText(ox, oy - 250, L('ブブブブブ…', 'BZZZZZZ…'), '#c89a00', 34); sfx('zap');
+        for (let i = 0; i < 10; i++) sl(8 + i * 2, () => { hit(0.05, 0); if (i % 2 === 0) popText(ox + rand(-60, 60), oy - rand(100, 170), L('チクッ', 'STING'), '#c80', 20); });
+        sl(30, () => { finish(0.8, 8); popText(ox, oy - 260, L('ブスッ!!', 'STAB!!'), '#c00', 44); T.stings = 0; });
+        break;
+      case 'shadowclone': {                                  // 影：プレイヤーと瓜二つの黒い影分身が現れて、一斉に殴りかかる
+        popText(f.x, f.y - 220, L('影分身!!', 'SHADOW CLONES!!'), '#222', 34);
+        [-190, 190, f.x < ox ? -330 : 330].forEach((dx, i) => {
+          const sx = Math.max(40, Math.min(W - 40, ox + dx)), dir = sx < ox ? 1 : -1;
+          sl(i * 3, () => { addFx('shadowclone', sx, GROUND, { life: 42 - i * 3, f, tx: ox - dir * 70, d: dir }); burst(sx, GROUND - 80, '#1a1a22', 16, 4, null, -0.03); sfx('swing', 60); });
+        });
+        for (let i = 0; i < 6; i++) sl(11 + i * 2.5, () => { addFx('crescent', ox + rand(-20, 20), oy - rand(60, 120), { life: 10, dir: i % 2 ? -1 : 1, size: 1.1, rot: rand(-0.6, 0.6), color: '#222' }); sfx('slash'); hit(0.07, 1); });
+        sl(28, () => finish(0.8, 14));
+        break;
+      }
+      case 'phantom': {                                      // 幻：半透明の自分が輪になって現れ全員から字が飛ぶ → 空間が歪み、巨大な幻の字が相手を飲み込む
+        for (let i = 0; i < 6; i++) {
+          const a = i / 6 * TAU + 0.3, px = ox + Math.cos(a) * 210, py = oy - 10 - (Math.sin(a) + 1) * 80;
+          sl(i * 1.2, () => addFx('phantomself', px, py, { life: 46 - i, f, d: px < ox ? 1 : -1 }));
+          sl(10 + i * 2, () => addFx('clone', ox, oy - 90, { life: 14, a, w }));
+          sl(15 + i * 2, () => { sfx('hit', 6, w.size); hit(0.05, 0.5); addFx('impact', ox + rand(-30, 30), oy - rand(60, 120), { life: 8, size: 60, color: '#e8d8ff' }); });
+        }
+        sl(29, () => { addFx('warp', ox, oy - 90, { life: 74 }); sfx('ice'); popText(ox, oy - 250, L('ゆら…ゆら…', 'WOBBLE… WOBBLE…'), '#7a5ab0', 30); });
+        sl(35, () => addFx('phantomglyph', ox, oy - 90, { life: 40, w }));
+        sl(50, () => { finish(0.9, 6); T.confused = Math.max(o.confused || 0, 90); });
+        break;
+      }
+      case 'pinball': {                                      // 跳：壁と天井をピンボールのように跳ね回り、通るたびに当たる
+        const d = ox >= f.x ? 1 : -1, cl = (x) => Math.max(50, Math.min(W - 50, x)), far = cl(ox + d * 300), near = cl(ox - d * 280), hy = oy - 90, TOP = 150;   // 画面から出ないよう、相手のまわりで跳ね回る
+        const P = [[f.x, f.y - 60, 0], [ox, hy, 1], [far, 210, 2], [(ox + far) / 2, TOP, 2], [near, 250, 2], [ox, hy, 1], [far, 120, 2], [ox - d * 120, TOP, 2],
+          [near, 170, 2], [ox, hy, 1], [far, 290, 2], [(ox + near) / 2, TOP, 2], [ox, hy, 1], [ox - d * 95, GROUND, 3]];
+        const SEG = 3;
+        for (let j = 1; j < P.length; j++) for (let k = 1; k <= SEG; k++) {
+          f.later(8 + (j - 1) * SEG + k, () => {
+            const [x0, y0] = P[j - 1], [x1, y1, kind] = P[j], q = k / SEG;
+            f.x = x0 + (x1 - x0) * q; f.y = Math.min(GROUND, y0 + (y1 - y0) * q); f.vx = 0; f.vy = 0; f.onGround = f.y >= GROUND;
+            for (let i = 0; i < 3; i++) particles.push({ x: f.x - 20 + rand(-30, 30), y: f.y - 60 + rand(-40, 40), vx: 0, vy: 0, g: 0, life: 10, color: 'rgba(255,220,120,0.85)', r: 2, streak: true });
+            if (k < SEG) return;
+            if (kind === 1) { addFx('impact', ox, hy, { life: 10, size: 90, color: '#fff6c0' }); sfx('hit', 8, w.size); hit(0.1, 0); }
+            if (kind === 2) { spark(f.x, f.y - 60, '#ffffff', 10, 5); popText(f.x, f.y - 120, L('ボヨン', 'BOING'), '#c60', 20); shake = Math.max(shake, 6); sfx('hit', 3, 40); }
+            if (kind === 3) { f.facing = d; shake = Math.max(shake, 16); spark(f.x, GROUND - 6, '#c9a36b', 20, 7); cracks.push({ x: f.x, life: 90, seed: Math.random() * 1000 }); finish(0.8, 14); }
+          });
+        }
+        break;
+      }
+      case 'meteor':                                         // 星：夜空に変わり、尾を引く大きな流れ星が次々に降ってきて、着弾で爆発
+        addFx('nightsky', W / 2, 0, { life: 62, back: true });
+        for (let i = 0; i < 9; i++) {
+          sl(4 + i * 2.2, () => addFx('meteor', ox + rand(-140, 140), GROUND - 10, { life: 20, from: -f.facing, s: rand(0.7, 1.1) }));
+          sl(9.6 + i * 2.2, () => { if (i % 2 === 0) sfx('boom'); shake = Math.max(shake, 7); hit(0.05, 0.5); });
+        }
+        sl(25, () => addFx('meteor', ox, oy - 40, { life: 26, from: -f.facing, s: 2.6, final: true }));
+        sl(31, () => { finish(1, 8); T.dizzy = 40; });
+        break;
+      case 'serpent':                                        // 蛇：地面から巨大な大蛇が現れ、相手に巻きついて締め上げ、最後に噛みつく
+        addFx('serpent', ox, GROUND, { life: 84, ref: landed ? o : null, side: ox >= f.x ? 1 : -1 }); sfx('boom'); shake = Math.max(shake, 10);
+        if (landed) { T.vx = 0; T.bound = Math.max(o.bound || 0, 72); T.boundKind = 'supercoil'; }
+        for (let i = 0; i < 4; i++) sl(14 + i * 4, () => { shake = Math.max(shake, 5 + i * 3); popText(ox + rand(-30, 30), oy - 200 - i * 8, L('ギュウ…', 'SQUEEZE…'), '#2a6a2a', 22 + i * 3); sfx('guard'); hit(0.07, 0); });
+        sl(33, () => { addFx('teeth', ox, oy - 130, { life: 30, big: true }); sfx('slash'); finish(1.1, 0); popText(ox, oy - 260, L('ガブッ!!', 'CHOMP!!'), '#2a6a2a', 46); });
+        break;
+      case 'lawbook':                                        // 法：巨大な六法全書が上から落ちてきて押しつぶす
+        popText(f.x, f.y - 220, L('判決を言い渡す!', 'THE COURT RULES!'), '#2a3a6a', 30);
+        sl(6, () => addFx('bigobj', ox, oy - 40, { life: 56, obj: 'lawbook', s: 5, rot: -0.06 }));
+        sl(14, () => {
+          finish(1.2, 4); popText(ox, oy - 270, L('有罪!!', 'GUILTY!!'), '#c0392b', 52);
+          if (o.fx !== 'fly') { T.squash = 60; T.down = 60; T.downMax = 60; }
+          cracks.push({ x: ox - 60, life: 120, seed: Math.random() * 1000 }); cracks.push({ x: ox + 60, life: 120, seed: Math.random() * 1000 });
+        });
+        break;
+      case 'shuriken':                                       // 忍：手から手裏剣を次々に投げ、最後に巨大な手裏剣
+        for (let i = 0; i < 12; i++) sl(i * 1.4, () => {
+          const y0 = f.y - rand(90, 130);
+          addFx('shurikenfly', f.x + f.facing * 30, y0, { life: 12, x2: ox + rand(-20, 20), y2: oy - rand(50, 140) }); sfx('shoot');
+        });
+        for (let i = 0; i < 12; i++) sl(i * 1.4 + 4, () => { if (i % 2 === 0) sfx('slash'); spark(ox + rand(-25, 25), oy - rand(50, 140), '#cfd6e0', 4, 4); hit(0.04, 0.3); });
+        sl(19, () => { popText(f.x, f.y - 220, L('奥義・大手裏剣!!', 'GIANT SHURIKEN!!'), '#334', 32); addFx('shurikenfly', f.x + f.facing * 40, f.y - 130, { life: 18, x2: ox, y2: oy - 100, big: true }); sfx('swing', 150); });
+        sl(25, () => { addFx('crescent', ox, oy - 90, { life: 22, dir: f.facing, size: 2.4, rot: 0, flat: true }); finish(0.9, 18); });
+        break;
+      case 'fastball':                                       // 球：振りかぶって、炎をまとった剛速球を投げる
+        popText(f.x, f.y - 220, L('振りかぶって…', 'THE WIND-UP…'), '#555', 28);
+        f.atk = makeAttack(f, 'strong'); f.atk.hit = true; f.atk.label = null; f.atk.su = 10; f.atk.act = 14;
+        f.thrownSuper = 4; for (let i = 0; i < 8; i++) sl(i * 0.8, () => { spark(f.x + f.facing * 30, f.y - 200, '#ff8a1f', 4, 2, { g: -0.08 }); });   // 振りかぶると字が燃え上がる
+        sl(7, () => { f.thrownSuper = 60; addFx('fireball', f.x + f.facing * 40, f.y - 120, { life: 10, tx: ox, ty: oy - 90, w }); sfx('fire'); sfx('swing', 120); });
+        sl(13, () => { addFx('explosion', ox, oy - 90, { life: 46, r: 200 }); sfx('boom'); finish(1.2, 26); T.burn = Math.max(o.burn || 0, 200); T.burnBy = w.ch; });
         break;
       case 'negi':                                           // 母：ネギが千本降り注ぎ、最後に特大のネギが突き刺さる
         for (let i = 0; i < 30; i++) sl(i * 0.7, () => addFx('fallobj', ox + rand(-150, 150), GROUND - rand(4, 30), { life: 34, obj: 'negi', rot: rand(-0.5, 0.5) }));
@@ -1961,7 +2276,7 @@ const effectName = (e) => (EN ? EFFECT_NAME_EN[e] : EFFECT_NAME[e]);
       match.c.tough = Math.min(SURV.toughMax, SURV.toughBase + SURV.toughStep * run.wins) * (isBoss(run.wins) ? SURV.bossTough : 1);
       match.boss = isBoss(run.wins);
     }
-    particles = []; texts = []; projectiles = []; traps = []; cracks = []; swamps = []; fxs = []; smites = []; shake = 0; hitstop = 0; punch = 0;
+    particles = []; texts = []; projectiles = []; traps = []; cracks = []; swamps = []; stinks = []; fxs = []; smites = []; shake = 0; hitstop = 0; punch = 0;
     updateCamera(match, true);
     showScreen(null);
     if (window.Bgm) Bgm.play('battle');
@@ -2560,7 +2875,7 @@ const effectName = (e) => (EN ? EFFECT_NAME_EN[e] : EFFECT_NAME[e]);
       const g = f.weaponGeom(), e = gripEdge(f, g), ux = e.x - f.x, uy = e.y - f.y, c = Math.cos(-lean * d), s = Math.sin(-lean * d);
       const grip = [(ux * c - uy * s) * d, -(ux * s + uy * c)];
       let fist = null;
-      try { fist = window.Char3D.draw(ctx, f.side, { J, grip, tint: spriteColor(f), face: face3D(f), hand: hand3D(f), bend: f.bow > 0 ? 0.6 * Math.sin(Math.PI * Math.min(1, (30 - f.bow) / 12) / 2) : f.gloom > 0 && !f.atk && f.down <= 0 ? GLOOM_BEND * f.gloom + (f.sighT > 0 ? SIGH_BEND * Math.sin(Math.PI * (SIGH_LEN - f.sighT) / SIGH_LEN) : 0) : 0, look: f.hitstun > 0 || f.hitFlash > 0 || f.down > 0 || f.hp <= 0 }); }
+      try { fist = window.Char3D.draw(ctx, f.side, { J, grip, spin: f.buttT > 0 ? Math.PI : 0, tint: spriteColor(f), face: face3D(f), hand: hand3D(f), bend: f.bow > 0 ? 0.6 * Math.sin(Math.PI * Math.min(1, (30 - f.bow) / 12) / 2) : f.gloom > 0 && !f.atk && f.down <= 0 ? GLOOM_BEND * f.gloom + (f.sighT > 0 ? SIGH_BEND * Math.sin(Math.PI * (SIGH_LEN - f.sighT) / SIGH_LEN) : 0) : 0, look: f.hitstun > 0 || f.hitFlash > 0 || f.down > 0 || f.hp <= 0 }); }
       catch (e) { window.Char3D.ready = false; console.warn('3Dキャラを描けなかったので、棒人間に戻します', e); }   // 止まらないように
       ctx.restore();
       if (fist) {
@@ -2689,6 +3004,9 @@ const effectName = (e) => (EN ? EFFECT_NAME_EN[e] : EFFECT_NAME[e]);
   // 神は宙に浮いて描く（当たり判定はそのまま）。ゆっくり上下に揺れる
   const godLift = (f) => (f.fx === 'god' && f.down <= 0 && f.hp > 0 && !f.dust ? 26 + Math.sin(f.t * 0.06) * 7 : 0);
   function drawFighter(f) {
+    if (f.fx === 'lightspeed' && f.lightTrail && !f.dust && f.hp > 0) {      // 光：半透明の光の残像
+      f.lightTrail.forEach((p, i) => drawGhostOf(f, p.x, p.y, p.d, 'brightness(1.7) sepia(0.6) saturate(2)', 0.12 + i * 0.08));
+    }
     const hb = f.hurtbox();
     ctx.save();
     if (f.dust) {                                                 // 砂になって上から崩れていく
@@ -2760,7 +3078,8 @@ const effectName = (e) => (EN ? EFFECT_NAME_EN[e] : EFFECT_NAME[e]);
       ctx.restore();
     }
     // 拘束：蛇・網・糸
-    if (f.bound > 0 && f.boundKind !== 'chain' && f.boundKind !== 'superchain' && f.boundKind !== 'nigiri' && f.boundKind !== 'sand') {
+    if (f.bound > 0 && f.boundKind === 'coil') drawSnakeCoil(f.x, f.y - 8, f.y - 128, 36, 3.2, 11, Math.min(1, (60 - f.bound + 1) / 10), f.t, 1);   // 蛇：本物の蛇が巻きつく
+    if (f.bound > 0 && !['chain', 'superchain', 'nigiri', 'sand', 'coil', 'supercoil'].includes(f.boundKind)) {
       ctx.save();
       const col = f.boundKind === 'coil' ? '#3a8a3a' : f.boundKind === 'net' ? '#555' : '#eee';
       ctx.strokeStyle = col; ctx.lineWidth = f.boundKind === 'coil' ? 7 : 2.5;
@@ -2789,11 +3108,6 @@ const effectName = (e) => (EN ? EFFECT_NAME_EN[e] : EFFECT_NAME[e]);
     if (f.fx === 'split' && f.splits > 0) {                      // 分：分裂した字が後ろに並ぶ
       ctx.save(); ctx.globalAlpha = 0.45;
       for (let i = 1; i <= f.splits; i++) drawWeaponGlyph(f.weapon, g.cx - f.facing * 18 * i, g.cy - 14 * i, f.weapon.size * 0.6, g.rot);
-      ctx.restore();
-    }
-    if (f.fx === 'shadow') {                                    // 影：うしろに影がついてくる
-      ctx.save(); ctx.globalAlpha = 0.3;
-      drawWeaponGlyph(f.weapon, g.cx - f.facing * 26, g.cy + 8, f.weapon.size, g.rot);
       ctx.restore();
     }
     drawCapsuleArm(f, s, g);
@@ -3324,7 +3638,205 @@ const effectName = (e) => (EN ? EFFECT_NAME_EN[e] : EFFECT_NAME[e]);
           if (e.t >= 12 && !e.landed) { e.landed = true; shake = Math.max(shake, 24); spark(bx, GROUND - 4, '#c9a36b', 34, 10); }
           break;
         }
-        case 'clone': {                                   // 必殺・分：字の分身が飛んでくる
+        // ---- 2026-11 に作り直した必殺技の絵 ----
+        case 'tint': {                                    // 画面全体をうっすら染める（屁の黄緑・滅の暗さ）
+          ctx.globalAlpha = (e.a || 0.35) * Math.min(1, e.t / 5) * Math.min(1, (e.life - e.t) / 15);
+          ctx.fillStyle = `rgb(${e.color})`; ctx.fillRect(-W, -H, W * 3, H * 3);
+          break;
+        }
+        case 'meadow': {                                  // 草：地面いっぱいに広がる草原（相手のまわりから左右へ）
+          const grow = Math.min(1, e.t / 18), fade = Math.min(1, (e.life - e.t) / 16);
+          ctx.globalAlpha = fade;
+          const half = (W * 0.9) * grow;
+          const gr = ctx.createLinearGradient(0, GROUND - 70, 0, GROUND + 30);
+          gr.addColorStop(0, 'rgba(90,190,70,0)'); gr.addColorStop(0.45, 'rgba(90,190,70,0.55)'); gr.addColorStop(1, 'rgba(50,140,40,0.85)');
+          ctx.fillStyle = gr; ctx.fillRect(e.x - half, GROUND - 70, half * 2, 100);
+          ctx.strokeStyle = '#3f9a2f'; ctx.lineWidth = 3; ctx.lineCap = 'round';
+          for (let i = -40; i <= 40; i++) {                          // 草の葉がゆれる
+            const x = e.x + i * 22; if (Math.abs(x - e.x) > half) continue;
+            const h = 18 + ((i * 37) % 5 + 5) % 5 * 6, sw = Math.sin(e.t * 0.15 + i) * 6;
+            ctx.beginPath(); ctx.moveTo(x, GROUND + 6); ctx.quadraticCurveTo(x + sw * 0.4, GROUND - h * 0.5, x + sw, GROUND - h); ctx.stroke();
+            ctx.beginPath(); ctx.moveTo(x + 8, GROUND + 6); ctx.quadraticCurveTo(x + 8 - sw * 0.3, GROUND - h * 0.4, x + 6 - sw, GROUND - h * 0.75); ctx.stroke();
+          }
+          break;
+        }
+        case 'sprout': {                                  // 草：字が地面からにょきっと生えて、ゆれる
+          const grow = Math.min(1, e.t / (e.pop ? 6 : 10)), s2 = 120 * (e.s || 1);
+          ctx.globalAlpha = Math.min(1, (e.life - e.t) / 10);
+          const bounce = e.pop ? 1 + Math.max(0, 0.25 - e.t * 0.03) : 1;
+          ctx.save(); ctx.beginPath(); ctx.rect(e.x - s2, -H, s2 * 2, e.y + H); ctx.clip();          // 地面より下は見えない
+          ctx.translate(e.x, e.y + s2 * 0.75 * (1 - grow)); ctx.rotate(Math.sin(e.t * 0.2 + e.x) * 0.06); drawGrassArt(s2 / 100 * 1.8 * bounce, e.wshape, e.t);
+          ctx.restore();
+          if (e.t === 1) spark(e.x, GROUND - 4, '#5aa03a', 8, 4);
+          break;
+        }
+        case 'lightdash': {                               // 光：画面を横切る光の線
+          const k = 1 - p;
+          ctx.globalCompositeOperation = 'lighter'; ctx.globalAlpha = k;
+          const x0 = Math.min(e.x, e.x2), len = Math.abs(e.x2 - e.x);
+          ctx.fillStyle = 'rgba(255,230,120,0.7)'; ctx.fillRect(x0, e.y - 14 * k - 3, len, 28 * k + 6);
+          ctx.fillStyle = 'rgba(255,255,240,1)'; ctx.fillRect(x0, e.y - 3, len, 6);
+          ctx.fillStyle = 'rgba(255,250,200,0.9)'; ctx.beginPath(); ctx.arc(e.x2, e.y, 26 * k + 6, 0, TAU); ctx.fill();
+          break;
+        }
+        case 'fistline': {                                // 拳：残像の拳が相手へ飛んでいく
+          const k = Math.min(1, e.t / 3), x = e.x + (e.x2 - e.x) * k, y = e.y + (e.y2 - e.y) * k;
+          ctx.globalAlpha = Math.max(0, 1 - Math.max(0, e.t - 3) / 4);
+          ctx.strokeStyle = 'rgba(255,255,255,0.8)'; ctx.lineWidth = 3;
+          for (let i = -1; i <= 1; i++) { ctx.beginPath(); ctx.moveTo(x - sign(e.x2 - e.x) * 60, y + i * 12); ctx.lineTo(x - sign(e.x2 - e.x) * 14, y + i * 12); ctx.stroke(); }
+          ctx.translate(x, y); ctx.scale(sign(e.x2 - e.x) || 1, 1); drawFistArt(1.9, e.side);
+          break;
+        }
+        case 'bigfist': {                                 // 拳：最後の巨大な爆裂パンチ
+          const k = Math.min(1, e.t / 6), x = e.x + (e.x2 - e.x) * k * k;
+          ctx.globalAlpha = Math.min(1, (e.life - e.t) / 6);
+          ctx.strokeStyle = 'rgba(255,255,255,0.85)'; ctx.lineWidth = 6;
+          for (let i = -2; i <= 2; i++) { ctx.beginPath(); ctx.moveTo(x - e.d * 260, e.y + i * 30); ctx.lineTo(x - e.d * 90, e.y + i * 30); ctx.stroke(); }
+          ctx.translate(x, e.y); ctx.scale(e.d, 1); drawFistArt(4.2, e.side);
+          break;
+        }
+        case 'jab': {                                     // 拳：ふだんの追加ジャブ（小さな拳）
+          const k = Math.min(1, e.t / 3);
+          ctx.globalAlpha = Math.max(0, 1 - Math.max(0, e.t - 3) / 4);
+          ctx.translate(e.x - e.d * 30 * (1 - k), e.y); ctx.scale(e.d, 1); drawFistArt(1.1, e.side);
+          break;
+        }
+        case 'mirage': {                                  // 幻：元の場所の姿が、蜃気楼のようにゆらゆら揺れて消える
+          for (let i = 0; i < 3; i++) {
+            const off = Math.sin(e.t * 0.6 + i * 2.1) * (6 + p * 26);
+            drawGhostOf(e.f, e.x + off, e.y - i * 2, e.d, 'saturate(0.3) brightness(1.3)', (0.38 - i * 0.1) * (1 - p));
+          }
+          ctx.globalAlpha = 0.5 * (1 - p); ctx.strokeStyle = 'rgba(200,180,255,0.8)'; ctx.lineWidth = 2;
+          for (let j = 0; j < 6; j++) { const y0 = e.y - 20 - j * 26; ctx.beginPath(); for (let x = -50; x <= 50; x += 10) { const y = y0 + Math.sin(x * 0.12 + e.t * 0.5 + j) * 4; x > -50 ? ctx.lineTo(e.x + x, y) : ctx.moveTo(e.x + x, y); } ctx.stroke(); }
+          break;
+        }
+        case 'shurikenfly': {                             // 忍：手裏剣が相手へ飛んでいく
+          const k = Math.min(1, e.t / (e.big ? 9 : 6)), x = e.x + (e.x2 - e.x) * k, y = e.y + (e.y2 - e.y) * k;
+          ctx.globalAlpha = k < 1 ? 1 : Math.max(0, 1 - (e.t - (e.big ? 9 : 6)) / 6);
+          if (e.big) { ctx.strokeStyle = 'rgba(255,255,255,0.7)'; ctx.lineWidth = 5; for (let i = -1; i <= 1; i++) { ctx.beginPath(); ctx.moveTo(x - sign(e.x2 - e.x) * 200, y + i * 40); ctx.lineTo(x - sign(e.x2 - e.x) * 70, y + i * 40); ctx.stroke(); } }
+          ctx.translate(x, y); drawShuriken(e.big ? 110 : 32, e.t * 0.9);
+          break;
+        }
+        case 'bees': {                                    // 蜂：左右から飛んできて、相手のまわりを飛び回る
+          if (!e.bs) e.bs = Array.from({ length: e.n }, (_, i) => ({ side: i % 2 ? -1 : 1, y0: rand(-220, 40), at: 6 + (i % 7) * 2, r: rand(30, 75), a0: rand(0, TAU), sp: rand(0.25, 0.4) * (i % 3 ? 1 : -1), dy: rand(-60, 40) }));
+          const cx = e.ref ? e.ref.x : e.x, cy = e.ref ? e.ref.y - 90 : e.y;
+          ctx.globalAlpha = Math.min(1, (e.life - e.t) / 10);
+          for (const b of e.bs) {
+            const a = b.a0 + e.t * b.sp, ox2 = cx + Math.cos(a) * b.r, oy2 = cy + b.dy * 0.6 + Math.sin(a) * b.r * 0.6;
+            let x, y;
+            if (e.t < b.at) { const k = e.t / b.at, sx = b.side > 0 ? cx + W * 0.8 : cx - W * 0.8; x = sx + (ox2 - sx) * k; y = cy + b.y0 + (oy2 - cy - b.y0) * k; }
+            else { x = ox2; y = oy2; }
+            drawBee(x, y, e.t < b.at ? -b.side : (Math.cos(a) * b.sp > 0 ? -1 : 1), e.t);
+          }
+          break;
+        }
+        case 'shadowclone': {                             // 影：黒い影分身が踏み込んで殴りかかる
+          const k = Math.min(1, e.t / 9), x = e.x + (e.tx - e.x) * (1 - (1 - k) * (1 - k));
+          if (!e.atk) e.atk = makeAttack(e.f, 'strong');
+          e.atk.t = Math.min(e.atk.su + e.atk.act + e.atk.rec - 1, Math.max(0, e.t - 6) * 2);
+          drawGhostOf(e.f, x, GROUND, e.d, 'brightness(0)', 0.88 * Math.min(1, (e.life - e.t) / 8) * Math.min(1, e.t / 3), e.atk);
+          if (e.t < 9 && e.t % 2 === 0) particles.push({ x: x - e.d * 30, y: GROUND - rand(20, 140), vx: 0, vy: 0, g: 0, life: 8, color: 'rgba(30,30,40,0.7)', r: 2, streak: true });
+          break;
+        }
+        case 'shadowsub': {                               // 影：身代わりになった影が、崩れて消える
+          ctx.save(); ctx.beginPath(); ctx.rect(-W, e.y - 230 + p * 240, W * 3, H * 2); ctx.clip();
+          drawGhostOf(e.f, e.x, e.y, e.d, 'brightness(0)', 0.85 * (1 - p * 0.5));
+          ctx.restore();
+          if (e.t % 2 === 0) spark(e.x + rand(-26, 26), e.y - 220 + p * 240, '#1a1a22', 2, 2, { vy: rand(-1, 1), g: 0.05 });
+          break;
+        }
+        case 'phantomself': {                             // 幻：半透明の自分（宙に浮いている）
+          const fl = Math.sin(e.t * 0.2 + e.x) * 6;
+          drawGhostOf(e.f, e.x, e.y + fl, e.d, 'saturate(0.4) brightness(1.25)', 0.42 * Math.min(1, e.t / 6) * Math.min(1, (e.life - e.t) / 10));
+          break;
+        }
+        case 'warp': {                                    // 幻：空間がゆらゆら歪む
+          const k = Math.min(1, e.t / 10) * Math.min(1, (e.life - e.t) / 14);
+          ctx.globalAlpha = k;
+          ctx.fillStyle = 'rgba(120,80,180,0.16)'; ctx.fillRect(-W, -H, W * 3, H * 3);
+          ctx.strokeStyle = 'rgba(190,150,255,0.5)'; ctx.lineWidth = 3;
+          for (let j = 0; j < 16; j++) {
+            const y0 = j * (GROUND + 60) / 16;
+            ctx.beginPath();
+            for (let x = -40; x <= W + 40; x += 20) { const y = y0 + Math.sin(x * 0.02 + e.t * 0.25 + j) * 10; x > -40 ? ctx.lineTo(x, y) : ctx.moveTo(x, y); }
+            ctx.stroke();
+          }
+          for (let r = 0; r < 4; r++) { const rr = ((e.t * 6 + r * 70) % 280) + 20; ctx.globalAlpha = k * (1 - rr / 300); ctx.beginPath(); ctx.ellipse(e.x, e.y, rr, rr * 0.6, 0, 0, TAU); ctx.stroke(); }
+          break;
+        }
+        case 'phantomglyph': {                            // 幻：巨大な幻の字がふくらみ、相手を飲み込んで消える
+          const sc = p < 0.55 ? Math.sin(p / 0.55 * Math.PI / 2) * 3.4 : 3.4 * (1 - (p - 0.55) / 0.45);
+          ctx.globalAlpha = 0.62 * Math.min(1, e.t / 4);
+          Texture.draw(ctx, e.w.ch, e.x, e.y, Math.max(4, Math.round(140 * sc)), weaponStyle(e.w), (p - 0.5) * 1.6);
+          break;
+        }
+        case 'nightsky': {                                // 星：夜空（地面より上を紺色に、星がまたたく）
+          const k = Math.min(1, e.t / 10) * Math.min(1, (e.life - e.t) / 18);
+          ctx.globalAlpha = k * 0.85;
+          const gr = ctx.createLinearGradient(0, -H, 0, GROUND);
+          gr.addColorStop(0, '#0a0f3a'); gr.addColorStop(0.75, '#1c2a6a'); gr.addColorStop(1, 'rgba(40,60,130,0.4)');
+          ctx.fillStyle = gr; ctx.fillRect(-W, -H, W * 3, GROUND + H);
+          ctx.fillStyle = '#fff8d0';
+          for (let i = 0; i < 60; i++) { const x = ((i * 137) % (W * 1.6)) - W * 0.3, y = ((i * 89) % (GROUND - 60)) - 40, tw = 0.5 + 0.5 * Math.sin(e.t * 0.3 + i); ctx.globalAlpha = k * tw; ctx.fillRect(x, y, 3, 3); }
+          break;
+        }
+        case 'meteor': {                                  // 星：尾を引く流れ星が斜めに落ちてきて、着弾で爆発
+          const T0 = e.final ? 12 : 9, k = Math.min(1, e.t / T0), s2 = e.s || 1;
+          const sx = e.x - e.from * 520, sy = e.y - 640, x = sx + (e.x - sx) * k, y = sy + (e.y - sy) * k;
+          if (e.t <= T0) {
+            ctx.globalCompositeOperation = 'lighter';
+            const tl = ctx.createLinearGradient(x, y, x - (e.x - sx) * 0.35, y - (e.y - sy) * 0.35);
+            tl.addColorStop(0, 'rgba(255,240,170,0.95)'); tl.addColorStop(1, 'rgba(255,160,60,0)');
+            ctx.strokeStyle = tl; ctx.lineWidth = 22 * s2; ctx.lineCap = 'round';
+            ctx.beginPath(); ctx.moveTo(x, y); ctx.lineTo(x - (e.x - sx) * 0.35, y - (e.y - sy) * 0.35); ctx.stroke();
+            ctx.globalCompositeOperation = 'source-over';
+            ctx.fillStyle = '#ffe35a'; ctx.strokeStyle = '#ff9a1f'; ctx.lineWidth = 3;
+            star(x, y, 26 * s2, 11 * s2, 5, e.t * 0.3); ctx.fill(); ctx.stroke();
+          }
+          if (e.t >= T0 && !e.landed) {
+            e.landed = true;
+            addFx('explosion', e.x, e.y - 10, { life: e.final ? 46 : 22, r: e.final ? 220 : 70 * s2 });
+            for (let i = 0; i < (e.final ? 30 : 8); i++) spark(e.x, e.y - 20, '#ffe35a', 1, e.final ? 10 : 6, { ch: '★' });
+            if (e.final) { shake = Math.max(shake, 20); sfx('boom'); }
+          }
+          break;
+        }
+        case 'serpent': {                                 // 蛇：地面から大蛇が現れ、巻きついて締め上げ、最後に噛みつく
+          const cx = e.ref ? e.ref.x : e.x, base = e.ref ? e.ref.y : e.y, side = e.side;
+          ctx.globalAlpha = Math.min(1, (e.life - e.t) / 10);
+          const rise = Math.min(1, e.t / 10), coil = Math.max(0, Math.min(1, (e.t - 8) / 14));
+          const tight = Math.max(0, Math.min(1, (e.t - 22) / 26)), rx = 58 - 18 * tight;
+          // 地面から出てくる胴体
+          const bx = cx + side * 130;
+          ctx.strokeStyle = '#2f7a2c'; ctx.lineWidth = 40; ctx.lineCap = 'round';
+          ctx.beginPath(); ctx.moveTo(bx, GROUND + 10); ctx.quadraticCurveTo(bx + side * 30, GROUND - 120 * rise, cx + rx, base - 14); ctx.stroke();
+          ctx.strokeStyle = '#a8d870'; ctx.lineWidth = 12;
+          ctx.beginPath(); ctx.moveTo(bx, GROUND + 10); ctx.quadraticCurveTo(bx + side * 30, GROUND - 120 * rise, cx + rx, base - 14); ctx.stroke();
+          if (coil > 0) drawSnakeCoil(cx, base - 14, base - 160, rx, 3.4, 32, coil, e.t, 0);
+          // 頭：相手の上から見下ろし、最後に噛みつく
+          const bite = Math.max(0, Math.min(1, (e.t - 46) / 6)), hx = cx - side * 20, hy = base - 230 + bite * 120 + Math.sin(e.t * 0.15) * 6;
+          if (coil >= 1 || e.t > 20) {
+            ctx.strokeStyle = '#2f7a2c'; ctx.lineWidth = 36;
+            ctx.beginPath(); ctx.moveTo(cx - rx * 0.6, base - 160); ctx.quadraticCurveTo(cx + side * 60, base - 210, hx, hy); ctx.stroke();
+            drawSnakeHead(hx, hy, -side, 3.2, bite > 0, e.t);
+          }
+          break;
+        }
+        case 'fireball': {                                // 球：炎をまとった剛速球
+          const k = Math.min(1, e.t / (e.life - 1)), x = e.x + (e.tx - e.x) * k, y = e.y + (e.ty - e.y) * k, d = sign(e.tx - e.x) || 1;
+          ctx.globalCompositeOperation = 'lighter';
+          for (let i = 0; i < 6; i++) {
+            const tx = x - d * i * 26, r = 34 - i * 4;
+            const gr = ctx.createRadialGradient(tx, y, 2, tx, y, r);
+            gr.addColorStop(0, 'rgba(255,240,160,0.9)'); gr.addColorStop(0.5, 'rgba(255,120,30,0.6)'); gr.addColorStop(1, 'rgba(255,40,0,0)');
+            ctx.fillStyle = gr; ctx.beginPath(); ctx.arc(tx, y + Math.sin(e.t + i) * 3, r, 0, TAU); ctx.fill();
+          }
+          ctx.globalCompositeOperation = 'source-over';
+          Texture.draw(ctx, e.w.ch, x, y, 92, weaponStyle(e.w), e.t * 0.8 * d);           // 「球」の字そのものが燃えて飛ぶ
+          if (e.t % 1 === 0) spark(x, y, '#ffb030', 3, 3, { g: -0.05 });
+          break;
+        }
+        case 'clone': {                                   // 必殺・幻：字の分身が飛んでくる
           const k = Math.min(1, e.t / 10), r = 300 * (1 - k * k);
           ctx.globalAlpha = e.t < 10 ? 0.95 : Math.max(0, 1 - (e.t - 10) / 8);
           const size = e.final ? 200 : 120;
@@ -4002,7 +4514,145 @@ const effectName = (e) => (EN ? EFFECT_NAME_EN[e] : EFFECT_NAME[e]);
     ctx.restore();
   }
   function drawObj(obj, neta, s, seed) {
+    if (obj === 'lawbook') { drawLawbook(s); return; }
     if (obj === 'rock') drawRock(s, seed || 1); else if (obj === 'negi') drawNegi(s); else if (obj === 'dumbbell') drawDumbbell(s); else if (obj === 'bill') drawInvoice(s); else drawSushi(neta, s);
+  }
+  // 法：六法全書（分厚い本。表紙は紺、背に金の字）
+  function drawLawbook(s) {
+    ctx.save(); ctx.scale(s, s);
+    ctx.fillStyle = '#f4efe0'; ctx.strokeStyle = '#b8ae90'; ctx.lineWidth = 1;
+    ctx.fillRect(-22, -30, 48, 58);                                          // ページの束（厚み）
+    for (let i = 0; i < 8; i++) { ctx.beginPath(); ctx.moveTo(-20, -27 + i * 7); ctx.lineTo(25, -27 + i * 7); ctx.stroke(); }
+    ctx.fillStyle = '#1f3a6e'; ctx.strokeStyle = '#0e1d3a'; ctx.lineWidth = 2;
+    ctx.beginPath(); ctx.roundRect(-26, -32, 44, 60, 3); ctx.fill(); ctx.stroke();   // 表紙
+    ctx.fillStyle = '#16305a'; ctx.fillRect(-26, -32, 8, 60);                 // 背
+    ctx.strokeStyle = '#d8b24a'; ctx.lineWidth = 1.2; ctx.strokeRect(-14, -26, 26, 48);
+    ctx.fillStyle = '#e8c45a'; ctx.font = '900 9px "Noto Sans JP", sans-serif'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+    ['六', '法', '全', '書'].forEach((c, i) => ctx.fillText(c, -1, -16 + i * 11));
+    ctx.restore();
+  }
+  // 拳：横から見た握りこぶし（d=1 で右向き）。袖はキャラの道着の色
+  function drawFistArt(s, side) {
+    ctx.save(); ctx.scale(s, s);
+    ctx.lineJoin = 'round'; ctx.lineWidth = 2.5; ctx.strokeStyle = '#3a2210';
+    ctx.fillStyle = side === 1 ? '#2f5fc0' : '#c8322a';                     // 袖
+    ctx.beginPath(); ctx.roundRect(-46, -13, 24, 26, 5); ctx.fill(); ctx.stroke();
+    ctx.fillStyle = '#f2c79a';                                                 // 手首とこぶし
+    ctx.beginPath(); ctx.roundRect(-26, -10, 14, 20, 4); ctx.fill(); ctx.stroke();
+    ctx.beginPath(); ctx.roundRect(-16, -16, 30, 32, 10); ctx.fill(); ctx.stroke();
+    ctx.strokeStyle = '#a0704a'; ctx.lineWidth = 1.8;                          // 指の線
+    for (const y of [-8, 0, 8]) { ctx.beginPath(); ctx.moveTo(4, y); ctx.lineTo(13, y); ctx.stroke(); }
+    ctx.fillStyle = '#e8b888'; ctx.strokeStyle = '#3a2210'; ctx.lineWidth = 2;  // 親指
+    ctx.beginPath(); ctx.ellipse(-2, 9, 10, 5, -0.2, 0, TAU); ctx.fill(); ctx.stroke();
+    ctx.fillStyle = 'rgba(255,255,255,0.45)'; ctx.beginPath(); ctx.ellipse(2, -10, 8, 3, 0, 0, TAU); ctx.fill();
+    ctx.restore();
+  }
+  // 草：草むら（葉が何本も）。w=true なら「w」の形の草
+  function drawGrassArt(s, w, t) {
+    ctx.save(); ctx.scale(s, s); ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+    if (w) {
+      for (const [col, lw] of [['#1f6a1a', 13], ['#4cb83a', 8], ['#a6e07a', 2.5]]) {
+        ctx.strokeStyle = col; ctx.lineWidth = lw;
+        ctx.beginPath(); ctx.moveTo(-34, -70); ctx.lineTo(-18, 0); ctx.lineTo(0, -46); ctx.lineTo(18, 0); ctx.lineTo(34, -70); ctx.stroke();
+      }
+    } else {
+      const blades = [[-26, -58, -0.35], [-14, -82, -0.15], [0, -100, 0.02], [12, -78, 0.18], [26, -60, 0.4], [-6, -64, -0.05], [18, -50, 0.3]];
+      for (const [x, h, lean] of blades) {
+        const sw = Math.sin(t * 0.18 + x) * 4, tx = x + lean * -h + sw;
+        ctx.fillStyle = '#3f9a2f'; ctx.strokeStyle = '#1f5a1a'; ctx.lineWidth = 2;
+        ctx.beginPath(); ctx.moveTo(x - 6, 0); ctx.quadraticCurveTo(x - 4 + (tx - x) * 0.3, h * 0.5, tx, h); ctx.quadraticCurveTo(x + 4 + (tx - x) * 0.3, h * 0.5, x + 6, 0); ctx.closePath(); ctx.fill(); ctx.stroke();
+        ctx.strokeStyle = 'rgba(190,240,140,0.8)'; ctx.lineWidth = 1.5;
+        ctx.beginPath(); ctx.moveTo(x, -4); ctx.quadraticCurveTo(x + (tx - x) * 0.3, h * 0.5, tx, h + 6); ctx.stroke();
+      }
+    }
+    ctx.restore();
+  }
+  // 忍：手裏剣（4つ刃、真ん中に穴）
+  function drawShuriken(r, rot) {
+    ctx.save(); ctx.rotate(rot);
+    ctx.fillStyle = '#4a5260'; ctx.strokeStyle = '#1c2028'; ctx.lineWidth = Math.max(1.5, r * 0.06);
+    ctx.beginPath();
+    for (let i = 0; i < 4; i++) { const a = i * Math.PI / 2; ctx.lineTo(Math.cos(a) * r, Math.sin(a) * r); ctx.lineTo(Math.cos(a + Math.PI / 4) * r * 0.3, Math.sin(a + Math.PI / 4) * r * 0.3); }
+    ctx.closePath(); ctx.fill(); ctx.stroke();
+    ctx.strokeStyle = 'rgba(220,230,245,0.8)'; ctx.lineWidth = Math.max(1, r * 0.04);
+    for (let i = 0; i < 4; i++) { const a = i * Math.PI / 2; ctx.beginPath(); ctx.moveTo(Math.cos(a + 0.4) * r * 0.25, Math.sin(a + 0.4) * r * 0.25); ctx.lineTo(Math.cos(a) * r * 0.9, Math.sin(a) * r * 0.9); ctx.stroke(); }
+    ctx.fillStyle = '#d8dde6'; ctx.beginPath(); ctx.arc(0, 0, r * 0.12, 0, TAU); ctx.fill(); ctx.stroke();
+    ctx.restore();
+  }
+  // 球：野球のボール（白に赤い縫い目）
+  function drawBaseball(r) {
+    ctx.save();
+    ctx.fillStyle = '#ffffff'; ctx.strokeStyle = '#9a9a9a'; ctx.lineWidth = 1.5;
+    ctx.beginPath(); ctx.arc(0, 0, r, 0, TAU); ctx.fill(); ctx.stroke();
+    ctx.strokeStyle = '#d33'; ctx.lineWidth = Math.max(1.5, r * 0.1);
+    for (const d of [-1, 1]) {
+      const c0 = d < 0 ? 0 : Math.PI;                                          // 左右の縫い目は、外側の円の内向きの弧
+      ctx.beginPath(); ctx.arc(d * r * 1.35, 0, r * 0.95, c0 - 0.75, c0 + 0.75); ctx.stroke();
+    }
+    ctx.restore();
+  }
+  // 蜂（x, y が中心、dir は向き）
+  function drawBee(x, y, dir, t) {
+    ctx.save(); ctx.translate(x, y); ctx.scale(dir * 1.5, 1.5);
+    const flap = Math.sin(t * 2.2 + x) * 0.5;
+    ctx.fillStyle = 'rgba(230,245,255,0.85)'; ctx.strokeStyle = 'rgba(120,140,160,0.8)'; ctx.lineWidth = 1;
+    ctx.beginPath(); ctx.ellipse(-1, -8, 6, 9, -0.5 + flap, 0, TAU); ctx.fill(); ctx.stroke();
+    ctx.beginPath(); ctx.ellipse(4, -8, 5, 8, 0.4 - flap, 0, TAU); ctx.fill(); ctx.stroke();
+    ctx.fillStyle = '#f6c21a'; ctx.strokeStyle = '#222'; ctx.lineWidth = 1.5;
+    ctx.beginPath(); ctx.ellipse(0, 0, 11, 7.5, 0, 0, TAU); ctx.fill(); ctx.stroke();
+    ctx.fillStyle = '#222'; ctx.fillRect(-4, -7, 3, 14); ctx.fillRect(2, -7, 3, 14);
+    ctx.beginPath(); ctx.moveTo(-11, -2); ctx.lineTo(-17, 0); ctx.lineTo(-11, 2); ctx.fill();     // 針
+    ctx.beginPath(); ctx.arc(10, -2, 5, 0, TAU); ctx.fill();                                    // 頭
+    ctx.fillStyle = '#fff'; ctx.beginPath(); ctx.arc(11.5, -3, 1.6, 0, TAU); ctx.fill();
+    ctx.restore();
+  }
+  // 蛇：体に巻きつくとぐろ（後ろ側を暗く、手前を明るく）。grow 0〜1 で下から巻いていく。head=1 なら小さな頭もつける
+  function drawSnakeCoil(cx, yb, yt, rx, turns, lw, grow, t, head) {
+    const N = Math.max(2, Math.round(60 * grow)), pts = [];
+    for (let i = 0; i <= N; i++) { const q = i / 60, a = q * turns * TAU; pts.push([cx + Math.cos(a) * rx, yb + (yt - yb) * q + Math.sin(a) * rx * 0.22, Math.sin(a)]); }
+    ctx.save(); ctx.lineCap = 'round';
+    for (const front of [false, true]) {
+      for (let i = 1; i < pts.length; i++) {
+        const [x0, y0, z0] = pts[i - 1], [x1, y1] = pts[i];
+        if ((z0 > 0) !== front) continue;
+        ctx.strokeStyle = front ? '#2f7a2c' : '#1d4f1c'; ctx.lineWidth = lw;
+        ctx.beginPath(); ctx.moveTo(x0, y0); ctx.lineTo(x1, y1); ctx.stroke();
+        if (front) { ctx.strokeStyle = '#a8d870'; ctx.lineWidth = lw * 0.32; ctx.beginPath(); ctx.moveTo(x0, y0 - lw * 0.18); ctx.lineTo(x1, y1 - lw * 0.18); ctx.stroke(); }
+        if (front && i % 4 === 0) { ctx.fillStyle = '#1d4f1c'; ctx.beginPath(); ctx.arc(x1, y1 + lw * 0.12, lw * 0.16, 0, TAU); ctx.fill(); }
+      }
+    }
+    ctx.restore();
+    if (head && pts.length > 1) { const [x, y] = pts[pts.length - 1]; drawSnakeHead(x, y - 6, x > cx ? 1 : -1, lw / 14, false, t); }
+  }
+  function drawSnakeHead(x, y, dir, s, open, t) {
+    ctx.save(); ctx.translate(x, y); ctx.scale(dir * s, s);
+    if (open || Math.sin(t * 0.4) > 0.3) {                                    // 舌をチロチロ
+      ctx.strokeStyle = '#d0263a'; ctx.lineWidth = 2;
+      ctx.beginPath(); ctx.moveTo(14, 3); ctx.lineTo(24, 3); ctx.lineTo(28, 0); ctx.moveTo(24, 3); ctx.lineTo(28, 6); ctx.stroke();
+    }
+    ctx.fillStyle = '#2f7a2c'; ctx.strokeStyle = '#163d15'; ctx.lineWidth = 2;
+    ctx.beginPath(); ctx.ellipse(2, 0, 15, 10, 0, 0, TAU); ctx.fill(); ctx.stroke();
+    if (open) { ctx.fillStyle = '#7a1020'; ctx.beginPath(); ctx.moveTo(4, 2); ctx.lineTo(18, -2); ctx.lineTo(18, 10); ctx.closePath(); ctx.fill(); ctx.fillStyle = '#fff'; ctx.fillRect(14, 0, 2, 4); }
+    ctx.fillStyle = '#ffd84d'; ctx.beginPath(); ctx.arc(7, -4, 3.2, 0, TAU); ctx.fill();
+    ctx.fillStyle = '#111'; ctx.fillRect(6.4, -6.5, 1.4, 5);
+    ctx.restore();
+  }
+  // 影分身・幻：キャラを別の場所に描く（filter で黒い影や半透明にする）。atk を渡すとその技の格好で
+  function drawGhostOf(f, x, y, facing, filter, alpha, atk) {
+    if (alpha <= 0.01 || f.dust) return;
+    const keep = { x: f.x, y: f.y, facing: f.facing, atk: f.atk, gripShift: f.gripShift, invis: f.invis, squash: f.squash, down: f.down };
+    f.x = x; f.y = y; f.facing = facing; f.invis = 0; f.squash = 0; f.down = 0;
+    if (atk !== undefined) f.atk = atk;
+    ctx.save(); ctx.globalAlpha = alpha; if (filter && 'filter' in ctx) ctx.filter = filter;
+    try {
+      drawCapsuleBody(f);
+      const g = f.weaponGeom(), gs = f.gripShift && clearOfBody(f, g, f.gripShift);
+      if (gs) ctx.translate(gs.x, gs.y);
+      drawWeaponGlyph(f.weapon, g.cx, g.cy, f.weapon.size, g.rot);
+    } finally {
+      ctx.restore();
+      Object.assign(f, keep);
+    }
   }
   function drawProjectiles() {
     for (const p of projectiles) {
@@ -4034,6 +4684,8 @@ const effectName = (e) => (EN ? EFFECT_NAME_EN[e] : EFFECT_NAME[e]);
         ctx.rotate((120 - p.life) * p.spin); drawRock(1, p.seed);
       } else if (p.kind === 'sushi') {                               // 鮨：投げた寿司
         ctx.rotate(p.life * 0.25 * sign(p.vx)); drawSushi(p.neta, 1);
+      } else if (p.kind === 'bouncer') {                             // 球：投げた球
+        ctx.globalAlpha = Math.min(1, p.life / 20); ctx.rotate(p.life * 0.3 * sign(p.vx)); drawBaseball(p.r);
       } else if (p.kind === 'kickball') {                            // 蹴：蹴った字（炎をまとって飛ぶ）
         const gr = ctx.createRadialGradient(0, 0, 4, 0, 0, p.size * 0.75);
         gr.addColorStop(0, 'rgba(255,240,160,0.8)'); gr.addColorStop(0.6, 'rgba(255,120,30,0.45)'); gr.addColorStop(1, 'rgba(255,60,0,0)');
@@ -4372,7 +5024,7 @@ const effectName = (e) => (EN ? EFFECT_NAME_EN[e] : EFFECT_NAME[e]);
     if (match) { const z = cam.z * (1 + punch); ctx.translate(W / 2, GROUND); ctx.scale(z, z); ctx.translate(-cam.x, -GROUND); }
     drawBg();
     if (match) {
-      drawSwamps(); drawCracks(); drawTraps();
+      drawSwamps(); drawCracks(); drawTraps(); drawStinks();
       drawAuraBack(match.c, match.p); drawAuraBack(match.p, match.c);
       if (match.charge) drawCharge(match.charge);
       drawFxs(true);
@@ -4439,6 +5091,8 @@ const effectName = (e) => (EN ? EFFECT_NAME_EN[e] : EFFECT_NAME[e]);
     const ch = [...line][0];
     if (ch) MEANINGS.set(ch, line.slice(ch.length).split(';'));
   }
+  // KANJIDIC2 に無いが、ゲームではおなじみの意味を先頭に足す（表示と英単語さがしの両方に効く）
+  for (const [ch, word] of [['忍', 'ninja']]) MEANINGS.set(ch, [word, ...(MEANINGS.get(ch) || [])]);
   const meaningOf = (ch) => (MEANINGS.get(ch) || []).slice(0, 2).join(', ');
   function showMeaning(ch) {
     const m = EN ? meaningOf(ch) : '';
@@ -4867,6 +5521,8 @@ const effectName = (e) => (EN ? EFFECT_NAME_EN[e] : EFFECT_NAME[e]);
   $('found-hint').addEventListener('click', () => { sfx('click'); openDex('screen-input'); });
   $('btn-result-dex').addEventListener('click', () => { sfx('click'); openDex('screen-result'); });
   $('btn-dex-back').addEventListener('click', () => { sfx('click'); showScreen(dexFrom); });
+  $('btn-credits').addEventListener('click', () => { sfx('click'); showScreen('screen-credits'); $('screen-credits').scrollTop = 0; });
+  $('btn-credits-back').addEventListener('click', () => { sfx('click'); showScreen('screen-title'); });
   $('btn-change').addEventListener('click', () => { sfx('click'); mode.step = 1; openInput(); });
   $('btn-title').addEventListener('click', () => { sfx('click'); toTitle(); });
   $('btn-input-back').addEventListener('click', () => { sfx('click'); toTitle(); });

@@ -94,6 +94,8 @@ ruby tools/build_kanji_shapes.rb kanjivg-20260714.xml.gz --show 介礼口   # �
 表に無い漢字は、描画したときの黒さから画数を推定する（「推定」と表示される）。
 
 ## クレジット・ライセンス
+ゲームの中では、タイトル画面の「クレジット」から同じ内容を見られる（`index.html` の `#screen-credits`）。素材を増やしたら、ここと両方を直す。
+
 - 3Dモデル（キャラ・道場）: CGTrader のロイヤリティフリーライセンス（商用利用OK）。
   - キャラ：[Karateka Lee - Proto Series](https://www.cgtrader.com/3d-models/character/man/karateka-lee-proto-series)。取り出せないように暗号化して入れる（`img/fighter.dat`）。
   - 道場：[Dojo Hall](https://www.cgtrader.com/3d-models/interior/hall/dojo-hall)。3Dモデルは入れず、撮った絵（`img/dojo_*.jpg`・`img/title_*.jpg`）だけを使う。

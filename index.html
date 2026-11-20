@@ -43,7 +43,10 @@
       <button id="btn-versus" class="btn btn-sub" data-en="2-player battle">ふたりで対戦</button>
       <button id="btn-dex" class="btn btn-sub" data-en="Kanjidex">漢字図鑑</button>
     </div>
-    <button id="btn-lang" class="link-btn lang-btn" aria-label="言語 / Language">English</button>
+    <div class="title-links">
+      <button id="btn-lang" class="link-btn lang-btn" aria-label="言語 / Language">English</button>
+      <button id="btn-credits" class="link-btn credit-btn" data-en="Credits">クレジット</button>
+    </div>
     <!-- 起動時：タップすると音が鳴らせるようになり、タイトルの曲が始まる -->
     <button id="tap-start" class="tap-start"><span class="tap-big">TAP TO START</span><span class="tap-small" data-en="Sound on 🔊">タップしてスタート 🔊</span></button>
   </section>
@@ -64,6 +67,37 @@
     <div id="dex-grid" class="dex-grid"></div>
     <p id="dex-seal" class="hint"></p>
     <button id="btn-dex-back" class="btn btn-sub" data-en="Back">もどる</button>
+  </section>
+
+  <!-- クレジット（使わせてもらっている素材・データ・ライセンス） -->
+  <section id="screen-credits" class="screen hidden">
+    <h2 data-en="Credits">クレジット</h2>
+    <dl class="credits">
+      <dt data-en="Kanji shape data">字の形のデータ</dt>
+      <dd><a href="https://kanjivg.tagaini.net/" target="_blank" rel="noopener">KanjiVG</a> © Ulrich Apel<br>
+        <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC BY-SA 3.0</a><br>
+        <small data-en="The game's kanji shape features are made from KanjiVG (also CC BY-SA 3.0).">字の形の特徴は KanjiVG を元に作ったデータです（同じく CC BY-SA 3.0）。</small></dd>
+      <dt data-en="Stroke counts and meanings">画数・意味のデータ</dt>
+      <dd><a href="https://www.edrdg.org/wiki/index.php/KANJIDIC_Project" target="_blank" rel="noopener">KANJIDIC2</a> © Electronic Dictionary Research and Development Group<br>
+        <a href="https://www.edrdg.org/edrdg/licence.html" target="_blank" rel="noopener">CC BY-SA 4.0</a></dd>
+      <dt data-en="3D models">3Dモデル</dt>
+      <dd><a href="https://www.cgtrader.com/3d-models/character/man/karateka-lee-proto-series" target="_blank" rel="noopener">Karateka Lee - Proto Series</a><br>
+        <a href="https://www.cgtrader.com/3d-models/interior/hall/dojo-hall" target="_blank" rel="noopener">Dojo Hall</a><br>
+        <small data-en="CGTrader Royalty Free License">CGTrader ロイヤリティフリーライセンス</small></dd>
+      <dt data-en="3D rendering">3D表示</dt>
+      <dd><a href="https://threejs.org/" target="_blank" rel="noopener">three.js</a> © 2010-2023 three.js authors<br>
+        <a href="https://opensource.org/license/mit" target="_blank" rel="noopener">MIT License</a></dd>
+      <dt data-en="Fonts">フォント</dt>
+      <dd>Dela Gothic One © 2020 The Dela Gothic Project Authors<br>
+        Noto Sans JP © 2014-2021 Adobe<br>
+        Yuji Boku © 2021 The Yuji Project Authors<br>
+        Anton © 2020 The Anton Project Authors<br>
+        <a href="https://openfontlicense.org/" target="_blank" rel="noopener">SIL Open Font License 1.1</a></dd>
+      <dt data-en="Made by">制作</dt>
+      <dd><span data-en="Yuruge Lab">ゆるゲー研究所</span><br>
+        <a href="https://yurugamelab.github.io/kanji-fighter/privacy.html" target="_blank" rel="noopener" data-en="Privacy Policy">プライバシーポリシー</a></dd>
+    </dl>
+    <button id="btn-credits-back" class="btn btn-sub" data-en="Back">もどる</button>
   </section>
 
   <!-- 勝ち抜き：次の相手の前 -->
