@@ -328,7 +328,7 @@ const effectName = (e) => (EN ? EFFECT_NAME_EN[e] : EFFECT_NAME[e]);
 
 // ---------- キャラ ----------
   const STATUS = ['hitstun', 'frozen', 'stunned', 'burn', 'poison', 'sleep', 'laugh', 'charm', 'timestop', 'spicy', 'blind', 'confused', 'nap',
-    'down', 'wake', 'backT',
+    'down', 'wake', 'backT', 'hold',          // hold：長い必殺技の溜めの間、両方とも動かない
     // 追加の64字で使う状態
     'bleed', 'slip', 'snow', 'bound', 'sticky', 'slowT', 'curse', 'swoon', 'invis', 'dizzy', 'flower', 'bugs', 'squash',
     'fartT', 'rushT', 'inSwamp', 'hitFlash', 'mu',
@@ -431,7 +431,7 @@ const effectName = (e) => (EN ? EFFECT_NAME_EN[e] : EFFECT_NAME[e]);
     later(frames, fn) { this.timers.push({ t: frames, fn }); }
     busy() {
       return this.frozen > 0 || this.stunned > 0 || this.hitstun > 0 || this.sleep > 0 || this.laugh > 0 || this.timestop > 0 || this.nap > 0
-        || this.down > 0 || this.backT > 0 || this.snow > 0 || this.bound > 0 || this.swoon > 0;
+        || this.down > 0 || this.backT > 0 || this.snow > 0 || this.bound > 0 || this.swoon > 0 || this.hold > 0;
     }
     // 転んでいる間・起き上がり直後・透明の間は攻撃が当たらない
     untouchable() { return this.down > 0 || this.wake > 0 || this.invis > 0; }
@@ -1551,7 +1551,7 @@ const effectName = (e) => (EN ? EFFECT_NAME_EN[e] : EFFECT_NAME[e]);
     '跳': ['pinball', '天上跳躍', 'SKY-HIGH STOMP'], '磁': ['magnet', '超磁力吸引', 'MEGA MAGNET'],
     '風': ['wind', '神風烈破', 'DIVINE WIND'], '嵐': ['bigtornado', '暴嵐竜巻', 'MEGA TORNADO'], '罠': ['beartrap', '罠地獄', 'TRAP HELL'],
     '巨': ['drop', '超巨大化', 'GIGANTIFY'], '影': ['shadowclone', '影武者乱舞', 'SHADOW DOUBLE FRENZY'], '弓': ['arrows', '天弓千矢', 'THOUSAND ARROWS'],
-    '竜': ['dragonroar', '竜王咆哮', "DRAGON'S ROAR"], '龍': ['risingdragon', '昇龍烈火', 'RISING DRAGON FLAME'], '龘': ['tridragon', '三龍滅却', 'TRIPLE DRAGON ANNIHILATION'],
+    '竜': ['dragonflyby', '竜王咆哮', "DRAGON'S ROAR"], '龍': ['dragonflyby', '昇龍烈火', 'RISING DRAGON FLAME'], '龘': ['tridragon', '三龍滅却', 'TRIPLE DRAGON ANNIHILATION'],
     '砲': ['bigcannon', '超弩級大砲', 'MEGA CANNON'], '猫': ['cats', '猫拳百連撃', '100 CAT PUNCHES'], '酔': ['drunkfist', '酩酊千鳥拳', 'DRUNKEN FRENZY'],
     '光': ['lightspeed', '極光閃', 'BLINDING FLASH'], '闇': ['dark', '漆黒深淵', 'PITCH-BLACK ABYSS'], '剣': ['swordrain', '千剣降臨', 'RAIN OF SWORDS'],
     '矛': ['longthrust', '破天神矛', 'HEAVEN-SPLITTING PIKE'], '槍': ['pierce', '天穿一閃', 'HEAVEN-PIERCING SPEAR'], '薙': ['screencut', '横一文字', 'HORIZON SLASH'],
@@ -1563,7 +1563,7 @@ const effectName = (e) => (EN ? EFFECT_NAME_EN[e] : EFFECT_NAME[e]);
     '岩': ['rockfall', '巨岩崩落', 'BOULDER COLLAPSE'], '砂': ['antlion', '無限蟻地獄', 'ENDLESS ANTLION PIT'], '震': ['earth', '大地震撼', 'MEGA QUAKE'],
     '波': ['surfer', '海神怒濤', 'TIDAL WAVE'], '花': ['bloom', '百花繚乱', 'FLOWER FRENZY'],
     '蛇': ['serpent', '大蛇縛鎖', 'GIANT SERPENT SQUEEZE'], '蜂': ['bees', '万蜂襲来', 'KILLER BEE SWARM'], '虫': ['bugcloud', '蟲毒大群', 'BUG APOCALYPSE'],
-    '牛': ['stampede', '猛牛突進', 'RAMPAGING BULL'], '馬': ['derby', '万馬奔騰', 'STAMPEDE'], '象': ['elephant', '巨象大噴射', 'ELEPHANT SPLASH'],
+    '牛': ['stampede', '猛牛大暴走', 'BULL STAMPEDE'], '馬': ['derby', '万馬奔騰', 'STAMPEDE'], '象': ['elephant', '巨象大噴射', 'ELEPHANT SPLASH'],
     '盗': ['steal', '怪盗参上', 'PHANTOM THIEF'], '獣': ['beast', '野生解放', 'UNLEASH THE BEAST'], '狼': ['moonwolves', '月下狼哮', 'MOONLIGHT HOWL'],
     '牙': ['jaws', '千牙噛砕', 'BONE CRUSHER'], '爪': ['bigclaw', '三爪連斬', 'TRIPLE CLAW RIPPER'], '蘇': ['phoenix', '鳳凰転生', 'PHOENIX'],
     '麺': ['noodlebowl', '無限替玉', 'ENDLESS REFILLS'], '鏡': ['mirror', '無限鏡回廊', 'INFINITE MIRROR'],
@@ -1603,7 +1603,7 @@ const effectName = (e) => (EN ? EFFECT_NAME_EN[e] : EFFECT_NAME[e]);
   const bigOpening = (o) => o.stunned > 0 || o.frozen > 0 || o.sleep > 0 || o.laugh > 0 || o.timestop > 0 || o.bound > 0
     || o.charm > 0 || o.swoon > 0 || o.nap > 0 || (o.atk && !o.atk.hit && o.atk.t >= o.atk.su + o.atk.act);
   // 近づいて殴る技か（飛び道具・天から降る技は、見切って避けることができない）
-  const REMOTE = ['bigcannon', 'bigmouth', 'swordrain', 'magnet', 'longthrust', 'noodleslap', 'sheep', 'idolstage', 'loveletter', 'beartrap', 'sinkswamp', 'derby', 'elephant', 'snowroll', 'armorcharge', 'bugcloud', 'bigtornado', 'mysterybox', 'surfer', 'hakiquake', 'hotpot', 'dragonroar', 'risingdragon', 'tridragon', 'phoenix', 'dogpile', 'moonwolves', 'jaws', 'void', 'ofuda', 'raincloud', 'cats', 'gunfire', 'noodlebowl', 'shuriken', 'prairie', 'lightspeed', 'bigfart', 'bees', 'shadowclone', 'phantom', 'meteor', 'serpent', 'lawbook', 'fastball', 'antlion', 'bloom', 'rockfall', 'negi', 'muscle', 'sushi', 'tax', 'punish', 'evil', 'souls', 'reaper', 'ghosts', 'kickshot', 'ironfist', 'arrows', 'rain', 'heartdrop', 'divine', 'manji', 'thunder', 'holy', 'dark', 'time', 'heal', 'magic', 'earth', 'net', 'mirror', 'bell', 'gravity'];
+  const REMOTE = ['dragonflyby', 'bigcannon', 'bigmouth', 'swordrain', 'magnet', 'longthrust', 'noodleslap', 'sheep', 'idolstage', 'loveletter', 'beartrap', 'sinkswamp', 'derby', 'elephant', 'snowroll', 'armorcharge', 'bugcloud', 'bigtornado', 'mysterybox', 'surfer', 'hakiquake', 'hotpot', 'dragonroar', 'risingdragon', 'tridragon', 'phoenix', 'dogpile', 'moonwolves', 'jaws', 'void', 'ofuda', 'raincloud', 'cats', 'gunfire', 'noodlebowl', 'shuriken', 'prairie', 'lightspeed', 'bigfart', 'bees', 'shadowclone', 'phantom', 'meteor', 'serpent', 'lawbook', 'fastball', 'antlion', 'bloom', 'rockfall', 'negi', 'muscle', 'sushi', 'tax', 'punish', 'evil', 'souls', 'reaper', 'ghosts', 'kickshot', 'ironfist', 'arrows', 'rain', 'heartdrop', 'divine', 'manji', 'thunder', 'holy', 'dark', 'time', 'heal', 'magic', 'earth', 'net', 'mirror', 'bell', 'gravity'];
   const meleeSuper = (f, sup) => !f.weapon.ranged && !REMOTE.includes(sup.theme.split(':')[0]);
   function startSuper(f, o) {
     if (f.thrown) { f.thrown.life = 0; f.thrown = null; }   // 投げた卍は手元に戻す
@@ -2121,14 +2121,34 @@ const effectName = (e) => (EN ? EFFECT_NAME_EN[e] : EFFECT_NAME[e]);
         for (let i = 0; i < 5; i++) sl(4 + i * 2.5, () => hit(0.07, 0));
         sl(20, () => { addFx('explosion', ox, oy - 260, { life: 40, r: 150 }); finish(0.9, 4); T.burn = Math.max(o.burn || 0, 240); T.burnBy = w.ch; popText(ox, oy - 320, L('昇龍!!', 'RISING DRAGON!!'), '#c0392b', 44); });
         break;
-      case 'tridragon':                                      // 龘：三つ首の龍がらせんに昇り、炎と雷が降り注ぐ
-        addFx('tridragon', ox, GROUND, { life: 96, back: true }); sfx('boom'); shake = Math.max(shake, 14);
-        for (let i = 0; i < 12; i++) {
-          sl(12 + i * 1.6, () => { const x = ox + rand(-160, 160); if (i % 2) { addFx('bolt', x, oy - 80, { life: 12, big: i % 4 === 1 }); sfx('zap'); } else addFx('meteor', x, GROUND - 10, { life: 16, from: rand(-0.6, 0.6), s: rand(0.8, 1.2), fire: true }); });
-          sl(14 + i * 1.6, () => hit(0.045, 0.3));
-        }
-        sl(34, () => { addFx('bolt', ox, oy - 80, { life: 20, big: true }); addFx('flamepillar', ox, GROUND, { life: 44 }); m.flash = Math.max(m.flash, 10); finish(1.1, 6); T.burn = Math.max(o.burn || 0, 200); T.burnBy = w.ch; T.stunned = Math.max(o.stunned || 0, 50); });
+      case 'dragonflyby': {                                  // 竜・龍：ドラゴンが飛んできて相手の上で止まり、口に炎を溜めてから太い炎を吐き続ける
+        const d = ox >= f.x ? 1 : -1, S = portrait ? 1.2 : 1.5, hx = ox - d * (133 * S + 90), hy = GROUND - 250;
+        addFx('dim', 0, 0, { life: 190, back: true, a: 0.45, delay: 22, fin: 24, fout: 16 });
+        addFx('wyvern', hx, hy, { life: 192, d, S, hx, hy, tx: ox });
+        f.hold = 162; if (c.result !== 'dodge') { o.hold = 162; o.vx = 0; }   // 溜めて吐き終わるまで、どちらも動かない
+        sl(16, () => { popText(hx, hy - 210, L('グオオオオオ!!', 'ROOOOAAAR!!'), '#8a1c14', 48); shake = Math.max(shake, 16); sfx('boom'); });
+        for (let i = 0; i < 5; i++) sl(20 + i * 5, () => { shake = Math.max(shake, 3 + i * 2); });           // 溜めの地響き
+        sl(43, () => { sfx('fire'); shake = Math.max(shake, 14); });
+        for (let i = 0; i < 9; i++) sl(46 + i * 6, () => { hit(0.06, 0.5); shake = Math.max(shake, 7); if (i % 3 === 2) sfx('fire'); });
+        sl(99, () => { addFx('explosion', ox, GROUND - 60, { life: 40, r: 140 }); finish(0.8, 14); T.burn = Math.max(o.burn || 0, 240); T.burnBy = w.ch; });
         break;
+      }
+      case 'tridragon': {                                    // 龘：三つ首のドラゴンが現れ、3つの口に炎・雷・炎の光を溜めてから、3本同時の極太ブレスで焼き払う
+        const d = ox >= f.x ? 1 : -1, S = portrait ? 0.75 : 0.85;
+        const bx = Math.max(150, Math.min(W - 150, f.x - d * 40));
+        addFx('dim', 0, 0, { life: 196, back: true, a: 0.55, delay: 12, fin: 30, fout: 16 });
+        const tri = addFx('tridragon', bx, GROUND, { life: 200, d, S, back: true });
+        f.hold = 180; if (c.result !== 'dodge') { o.hold = 180; o.vx = 0; } sfx('boom'); shake = Math.max(shake, 14);
+        popText(bx, GROUND - 440 * S, L('ギャオオオオ!!', 'GYAOOOOO!!'), '#8a1c14', 46);
+        for (let i = 0; i < 8; i++) sl(12 + i * 7, () => { shake = Math.max(shake, 3 + i * 2); if (i % 2 === 0) sfx('gauge'); });   // 溜め：だんだん強くなる地響き
+        sl(68, () => {
+          [0, 1, 2].forEach(k => { const mo = triMouth(tri, k); addFx(k === 1 ? 'zapbeam' : 'breath', mo.x, mo.y, { life: 66, tx: ox, ty: oy - 80, thick: true }); });
+          sfx('fire'); sfx('zap'); m.flash = Math.max(m.flash, 12); shake = Math.max(shake, 22);
+        });
+        for (let i = 0; i < 8; i++) sl(70 + i * 5, () => { hit(0.05, 0.3); shake = Math.max(shake, 10); if (i % 2) sfx('zap'); });
+        sl(110, () => { addFx('explosion', ox, oy - 80, { life: 44, r: 190 }); m.flash = Math.max(m.flash, 14); shake = Math.max(shake, 26); finish(0.9, 6); T.burn = Math.max(o.burn || 0, 200); T.burnBy = w.ch; T.stunned = Math.max(o.stunned || 0, 50); });
+        break;
+      }
       case 'phoenix':                                        // 蘇：不死鳥が羽ばたいて炎の羽根が降り注ぎ、自分のHPも少し回復
         addFx('phoenix', f.x, f.y - 200, { life: 46, tx: ox, ty: oy - 140 }); sfx('fire');
         for (let i = 0; i < 6; i++) sl(6 + i * 2.5, () => { for (let k = 0; k < 5; k++) particles.push({ x: ox + rand(-150, 150), y: oy - rand(220, 320), vx: rand(-1.5, 1.5), vy: rand(1, 3), g: 0.05, life: 70, color: ['#ff8a1f', '#ffd84d', '#e8321a'][k % 3], r: 4, petal: true, rot: rand(0, 6), vr: rand(-0.2, 0.2) }); hit(0.06, 0); });
@@ -3493,7 +3513,7 @@ const effectName = (e) => (EN ? EFFECT_NAME_EN[e] : EFFECT_NAME[e]);
   //   A：字を持っているだけで出る演出（オーラ・持ち物）
   //   B：当たった瞬間の演出（HIT_FX の表）
   // =====================================================================
-  function addFx(type, x, y, opt) { fxs.push({ type, x, y, t: 0, life: 24, ...(opt || {}) }); }
+  function addFx(type, x, y, opt) { const e = { type, x, y, t: 0, life: 24, ...(opt || {}) }; fxs.push(e); return e; }
   const burst = (x, y, color, n, speed, ch, g) => spark(x, y, color, n, speed, { ch, g: g == null ? 0.05 : g });
 
   // ---- B：当たった瞬間（att が殴った側、def が殴られた側）----
@@ -4203,7 +4223,7 @@ const effectName = (e) => (EN ? EFFECT_NAME_EN[e] : EFFECT_NAME[e]);
           const k = Math.min(1, e.t / 6), fade = Math.min(1, (e.life - e.t) / 8);
           ctx.globalAlpha = fade;
           for (let i = 0; i <= 12; i++) {
-            const q = i / 12 * k, x = e.x + (e.tx - e.x) * q, y = e.y + (e.ty - e.y) * q, r = 20 + q * 50;
+            const q = i / 12 * k, x = e.x + (e.tx - e.x) * q, y = e.y + (e.ty - e.y) * q, r = (20 + q * 50) * (e.thick ? 1.6 : 1);
             const g = ctx.createRadialGradient(x, y, 2, x, y, r); g.addColorStop(0, 'rgba(255,250,200,0.95)'); g.addColorStop(0.5, 'rgba(255,140,30,0.7)'); g.addColorStop(1, 'rgba(220,40,10,0)');
             ctx.fillStyle = g; ctx.beginPath(); ctx.arc(x + Math.sin(e.t + i) * 6, y + Math.cos(e.t * 1.3 + i) * 6, r, 0, TAU); ctx.fill();
           }
@@ -4223,22 +4243,63 @@ const effectName = (e) => (EN ? EFFECT_NAME_EN[e] : EFFECT_NAME[e]);
           if (pts.length) { const [x, y] = pts[0], [x2, y2] = pts[Math.min(2, pts.length - 1)]; ctx.translate(x, y); ctx.rotate(Math.atan2(y - y2, x - x2) + Math.PI / 2); drawDragonHead(2, '#ff7a1a', '#ffd84d', e.t); }
           break;
         }
-        case 'tridragon': {                               // 龘：三つ首の龍（翼のない赤い東洋の龍）がらせんに昇る
-          const rise = Math.min(1, e.t / 18), fade = Math.min(1, (e.life - e.t) / 14);
-          ctx.globalAlpha = fade;
-          const top = GROUND - 250 * rise, sw = Math.sin(e.t * 0.12) * 50;   // 頭が画面の上に出ない高さ
-          ctx.lineCap = 'round';
-          for (const [col, lw] of [['#4a0e0a', 64], ['#a8231a', 52], ['#e8a040', 14]]) {            // 胴体（らせんにうねって昇る）
-            ctx.strokeStyle = col; ctx.lineWidth = lw; ctx.beginPath();
-            for (let j = 0; j <= 20; j++) { const q = j / 20, y = GROUND + 30 - (GROUND + 30 - top) * q, x = e.x + Math.sin(q * 7 + e.t * 0.15) * 70 * (1 - q * 0.5) + sw * q; j ? ctx.lineTo(x, y) : ctx.moveTo(x, y); }
-            ctx.stroke();
+        case 'tridragon': {                               // 龘：翼を広げた三つ首のドラゴン（背後に立ち、3つの口に光を溜める）
+          ctx.globalAlpha = Math.min(1, e.t / 8, (e.life - e.t) / 12);
+          const open = e.t >= 20 ? 1 : 0.15;
+          ctx.save(); ctx.translate(e.x, e.y); ctx.scale(e.d * e.S, e.S); drawTriDragon(e.t * (e.t < 110 ? 0.08 : 0.18), [open, open, open]); ctx.restore();
+          if (e.t >= 20 && e.t < 180) {                           // 口に溜まる光の玉（炎・雷・炎）
+            const k = Math.min(1, (e.t - 20) / 90), R = e.t < 110 ? 6 + k * 34 : 22;
+            [0, 1, 2].forEach(i => {
+              const mo = triMouth(e, i), zap = i === 1, c1 = zap ? '235,245,255' : '255,245,190', c2 = zap ? '110,160,255' : '255,120,20';
+              const r = R * (1 + Math.sin(e.t * 0.9 + i) * 0.12);
+              const g = ctx.createRadialGradient(mo.x, mo.y, 1, mo.x, mo.y, r * 2.2); g.addColorStop(0, `rgba(${c1},1)`); g.addColorStop(0.35, `rgba(${c2},0.85)`); g.addColorStop(1, `rgba(${c2},0)`);
+              ctx.fillStyle = g; ctx.beginPath(); ctx.arc(mo.x, mo.y, r * 2.2, 0, TAU); ctx.fill();
+              if (e.t < 110 && e.t % 2 === 0) { const a = rand(0, TAU), dd = rand(70, 120); particles.push({ x: mo.x + Math.cos(a) * dd, y: mo.y + Math.sin(a) * dd, vx: -Math.cos(a) * dd / 12, vy: -Math.sin(a) * dd / 12, g: 0, life: 12, color: zap ? '#bcd6ff' : '#ffb040', r: 3 }); }
+              if (zap && e.t < 110 && e.t % 3 === 0) { ctx.strokeStyle = 'rgba(200,225,255,0.9)'; ctx.lineWidth = 2; ctx.beginPath(); let px = mo.x, py = mo.y; ctx.moveTo(px, py); for (let j = 0; j < 4; j++) { px += rand(-14, 14) + Math.cos(e.t + j) * 8; py += rand(-14, 14); ctx.lineTo(px, py); } ctx.stroke(); }
+            });
           }
-          const nx = e.x + Math.sin(7 + e.t * 0.15) * 35 + sw;
-          [-1, 0, 1].forEach((k) => {                                                         // 3本の首と頭
-            const hx = nx + k * 120 + Math.sin(e.t * 0.2 + k * 2) * 14, hy = top - 110 + Math.abs(k) * 40 + Math.cos(e.t * 0.25 + k) * 10;
-            for (const [col, lw] of [['#4a0e0a', 40], ['#a8231a', 30]]) { ctx.strokeStyle = col; ctx.lineWidth = lw; ctx.beginPath(); ctx.moveTo(nx, top); ctx.quadraticCurveTo(nx + k * 70, top - 20, hx, hy); ctx.stroke(); }
-            ctx.save(); ctx.translate(hx, hy); ctx.rotate(k * 0.6 - Math.PI / 2 + Math.PI / 2); drawDragonHead(1.05, '#a8231a', '#ffd84d', e.t + k * 7); ctx.restore();
-          });
+          break;
+        }
+        case 'dim': {                                     // 必殺技の溜め：背景を暗くする（キャラより奥）
+          const a = e.a * Math.max(0, Math.min(1, (e.t - (e.delay || 0)) / e.fin, (e.life - e.t) / e.fout));
+          ctx.globalAlpha = 1; ctx.fillStyle = `rgba(10,4,18,${a})`; ctx.fillRect(-3000, -3000, 8000, 8000);
+          break;
+        }
+        case 'wyvern': {                                  // 竜・龍：飛んできて相手の上で止まり、溜めてから炎を吐き続け、飛び去る
+          const S = e.S, d = e.d, t = e.t; let x, y;
+          if (t < 24) { const k = 1 - (1 - t / 24) ** 3; x = e.hx - d * 900 * (1 - k); y = e.hy - 60 * (1 - k); }
+          else if (t < 160) { x = e.hx; y = e.hy + Math.sin(t * 0.15) * 6; }
+          else { const k = (t - 160) / 30; x = e.hx + d * k * k * 900; y = e.hy - k * k * 320; }
+          const charge = t >= 24 && t < 70, fire = t >= 70 && t < 160, mx = x + d * 133 * S, my = y - 26 * S;
+          ctx.globalAlpha = Math.min(1, (e.life - t) / 8);
+          ctx.fillStyle = 'rgba(0,0,0,0.2)'; ctx.beginPath(); ctx.ellipse(x, GROUND, 150 * S, 16, 0, 0, TAU); ctx.fill();
+          if (fire) {                                     // 太い炎を地面へ吐き続ける
+            const tx = e.tx, ty = GROUND - 14, k = Math.min(1, (t - 70) / 5);
+            for (let i = 0; i <= 18; i++) {
+              const q = i / 18 * k, fx = mx + (tx - mx) * q, fy = my + (ty - my) * q, r = 20 + q * 72;
+              const g = ctx.createRadialGradient(fx, fy, 2, fx, fy, r); g.addColorStop(0, 'rgba(255,252,210,0.95)'); g.addColorStop(0.45, 'rgba(255,140,30,0.78)'); g.addColorStop(1, 'rgba(220,40,10,0)');
+              ctx.fillStyle = g; ctx.beginPath(); ctx.arc(fx + Math.sin(t * 0.9 + i) * 7, fy + Math.cos(t * 1.2 + i) * 7, r, 0, TAU); ctx.fill();
+            }
+            for (let j = 0; j < 3; j++) particles.push({ x: tx + rand(-90, 90), y: GROUND - rand(0, 10), vx: rand(-1.5, 1.5), vy: -rand(2, 6), g: -0.02, life: 30, color: ['#ff8a1f', '#ffd84d', '#e8321a'][j], r: 8 });
+          }
+          ctx.save(); ctx.translate(x, y); ctx.scale(d * S, S);
+          drawWingDragon(charge ? 24 * 0.35 + (t - 24) * 0.12 : t * 0.35, charge ? 0.4 + 0.6 * (t - 24) / 46 : fire ? 1 : 0.25);
+          ctx.restore();
+          if (charge) {                                   // 口の中に炎が溜まっていく
+            const k = (t - 24) / 46, r = 6 + k * 30;
+            const g = ctx.createRadialGradient(mx, my, 1, mx, my, r * 2); g.addColorStop(0, 'rgba(255,250,210,1)'); g.addColorStop(0.4, 'rgba(255,140,30,0.85)'); g.addColorStop(1, 'rgba(255,60,10,0)');
+            ctx.fillStyle = g; ctx.beginPath(); ctx.arc(mx, my, r * 2 * (1 + Math.sin(t) * 0.1), 0, TAU); ctx.fill();
+            if (t % 2 === 0) { const a = rand(0, TAU), dd = rand(60, 110); particles.push({ x: mx + Math.cos(a) * dd, y: my + Math.sin(a) * dd, vx: -Math.cos(a) * dd / 12, vy: -Math.sin(a) * dd / 12, g: 0, life: 12, color: '#ffb040', r: 3 }); }
+          }
+          break;
+        }
+        case 'zapbeam': {                                 // 龘：口から相手へ伸びる稲妻
+          const k = Math.min(1, e.t / 4); ctx.globalAlpha = Math.min(1, (e.life - e.t) / 6);
+          const tx = e.x + (e.tx - e.x) * k, ty = e.y + (e.ty - e.y) * k;
+          const pts = [[e.x, e.y]]; for (let i = 1; i < 9; i++) { const q = i / 9; pts.push([e.x + (tx - e.x) * q + rand(-18, 18), e.y + (ty - e.y) * q + rand(-18, 18)]); } pts.push([tx, ty]);
+          ctx.lineJoin = 'round'; ctx.lineCap = 'round';
+          for (const [col, lw] of [['rgba(120,170,255,0.35)', 26], ['rgba(170,210,255,0.8)', 10], ['#ffffff', 4]]) { ctx.strokeStyle = col; ctx.lineWidth = lw * (e.thick ? 2.2 : 1); ctx.beginPath(); pts.forEach(([px, py], i) => i ? ctx.lineTo(px, py) : ctx.moveTo(px, py)); ctx.stroke(); }
+          if (k >= 1 && e.t % 2 === 0) spark(tx, ty, '#cfe4ff', 4, 6);
           break;
         }
         case 'phoenix': {                                 // 蘇：炎の不死鳥が羽ばたいて飛ぶ
@@ -4579,14 +4640,15 @@ const effectName = (e) => (EN ? EFFECT_NAME_EN[e] : EFFECT_NAME[e]);
           }
           break;
         }
-        case 'stampede': {                                // 必殺・牛：字の群れが駆け抜ける
-          const front = e.x + e.dir * (e.t - 16) * 18;      // 16コマ目に先頭が相手に届く
+        case 'stampede': {                                // 必殺・牛：闘牛の群れが土けむりを上げて突進する
+          const front = e.x + e.dir * (e.t - 16) * 22;      // 16コマ目に先頭が相手に届く
           ctx.globalAlpha = Math.min(1, (e.life - e.t) / 8);
           for (let i = 5; i >= 0; i--) {
-            const x = front - e.dir * i * 80, hop = Math.abs(Math.sin(e.t * 0.5 + i * 1.3));
+            const x = front - e.dir * ((i % 3) * 130 + Math.floor(i / 3) * 65), y = GROUND + (i % 2) * 18, hop = Math.abs(Math.sin(e.t * 0.45 + i * 1.3));
             ctx.fillStyle = 'rgba(201,163,107,0.45)';
-            ctx.beginPath(); ctx.ellipse(x - e.dir * 50, GROUND - 6, 60, 16, 0, 0, TAU); ctx.fill();
-            Texture.draw(ctx, e.w.ch, x, GROUND - 70 - hop * 28, 110 + (i % 2) * 24, weaponStyle(e.w), Math.sin(e.t * 0.5 + i) * 0.15 * e.dir);
+            ctx.beginPath(); ctx.ellipse(x - e.dir * 70, y - 6, 70, 16, 0, 0, TAU); ctx.fill();
+            if (e.t % 2 === 0) particles.push({ x: x - e.dir * 70, y: GROUND - rand(0, 20), vx: -e.dir * rand(1, 3), vy: -rand(0.5, 2), g: 0, life: 18, color: 'rgba(200,180,140,0.6)', r: 9 });
+            ctx.save(); ctx.translate(x, y - hop * 22); ctx.scale(e.dir * 1.5, 1.5); drawBull(e.t * 0.45 + i * 1.3); ctx.restore();
           }
           break;
         }
@@ -5263,6 +5325,94 @@ const effectName = (e) => (EN ? EFFECT_NAME_EN[e] : EFFECT_NAME[e]);
     ['六', '法', '全', '書'].forEach((c, i) => ctx.fillText(c, -1, -16 + i * 11));
     ctx.restore();
   }
+  // 竜・龍・龘：翼のある赤いドラゴン（参考：赤いうろこ・コウモリ型の翼・角・炎）
+  const DR = { R: '#c62a1e', RD: '#8e1812', RL: '#e8553a', BE: '#efc89a', K: '#3a0806', EY: '#ffd84d' };
+  // コウモリ型の翼（原点＝つけ根、うしろ上へ広がる）。ph で羽ばたく
+  function drawBatWing(ph, col) {
+    ctx.save(); const f = Math.sin(ph); ctx.rotate(f * 0.15); ctx.scale(1, 0.4 + 0.6 * (0.5 + 0.5 * f));
+    const E = [28, -70], Wr = [-8, -138], F = [[-60, -156], [-112, -128], [-140, -78], [-126, -28], [-70, -2]];
+    ctx.fillStyle = col; ctx.strokeStyle = DR.K; ctx.lineWidth = 2.5; ctx.lineJoin = 'round';
+    ctx.beginPath(); ctx.moveTo(0, 0); ctx.lineTo(...E); ctx.lineTo(...Wr); ctx.lineTo(...F[0]);
+    for (let i = 1; i < F.length; i++) { const a = F[i - 1], b = F[i]; ctx.quadraticCurveTo((a[0] + b[0]) / 2 * 0.7 + Wr[0] * 0.3, (a[1] + b[1]) / 2 * 0.7 + Wr[1] * 0.3 + 10, b[0], b[1]); }
+    ctx.quadraticCurveTo(-40, -20, -10, 4); ctx.closePath(); ctx.fill(); ctx.stroke();
+    ctx.fillStyle = 'rgba(0,0,0,0.18)'; ctx.beginPath(); ctx.moveTo(...Wr); for (const pt of F) ctx.lineTo(...pt); ctx.lineTo(-10, 4); ctx.lineTo(0, 0); ctx.closePath(); ctx.globalAlpha *= 0.5; ctx.fill(); ctx.globalAlpha /= 0.5;
+    ctx.strokeStyle = DR.K; ctx.lineWidth = 5; ctx.lineCap = 'round';
+    ctx.beginPath(); ctx.moveTo(0, 0); ctx.lineTo(...E); ctx.lineTo(...Wr); for (const pt of F.slice(0, 4)) { ctx.moveTo(...Wr); ctx.lineTo(...pt); } ctx.stroke();
+    ctx.strokeStyle = DR.RL; ctx.lineWidth = 2.5; ctx.beginPath(); ctx.moveTo(0, 0); ctx.lineTo(...E); ctx.lineTo(...Wr); ctx.stroke();
+    ctx.fillStyle = DR.BE; ctx.beginPath(); ctx.moveTo(Wr[0] - 2, Wr[1]); ctx.quadraticCurveTo(Wr[0] + 4, Wr[1] - 16, Wr[0] + 14, Wr[1] - 14); ctx.lineTo(Wr[0] + 4, Wr[1] - 4); ctx.fill();   // 翼の爪
+    ctx.restore();
+  }
+  // ドラゴンの頭（原点＝首のつけ根、右向き）。open で口が開く
+  function drawDrakeHead(open) {
+    ctx.save(); ctx.lineJoin = 'round'; ctx.strokeStyle = DR.K; ctx.lineWidth = 2.5;
+    ctx.fillStyle = DR.RD;
+    for (const [a, b, c] of [[[8, -16], [-16, -44], [18, -14]], [[18, -18], [4, -48], [24, -14]]]) { ctx.beginPath(); ctx.moveTo(...a); ctx.quadraticCurveTo(b[0] + 4, b[1] + 16, ...b); ctx.lineTo(...c); ctx.closePath(); ctx.fill(); ctx.stroke(); }   // 角
+    ctx.fillStyle = DR.R; ctx.beginPath(); for (let i = 0; i < 3; i++) { ctx.moveTo(2 - i * 2, -8 + i * 8); ctx.lineTo(-14 - i * 2, -10 + i * 9); ctx.lineTo(0 - i * 2, -2 + i * 8); } ctx.fill(); ctx.stroke();   // えらのとげ
+    const j = open * 14;
+    ctx.fillStyle = '#5a0a08'; ctx.beginPath(); ctx.moveTo(24, 0); ctx.lineTo(56, -2); ctx.lineTo(50, 4 + j); ctx.closePath(); ctx.fill();   // 口の中
+    ctx.fillStyle = DR.R; ctx.beginPath(); ctx.moveTo(24, 2); ctx.lineTo(52, 4 + j); ctx.lineTo(48, 10 + j); ctx.quadraticCurveTo(26, 14 + j * 0.5, 12, 12); ctx.lineTo(0, 8); ctx.closePath(); ctx.fill(); ctx.stroke();   // 下あご
+    ctx.beginPath(); ctx.moveTo(0, 8); ctx.lineTo(2, -10); ctx.quadraticCurveTo(14, -22, 28, -20); ctx.lineTo(54, -12); ctx.lineTo(62, -6); ctx.lineTo(58, -1); ctx.lineTo(24, 2); ctx.closePath(); ctx.fill(); ctx.stroke();   // 頭と上あご
+    ctx.fillStyle = DR.RL; ctx.beginPath(); ctx.moveTo(8, -12); ctx.quadraticCurveTo(20, -20, 40, -14); ctx.lineTo(20, -10); ctx.closePath(); ctx.fill();
+    ctx.fillStyle = '#fff'; ctx.beginPath(); for (let x = 30; x <= 54; x += 6) { ctx.moveTo(x, -1); ctx.lineTo(x + 2, 5); ctx.lineTo(x + 4, -1); ctx.moveTo(x - 2, 4 + j * (x - 24) / 28); ctx.lineTo(x, -1 + j * (x - 24) / 28); ctx.lineTo(x + 2, 4 + j * (x - 24) / 28); } ctx.fill();   // 牙
+    ctx.fillStyle = DR.EY; ctx.shadowColor = '#ff8a1f'; ctx.shadowBlur = 8; ctx.beginPath(); ctx.moveTo(26, -13); ctx.lineTo(38, -12); ctx.lineTo(30, -8); ctx.closePath(); ctx.fill(); ctx.shadowBlur = 0;   // つり目
+    ctx.fillStyle = DR.K; ctx.beginPath(); ctx.arc(57, -7, 1.6, 0, TAU); ctx.fill();   // 鼻の穴
+    ctx.restore();
+  }
+  // 横向きに飛ぶドラゴン（原点＝胴の中心、右向き）
+  function drawWingDragon(t, open) {
+    ctx.save(); ctx.lineJoin = 'round'; ctx.lineCap = 'round'; ctx.strokeStyle = DR.K; ctx.lineWidth = 2.5;
+    ctx.save(); ctx.translate(-6, -16); ctx.globalAlpha *= 0.9; drawBatWing(t + 0.5, DR.RD); ctx.restore();          // 奥の翼
+    ctx.fillStyle = DR.R; ctx.beginPath(); ctx.moveTo(-40, -12); ctx.quadraticCurveTo(-90, -20, -130, Math.sin(t) * 6); ctx.quadraticCurveTo(-160, 22 + Math.sin(t + 1) * 8, -190, 10);   // しっぽ
+    ctx.lineTo(-186, 16); ctx.quadraticCurveTo(-158, 32 + Math.sin(t + 1) * 8, -128, 10 + Math.sin(t) * 6); ctx.quadraticCurveTo(-92, -4, -40, 10); ctx.closePath(); ctx.fill(); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(-188, 6); ctx.lineTo(-214, 14); ctx.lineTo(-190, 24); ctx.lineTo(-196, 14); ctx.closePath(); ctx.fill(); ctx.stroke();   // しっぽの先
+    ctx.fillStyle = DR.RD; ctx.beginPath(); ctx.ellipse(-28, 12, 14, 18, 0.6, 0, TAU); ctx.fill(); ctx.stroke();   // うしろ足
+    ctx.beginPath(); ctx.moveTo(-34, 22); ctx.lineTo(-52, 38); ctx.lineTo(-40, 42); ctx.lineTo(-24, 28); ctx.closePath(); ctx.fill(); ctx.stroke();
+    ctx.fillStyle = DR.BE; for (let i = 0; i < 3; i++) { ctx.beginPath(); ctx.moveTo(-52 + i * 5, 38); ctx.lineTo(-58 + i * 5, 46); ctx.lineTo(-49 + i * 5, 41); ctx.fill(); }
+    ctx.fillStyle = DR.R; ctx.beginPath(); ctx.moveTo(30, -14); ctx.quadraticCurveTo(58, -50, 80, -52); ctx.lineTo(86, -36); ctx.quadraticCurveTo(60, -26, 44, 8); ctx.closePath(); ctx.fill(); ctx.stroke();   // 首
+    ctx.beginPath(); ctx.ellipse(0, 0, 50, 22, -0.12, 0, TAU); ctx.fill(); ctx.stroke();                          // 胴
+    ctx.fillStyle = DR.BE; ctx.beginPath(); ctx.moveTo(-36, 12); ctx.quadraticCurveTo(10, 26, 40, 6); ctx.quadraticCurveTo(56, -14, 82, -36); ctx.lineTo(76, -40); ctx.quadraticCurveTo(52, -18, 34, -2); ctx.quadraticCurveTo(6, 14, -36, 6); ctx.closePath(); ctx.fill();   // おなか
+    ctx.strokeStyle = 'rgba(160,110,60,0.6)'; ctx.lineWidth = 1.2; ctx.beginPath(); for (let i = 0; i < 7; i++) { const x = -28 + i * 11; ctx.moveTo(x, 8 + (i > 4 ? -10 * (i - 4) : 0)); ctx.lineTo(x + 3, 16 - (i > 4 ? 12 * (i - 4) : 0)); } ctx.stroke();
+    ctx.strokeStyle = DR.K; ctx.lineWidth = 2.5; ctx.fillStyle = DR.RD;
+    ctx.beginPath(); for (let i = 0; i < 7; i++) { const x = -38 + i * 14, y = -20 + (i > 3 ? -(i - 3) * 9 : 0); ctx.moveTo(x - 5, y + 2); ctx.lineTo(x - 2, y - 10); ctx.lineTo(x + 5, y + 1); } ctx.fill(); ctx.stroke();   // 背中のとげ
+    ctx.save(); ctx.translate(80, -46); ctx.rotate(0.25); drawDrakeHead(open); ctx.restore();
+    ctx.fillStyle = DR.R; ctx.beginPath(); ctx.moveTo(24, 10); ctx.lineTo(40, 28); ctx.lineTo(50, 26); ctx.lineTo(32, 6); ctx.closePath(); ctx.fill(); ctx.stroke();   // 前足
+    ctx.fillStyle = DR.BE; for (let i = 0; i < 3; i++) { ctx.beginPath(); ctx.moveTo(44 + i * 3, 26); ctx.lineTo(50 + i * 4, 34); ctx.lineTo(48 + i * 3, 25); ctx.fill(); }
+    ctx.save(); ctx.translate(2, -18); drawBatWing(t, DR.R); ctx.restore();                                         // 手前の翼
+    ctx.restore();
+  }
+  // 三つ首のドラゴン（原点＝足元、右向き＝相手の方）。opens は3つの頭の口の開き
+  const TRI_HEADS = [[-35, -200, 10, -300, 120, -250, 0.4], [0, -215, 70, -370, 170, -320, 0.25], [35, -200, 140, -190, 225, -225, 0.35]];   // 首のつけ根・曲がり・頭の位置・頭の傾き
+  const TRI_HS = 1.5;
+  function triMouth(e, k) {                                   // 龘の k 番目の頭の口の位置（画面の座標）
+    const [, , , , hx, hy, r] = TRI_HEADS[k], mx = 56 * TRI_HS, my = 9 * TRI_HS;
+    return { x: e.x + e.d * e.S * (hx + Math.cos(r) * mx - Math.sin(r) * my), y: e.y + e.S * (hy + Math.sin(r) * mx + Math.cos(r) * my) };
+  }
+  function drawTriDragon(t, opens) {
+    ctx.save(); ctx.lineJoin = 'round'; ctx.lineCap = 'round'; ctx.strokeStyle = DR.K; ctx.lineWidth = 2.5;
+    ctx.save(); ctx.translate(-30, -200); ctx.scale(1.3, 1.3); drawBatWing(t, DR.RD); ctx.restore();          // 左右に広げた翼
+    ctx.save(); ctx.translate(30, -200); ctx.scale(-1.3, 1.3); drawBatWing(t + 0.3, DR.R); ctx.restore();
+    ctx.strokeStyle = DR.K; ctx.lineWidth = 34; ctx.beginPath(); ctx.moveTo(-30, -30); ctx.quadraticCurveTo(-150, 10, -190, -40); ctx.stroke();   // しっぽ
+    ctx.strokeStyle = DR.R; ctx.lineWidth = 28; ctx.stroke();
+    ctx.fillStyle = DR.R; ctx.strokeStyle = DR.K; ctx.lineWidth = 2.5; ctx.beginPath(); ctx.moveTo(-186, -52); ctx.lineTo(-210, -66); ctx.lineTo(-200, -38); ctx.closePath(); ctx.fill(); ctx.stroke();
+    for (const x of [-34, 34]) {                                                                                  // 足
+      ctx.fillStyle = DR.RD; ctx.beginPath(); ctx.ellipse(x, -66, 26, 38, x < 0 ? 0.2 : -0.2, 0, TAU); ctx.fill(); ctx.stroke();
+      ctx.beginPath(); ctx.roundRect(x - 12, -40, 24, 38, 6); ctx.fill(); ctx.stroke();
+      ctx.fillStyle = DR.BE; for (let i = -1; i <= 1; i++) { ctx.beginPath(); ctx.moveTo(x + i * 9 - 4, -4); ctx.lineTo(x + i * 9 + 2, 6); ctx.lineTo(x + i * 9 + 5, -4); ctx.fill(); }
+    }
+    ctx.fillStyle = DR.R; ctx.beginPath(); ctx.ellipse(0, -140, 58, 84, 0, 0, TAU); ctx.fill(); ctx.stroke();   // 胴
+    ctx.fillStyle = DR.BE; ctx.beginPath(); ctx.ellipse(6, -130, 30, 64, 0, 0, TAU); ctx.fill();
+    ctx.strokeStyle = 'rgba(160,110,60,0.6)'; ctx.lineWidth = 2; ctx.beginPath(); for (let i = 0; i < 8; i++) { const y = -184 + i * 14, hw = Math.sqrt(Math.max(0, 1 - ((y + 130) / 64) ** 2)) * 28; ctx.moveTo(6 - hw, y); ctx.lineTo(6 + hw, y); } ctx.stroke();
+    ctx.strokeStyle = DR.K; ctx.lineWidth = 2.5;
+    TRI_HEADS.forEach(([sx, sy, cx, cy, hx, hy, r], k) => {                                                      // 首と頭（奥から順に）
+      for (const [col, lw] of [[DR.K, 36], [k === 1 ? DR.RD : DR.R, 30], [DR.BE, 10]]) { ctx.strokeStyle = col; ctx.lineWidth = lw; ctx.beginPath(); ctx.moveTo(sx, sy); ctx.quadraticCurveTo(cx, cy, hx, hy); ctx.stroke(); }
+      ctx.fillStyle = DR.RD; ctx.strokeStyle = DR.K; ctx.lineWidth = 2;
+      ctx.beginPath(); for (let i = 1; i < 6; i++) { const q = i / 6, x = (1 - q) * (1 - q) * sx + 2 * (1 - q) * q * cx + q * q * hx, y = (1 - q) * (1 - q) * sy + 2 * (1 - q) * q * cy + q * q * hy; ctx.moveTo(x - 6, y - 12); ctx.lineTo(x - 14, y - 26); ctx.lineTo(x + 2, y - 14); } ctx.fill(); ctx.stroke();   // 首のとげ
+      ctx.save(); ctx.translate(hx, hy); ctx.rotate(r); ctx.scale(TRI_HS, TRI_HS); drawDrakeHead(opens[k]); ctx.restore();
+    });
+    ctx.fillStyle = DR.R; ctx.strokeStyle = DR.K; ctx.lineWidth = 2.5;                                            // 胸の前の腕
+    for (const d of [-1, 1]) { ctx.beginPath(); ctx.moveTo(d * 40, -170); ctx.lineTo(d * 20 + 18, -128); ctx.lineTo(d * 12 + 22, -122); ctx.lineTo(d * 30, -168); ctx.closePath(); ctx.fill(); ctx.stroke(); }
+    ctx.restore();
+  }
   // 竜：横向きの竜の首と頭のシルエット（原点＝首の根もと、右向き）。open は口の開き
   function drawDragon(open, t, c1, c2) {
     const g = ctx.createLinearGradient(0, -260, 0, 0); g.addColorStop(0, c2); g.addColorStop(1, c1);
@@ -5436,6 +5586,35 @@ const effectName = (e) => (EN ? EFFECT_NAME_EN[e] : EFFECT_NAME[e]);
     ctx.fillStyle = '#fff'; ctx.beginPath(); ctx.roundRect(-8, -56, 16, 10, 2); ctx.fill();    // ゼッケン
     leg(-16, -34, -0.7 * g, col); leg(26, -34, 0.7 * g, col);                           // 手前の足
     ctx.fillStyle = dark; ctx.beginPath(); ctx.ellipse(0, -36, 22, 4, 0, 0, TAU); ctx.fill();
+    ctx.restore();
+  }
+  // 牛：跳ねるように突進する黒い闘牛（原点＝ひづめの高さ、右向き、頭を下げて角を前へ）
+  function drawBull(t) {
+    ctx.save(); ctx.lineJoin = 'round'; ctx.lineCap = 'round';
+    const B = '#2c2c30', D = '#1c1c20', K = '#0e0e10', HN = '#ece6d6', HF = '#6a6a70', g = Math.sin(t);
+    ctx.strokeStyle = K; ctx.lineWidth = 2;
+    const leg = (x, y, a, c, front) => {                                       // 足：ももから曲がって、ひづめは灰色
+      ctx.save(); ctx.translate(x, y); ctx.rotate(a); ctx.fillStyle = c;
+      ctx.beginPath(); ctx.moveTo(-7, 0); ctx.lineTo(7, 0); ctx.lineTo(4, 18); ctx.lineTo(front ? 10 : -2, 30); ctx.lineTo(front ? 3 : -8, 32); ctx.lineTo(-4, 18); ctx.closePath(); ctx.fill(); ctx.stroke();
+      ctx.fillStyle = HF; ctx.beginPath(); ctx.roundRect(front ? 2 : -10, 30, 9, 6, 2); ctx.fill(); ctx.stroke();
+      ctx.restore();
+    };
+    leg(-34, -42, 0.5 + g * 0.35, D, false); leg(26, -44, -0.7 - g * 0.35, D, true);   // 奥の足
+    ctx.fillStyle = B; ctx.beginPath(); ctx.moveTo(-44, -56); ctx.quadraticCurveTo(-70, -54 + g * 6, -80, -30 + g * 6); ctx.lineWidth = 4; ctx.strokeStyle = B; ctx.stroke();   // しっぽ
+    ctx.fillStyle = K; ctx.beginPath(); ctx.ellipse(-80, -28 + g * 6, 4, 8, 0.3, 0, TAU); ctx.fill();
+    ctx.strokeStyle = K; ctx.lineWidth = 2;
+    ctx.fillStyle = B; ctx.beginPath();                                          // 胴：盛り上がった肩、細い腰
+    ctx.moveTo(-46, -54); ctx.quadraticCurveTo(-40, -72, -10, -70); ctx.quadraticCurveTo(14, -90, 34, -76);
+    ctx.quadraticCurveTo(50, -64, 46, -46); ctx.quadraticCurveTo(20, -30, -10, -38); ctx.quadraticCurveTo(-40, -34, -46, -54); ctx.closePath(); ctx.fill(); ctx.stroke();
+    ctx.fillStyle = 'rgba(255,255,255,0.08)'; ctx.beginPath(); ctx.ellipse(14, -74, 18, 6, -0.3, 0, TAU); ctx.fill();   // 肩のつや
+    ctx.fillStyle = B; ctx.beginPath(); ctx.moveTo(38, -70); ctx.quadraticCurveTo(58, -66, 66, -48); ctx.lineTo(70, -36); ctx.quadraticCurveTo(64, -28, 54, -32); ctx.quadraticCurveTo(44, -40, 38, -48); ctx.closePath(); ctx.fill(); ctx.stroke();   // 下げた頭
+    ctx.fillStyle = D; ctx.beginPath(); ctx.ellipse(64, -36, 7, 5, 0.4, 0, TAU); ctx.fill();   // 鼻先
+    ctx.fillStyle = K; ctx.beginPath(); ctx.arc(66, -37, 1.4, 0, TAU); ctx.fill();
+    ctx.fillStyle = HN; ctx.beginPath(); ctx.moveTo(50, -64); ctx.quadraticCurveTo(66, -70, 74, -84); ctx.quadraticCurveTo(70, -70, 54, -58); ctx.closePath(); ctx.fill(); ctx.stroke();   // 角（手前）
+    ctx.beginPath(); ctx.moveTo(44, -66); ctx.quadraticCurveTo(46, -78, 58, -86); ctx.quadraticCurveTo(52, -76, 48, -64); ctx.closePath(); ctx.fill(); ctx.stroke();   // 角（奥）
+    ctx.fillStyle = D; ctx.beginPath(); ctx.moveTo(42, -64); ctx.lineTo(34, -70); ctx.lineTo(40, -58); ctx.closePath(); ctx.fill(); ctx.stroke();   // 耳
+    ctx.fillStyle = '#d8d0c0'; ctx.beginPath(); ctx.arc(54, -54, 2, 0, TAU); ctx.fill(); ctx.fillStyle = K; ctx.beginPath(); ctx.arc(54.5, -54, 1, 0, TAU); ctx.fill();   // 目
+    leg(-26, -44, -0.2 - g * 0.45, B, false); leg(34, -46, -1.0 + g * 0.45, B, true);   // 手前の足（前足を前へ投げ出す）
     ctx.restore();
   }
   // 象：平たい色の横向きの象（原点＝足元、右向き）。spray=true で鼻を上げる

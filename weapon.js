@@ -162,7 +162,7 @@
     '影': { effect: 'shadow',   text: '影武者。攻撃を受けると、ときどき黒い影が身代わりになる' },
     // 遠距離（弱攻撃が飛び道具になる）
     '弓': { effect: 'arrow',    text: '離れた所から矢を撃つ', ranged: true, mod: { power: 0.8, recovery: 1.15 } },
-    '竜': { effect: 'breath',   text: '口から炎を吐く', ranged: true, mod: { recovery: 1.15 } },
+    '竜': { effect: 'breath',   text: '口から炎を吐く', ranged: true, mod: { recovery: 1.3 } },   // 勝率65%くらいに（1.15だと72%）
     '砲': { effect: 'cannon',   text: '遠くから大砲を一発', ranged: true, mod: { startup: 1.8, recovery: 1.6 } },
     // ネタ
     '猫': { effect: 'cat',      text: '気まぐれでサボる。当たると引っかき連撃' },
@@ -309,7 +309,7 @@
   const SPECIAL_LIST = Object.keys(SPECIALS);
   // 隠し字
   SPECIALS['龍'] = { ...SPECIALS['竜'], mod: { recovery: 1.5, power: 0.8 } };   // 竜と同じ効果（画数が多くて強くなりすぎるので少し弱める）
-  SPECIALS['龘'] = { effect: 'breath3', text: '竜の3倍の炎を吐く', ranged: true, mod: { recovery: 1.6 } }; // 100字見つけると解放
+  SPECIALS['龘'] = { effect: 'breath3', text: '竜の3倍の炎を吐く', ranged: true, mod: { recovery: 2.0, power: 0.6 } };   // 強すぎたので攻撃力を下げる（勝率80%くらい） // 100字見つけると解放
   let unlocked = false;              // 龘 の封印が解けているか（game.js が決める）
   let godOpen = false;               // 神 の封印が解けているか（勝ち抜きで10連勝。game.js が決める）
   const locked = (ch) => (ch === '龘' && !unlocked) || (ch === '神' && !godOpen);
