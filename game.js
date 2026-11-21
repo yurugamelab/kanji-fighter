@@ -1544,37 +1544,37 @@ const effectName = (e) => (EN ? EFFECT_NAME_EN[e] : EFFECT_NAME[e]);
     '炎': ['fire', '紅蓮獄炎', 'CRIMSON INFERNO'], '氷': ['ice', '絶対零度', 'ABSOLUTE ZERO'], '雷': ['thunder', '百雷轟天', 'HUNDRED THUNDERS'],
     '重': ['gravity', '超重力崩壊', 'GRAVITY COLLAPSE'], '盾': ['shield', '不動金剛盾', 'UNMOVING SHIELD'], '爆': ['explode', '爆炎崩界', 'BIG BANG'],
     '犬': ['dogpile', '百犬夜行', 'HUNDRED DOG PILE'], '無': ['void', '虚無回帰', 'THE VOID'], '神': ['divine', '神罰執行', 'DIVINE JUDGMENT'],
-    '毒': ['poison', '猛毒噴霧', 'TOXIC FOG'], '眠': ['rain:Z', '睡魔子守唄', 'SANDMAN LULLABY'],
+    '毒': ['poison', '猛毒噴霧', 'TOXIC FOG'], '眠': ['sheep', '睡魔子守唄', 'SANDMAN LULLABY'],
     '愛': ['heartdrop', '重愛圧殺', 'CRUSHING HEAVY LOVE'], '時': ['time', '時空支配', 'TIME DOMINION'], '辛': ['hotpot', '激辛煉獄', 'SPICY HELL'],
-    '怒': ['explode', '怒髪衝天', 'RAGE OVERDRIVE'], '運': ['omikuji', '大開運', 'MEGA FORTUNE'],
+    '怒': ['volcano', '怒髪衝天', 'RAGE OVERDRIVE'], '運': ['omikuji', '大開運', 'MEGA FORTUNE'],
     '鉄': ['ironfist', '鉄拳制裁', 'IRON FIST JUSTICE'], '斬': ['slash', '一刀両断', 'CLEAN CUT IN TWO'], '拳': ['fistrush', '拳撃百烈', 'HUNDRED FIST FLURRY'],
-    '跳': ['pinball', '天上跳躍', 'SKY-HIGH STOMP'], '磁': ['pierce', '電磁加速砲', 'RAILGUN'],
-    '風': ['wind', '神風烈破', 'DIVINE WIND'], '嵐': ['wind', '暴嵐竜巻', 'MEGA TORNADO'], '罠': ['earth', '奈落大罠', 'BOTTOMLESS PIT'],
+    '跳': ['pinball', '天上跳躍', 'SKY-HIGH STOMP'], '磁': ['magnet', '超磁力吸引', 'MEGA MAGNET'],
+    '風': ['wind', '神風烈破', 'DIVINE WIND'], '嵐': ['bigtornado', '暴嵐竜巻', 'MEGA TORNADO'], '罠': ['beartrap', '罠地獄', 'TRAP HELL'],
     '巨': ['drop', '超巨大化', 'GIGANTIFY'], '影': ['shadowclone', '影武者乱舞', 'SHADOW DOUBLE FRENZY'], '弓': ['arrows', '天弓千矢', 'THOUSAND ARROWS'],
     '竜': ['dragonroar', '竜王咆哮', "DRAGON'S ROAR"], '龍': ['risingdragon', '昇龍烈火', 'RISING DRAGON FLAME'], '龘': ['tridragon', '三龍滅却', 'TRIPLE DRAGON ANNIHILATION'],
-    '砲': ['explode', '天撃一斉砲', 'FULL BARRAGE'], '猫': ['cats', '猫拳百連撃', '100 CAT PUNCHES'], '酔': ['drunkfist', '酩酊千鳥拳', 'DRUNKEN FRENZY'],
-    '光': ['lightspeed', '極光閃', 'BLINDING FLASH'], '闇': ['dark', '漆黒深淵', 'PITCH-BLACK ABYSS'], '剣': ['slash', '奥義三連斬', 'SECRET TRIPLE SLASH'],
-    '矛': ['pierce', '破天神矛', 'HEAVEN-SPLITTING PIKE'], '槍': ['pierce', '天穿一閃', 'HEAVEN-PIERCING SPEAR'], '薙': ['slash', '横一文字', 'HORIZON SLASH'],
-    '𰻞': ['pierce', '𰻞𰻞無双', 'BIANGBIANG UNLEASHED'], '鎖': ['chainbind', '獄鎖縛陣', 'CHAIN HELL'], '銃': ['gunfire', '千発弾幕', 'SWISS CHEESE'],
+    '砲': ['bigcannon', '超弩級大砲', 'MEGA CANNON'], '猫': ['cats', '猫拳百連撃', '100 CAT PUNCHES'], '酔': ['drunkfist', '酩酊千鳥拳', 'DRUNKEN FRENZY'],
+    '光': ['lightspeed', '極光閃', 'BLINDING FLASH'], '闇': ['dark', '漆黒深淵', 'PITCH-BLACK ABYSS'], '剣': ['swordrain', '千剣降臨', 'RAIN OF SWORDS'],
+    '矛': ['longthrust', '破天神矛', 'HEAVEN-SPLITTING PIKE'], '槍': ['pierce', '天穿一閃', 'HEAVEN-PIERCING SPEAR'], '薙': ['screencut', '横一文字', 'HORIZON SLASH'],
+    '𰻞': ['noodleslap', '𰻞𰻞無双', 'BIANGBIANG UNLEASHED'], '鎖': ['chainbind', '獄鎖縛陣', 'CHAIN HELL'], '銃': ['gunfire', '千発弾幕', 'SWISS CHEESE'],
     '金': ['money', '札束乱打', 'CASH SLAP'], '鋼': ['heavy', '鋼鉄鉄槌', 'STEEL HAMMER'], '癒': ['heal', '天恵大回復', 'FULL HEAL'],
     '魔': ['magic', '禁断魔法', 'FORBIDDEN MAGIC'],
-    '屁': ['bigfart', '最終屁器', 'ULTIMATE WEAPON'], '忍': ['shuriken', '忍法手裏剣', 'SHURIKEN STORM'], '侍': ['slash', '居合一閃', 'FINAL QUICKDRAW'],
-    '水': ['water', '蒼海洪水', 'GREAT FLOOD'], '雪': ['ice', '白魔雪崩', 'AVALANCHE'], '星': ['meteor', '流星群', 'METEOR SHOWER'],
+    '屁': ['bigfart', '最終屁器', 'ULTIMATE WEAPON'], '忍': ['shuriken', '忍法手裏剣', 'SHURIKEN STORM'], '侍': ['iaido', '居合一閃', 'FINAL QUICKDRAW'],
+    '水': ['water', '蒼海洪水', 'GREAT FLOOD'], '雪': ['snowroll', '巨大雪達磨', 'GIANT SNOWMAN'], '星': ['meteor', '流星群', 'METEOR SHOWER'],
     '岩': ['rockfall', '巨岩崩落', 'BOULDER COLLAPSE'], '砂': ['antlion', '無限蟻地獄', 'ENDLESS ANTLION PIT'], '震': ['earth', '大地震撼', 'MEGA QUAKE'],
-    '波': ['water', '海神怒濤', 'TIDAL WAVE'], '花': ['bloom', '百花繚乱', 'FLOWER FRENZY'],
-    '蛇': ['serpent', '大蛇縛鎖', 'GIANT SERPENT SQUEEZE'], '蜂': ['bees', '万蜂襲来', 'KILLER BEE SWARM'], '虫': ['poison', '蟲毒大群', 'BUG APOCALYPSE'],
-    '牛': ['stampede', '猛牛突進', 'RAMPAGING BULL'], '馬': ['stampede', '暴走天馬', 'WILD STALLION'], '象': ['stampede', '巨象大行進', 'ELEPHANT PARADE'],
+    '波': ['surfer', '海神怒濤', 'TIDAL WAVE'], '花': ['bloom', '百花繚乱', 'FLOWER FRENZY'],
+    '蛇': ['serpent', '大蛇縛鎖', 'GIANT SERPENT SQUEEZE'], '蜂': ['bees', '万蜂襲来', 'KILLER BEE SWARM'], '虫': ['bugcloud', '蟲毒大群', 'BUG APOCALYPSE'],
+    '牛': ['stampede', '猛牛突進', 'RAMPAGING BULL'], '馬': ['derby', '万馬奔騰', 'STAMPEDE'], '象': ['elephant', '巨象大噴射', 'ELEPHANT SPLASH'],
     '盗': ['steal', '怪盗参上', 'PHANTOM THIEF'], '獣': ['beast', '野生解放', 'UNLEASH THE BEAST'], '狼': ['moonwolves', '月下狼哮', 'MOONLIGHT HOWL'],
     '牙': ['jaws', '千牙噛砕', 'BONE CRUSHER'], '爪': ['bigclaw', '三爪連斬', 'TRIPLE CLAW RIPPER'], '蘇': ['phoenix', '鳳凰転生', 'PHOENIX'],
     '麺': ['noodlebowl', '無限替玉', 'ENDLESS REFILLS'], '鏡': ['mirror', '無限鏡回廊', 'INFINITE MIRROR'],
     '幻': ['phantom', '幻影乱舞', 'PHANTOM DANCE'],
-    '謎': ['magic', '謎秘奥義', '???'], '鐘': ['bell', '百八煩悩鐘', '108 BELL TOLLS'],
-    '鎧': ['shield', '重鎧突撃', 'FULL-ARMOR TACKLE'], '網': ['net', '一網打尽', "CATCH 'EM ALL"],
-    '呪': ['ofuda', '丑刻呪詛', 'VOODOO DOLL'], '滅': ['doom', '天誅滅却', 'ANNIHILATE'],
+    '謎': ['mysterybox', '謎秘奥義', '???'], '鐘': ['bell', '百八煩悩鐘', '108 BELL TOLLS'],
+    '鎧': ['armorcharge', '重鎧突撃', 'FULL-ARMOR TACKLE'], '網': ['net', '一網打尽', "CATCH 'EM ALL"],
+    '呪': ['ofuda', '百符呪縛', 'TALISMAN BINDING'], '滅': ['doom', '天誅滅却', 'ANNIHILATE'],
     '薔': ['petals', '薔薇吹雪', 'ROSE BLIZZARD'],
-    '草': ['prairie', '爆笑大草原', 'ROFL MEGA PRAIRIE'], '尊': ['holy', '尊光降臨', 'PRECIOUS LIGHT DESCENDS'], '推': ['rain:♡', '全霊推活', 'ALL-IN STAN'],
-    '沼': ['earth', '無底泥沼', 'BOTTOMLESS SWAMP'], '鬱': ['raincloud', '憂鬱螺旋', 'SPIRAL OF GLOOM'], '卍': ['manji', '卍字大旋風', 'MEGA MANJI SPIN'],
-    '恋': ['rain:♥', '恋慕暴走', 'LOVE RAMPAGE'], '叫': ['explode', '魂魄絶叫', 'SOUL SCREAM'], '覇': ['holy', '覇王威圧', "CONQUEROR'S AURA"],
+    '草': ['prairie', '爆笑大草原', 'ROFL MEGA PRAIRIE'], '尊': ['holy', '尊光降臨', 'PRECIOUS LIGHT DESCENDS'], '推': ['idolstage', '全霊推活', 'ALL-IN STAN'],
+    '沼': ['sinkswamp', '無底泥沼', 'BOTTOMLESS SWAMP'], '鬱': ['raincloud', '憂鬱暗雲', 'DARK CLOUD OF GLOOM'], '卍': ['manji', '卍字大旋風', 'MEGA MANJI SPIN'],
+    '恋': ['loveletter', '恋文大告白', 'LOVE LETTER'], '叫': ['bigmouth', '魂魄絶叫', 'SOUL SCREAM'], '覇': ['hakiquake', '覇王威圧', "CONQUEROR'S AURA"],
     '母': ['negi', '千本葱舞', 'THOUSAND LEEK DANCE'], '筋': ['muscle', '筋肉感謝祭', 'MUSCLE FESTIVAL'], '鮨': ['sushi', '無限寿司地獄', 'ENDLESS SUSHI HELL'],
     '税': ['tax', '増税地獄', 'TAX HIKE HELL'], '罰': ['punish', '天罰覿面', 'INSTANT KARMA'], '悪': ['evil', '極悪非道', 'PURE EVIL'],
     '魂': ['souls', '魂魄解放', 'SOUL RELEASE'], '乙': ['otsu', '定時退勤', 'CLOCKING OUT AT FIVE'], '鎌': ['reaper', '死神大鎌', 'GRIM REAPER'],
@@ -1603,7 +1603,7 @@ const effectName = (e) => (EN ? EFFECT_NAME_EN[e] : EFFECT_NAME[e]);
   const bigOpening = (o) => o.stunned > 0 || o.frozen > 0 || o.sleep > 0 || o.laugh > 0 || o.timestop > 0 || o.bound > 0
     || o.charm > 0 || o.swoon > 0 || o.nap > 0 || (o.atk && !o.atk.hit && o.atk.t >= o.atk.su + o.atk.act);
   // 近づいて殴る技か（飛び道具・天から降る技は、見切って避けることができない）
-  const REMOTE = ['hotpot', 'dragonroar', 'risingdragon', 'tridragon', 'phoenix', 'dogpile', 'moonwolves', 'jaws', 'void', 'ofuda', 'raincloud', 'cats', 'gunfire', 'noodlebowl', 'shuriken', 'prairie', 'lightspeed', 'bigfart', 'bees', 'shadowclone', 'phantom', 'meteor', 'serpent', 'lawbook', 'fastball', 'antlion', 'bloom', 'rockfall', 'negi', 'muscle', 'sushi', 'tax', 'punish', 'evil', 'souls', 'reaper', 'ghosts', 'kickshot', 'ironfist', 'arrows', 'rain', 'heartdrop', 'divine', 'manji', 'thunder', 'holy', 'dark', 'time', 'heal', 'magic', 'earth', 'net', 'mirror', 'bell', 'gravity'];
+  const REMOTE = ['bigcannon', 'bigmouth', 'swordrain', 'magnet', 'longthrust', 'noodleslap', 'sheep', 'idolstage', 'loveletter', 'beartrap', 'sinkswamp', 'derby', 'elephant', 'snowroll', 'armorcharge', 'bugcloud', 'bigtornado', 'mysterybox', 'surfer', 'hakiquake', 'hotpot', 'dragonroar', 'risingdragon', 'tridragon', 'phoenix', 'dogpile', 'moonwolves', 'jaws', 'void', 'ofuda', 'raincloud', 'cats', 'gunfire', 'noodlebowl', 'shuriken', 'prairie', 'lightspeed', 'bigfart', 'bees', 'shadowclone', 'phantom', 'meteor', 'serpent', 'lawbook', 'fastball', 'antlion', 'bloom', 'rockfall', 'negi', 'muscle', 'sushi', 'tax', 'punish', 'evil', 'souls', 'reaper', 'ghosts', 'kickshot', 'ironfist', 'arrows', 'rain', 'heartdrop', 'divine', 'manji', 'thunder', 'holy', 'dark', 'time', 'heal', 'magic', 'earth', 'net', 'mirror', 'bell', 'gravity'];
   const meleeSuper = (f, sup) => !f.weapon.ranged && !REMOTE.includes(sup.theme.split(':')[0]);
   function startSuper(f, o) {
     if (f.thrown) { f.thrown.life = 0; f.thrown = null; }   // 投げた卍は手元に戻す
@@ -1924,6 +1924,180 @@ const effectName = (e) => (EN ? EFFECT_NAME_EN[e] : EFFECT_NAME[e]);
         sl(26, () => addFx('bigobj', ox, oy - 60, { life: 50, obj: 'rock', s: 6.5, seed: 3.3, rot: 0.1 }));
         sl(33, () => { finish(1.1, 4); if (o.fx !== 'fly') { T.squash = 60; T.down = 60; T.downMax = 60; } cracks.push({ x: ox - 60, life: 120, seed: Math.random() * 1000 }); cracks.push({ x: ox + 60, life: 120, seed: Math.random() * 1000 }); });
         break;
+      // ---- 2026-11 に作り直した必殺技（その3）----
+      case 'volcano':                                        // 怒：怒りマークと湯気が噴き出し、連続パンチ、最後に足元の火山が噴火
+        popText(f.x, f.y - 240, L('ムキーッ!!', 'GRRRAAAH!!'), '#d00', 40);
+        for (let i = 0; i < 6; i++) sl(i * 1.5, () => { addFx('anger', f.x + rand(-50, 50), f.y - rand(150, 220), { life: 24, big: true }); spark(f.x + rand(-20, 20), f.y - 180, 'rgba(255,255,255,0.8)', 2, 2, { vy: -3, g: -0.05 }); });
+        for (let i = 0; i < 6; i++) sl(6 + i * 2, () => { f.atk = makeAttack(f, i % 2 ? 'weak' : 'strong'); f.atk.hit = true; f.atk.label = null; addFx('impact', ox + rand(-25, 25), oy - rand(60, 140), { life: 8, size: 64, color: '#ffb0a0' }); sfx('hit', 8, w.size); hit(0.06, 0.5); });
+        sl(20, () => { addFx('volcano', ox, GROUND, { life: 60 }); shake = Math.max(shake, 16); sfx('boom'); });
+        sl(26, () => { finish(1, 4); if (o.fx !== 'fly') { T.vy = -18; T.onGround = false; o.y -= 1; } T.burn = Math.max(o.burn || 0, 200); T.burnBy = w.ch; });
+        break;
+      case 'bigcannon': {                                    // 砲：巨大な大砲が1門せり上がり、特大の砲弾をドーン
+        const d = ox >= f.x ? 1 : -1, cx = f.x - d * 50;
+        addFx('cannon', cx, GROUND, { life: 70, d, back: true }); sfx('clang');
+        sl(14, () => { addFx('cannonball', cx + d * 230, GROUND - 175, { life: 9, tx: ox, ty: oy - 90 }); addFx('muzzle', cx + d * 220, GROUND - 172, { life: 6, d }); shake = Math.max(shake, 22); sfx('boom'); popText(cx, GROUND - 330, L('ドーン!!', 'BOOM!!'), '#333', 50); });
+        sl(20, () => { addFx('explosion', ox, oy - 90, { life: 50, r: 240 }); sfx('boom'); finish(1.2, 24); });
+        break;
+      }
+      case 'bigmouth': {                                     // 叫：巨大な口が現れて叫び、音の波紋で画面が揺れて相手が吹っ飛ぶ
+        const d = ox >= f.x ? 1 : -1;
+        addFx('mouth', f.x + d * 70, f.y - 190, { life: 50, d });
+        sl(7, () => { popText(f.x, f.y - 320, L('ワーーーッ!!', 'AAAAAAH!!'), '#d33', 56); sfx('vs'); });
+        for (let i = 0; i < 6; i++) sl(7 + i * 2, () => { addFx('soundwave', f.x + d * 150, f.y - 180, { life: 22, d }); shake = Math.max(shake, 10 + i * 2); hit(0.06, 2); });
+        sl(22, () => finish(1, 34));
+        break;
+      }
+      case 'swordrain':                                      // 剣：空から無数の剣が降って地面に突き刺さり、最後に巨大な剣
+        for (let i = 0; i < 26; i++) sl(i * 0.8, () => addFx('fallobj', ox + rand(-170, 170), GROUND + 14, { life: 44, obj: 'sword', rot: rand(-0.2, 0.2) }));
+        for (let i = 0; i < 8; i++) sl(8 + i * 2, () => { if (i % 2 === 0) sfx('clang'); hit(0.05, 0.5); });
+        sl(25, () => addFx('bigobj', ox, GROUND + 30, { life: 50, obj: 'sword', s: 4.5, rot: 0.04 }));
+        sl(32, () => { finish(1.1, 4); if (o.fx !== 'fly') { T.down = 50; T.downMax = 50; } cracks.push({ x: ox, life: 90, seed: Math.random() * 1000 }); });
+        break;
+      case 'screencut':                                      // 薙：画面いっぱいの横一閃。背景ごと横に切れてずれる
+        sl(4, () => { addFx('slicecut', W / 2, oy - 90, { life: 44 }); sfx('slash'); });
+        sl(8, () => { hit(0.3, 0); hitstop = Math.max(hitstop, 8); });
+        sl(20, () => finish(0.9, 20));
+        break;
+      case 'iaido': {                                        // 侍：抜刀の構え → 画面が止まり、すれ違いざまに一閃。遅れて「斬」と赤い線
+        const d = ox >= f.x ? 1 : -1;
+        popText(f.x, f.y - 220, '……', '#555', 34);
+        addFx('tint', W / 2, H / 2, { life: 36, color: '10,10,20', a: 0.45 });
+        sl(12, () => {
+          const from = f.x; f.x = Math.max(40, Math.min(W - 40, ox + d * 150)); f.facing = -d;
+          for (let j = 0; j < 20; j++) particles.push({ x: from + (f.x - from) * Math.random(), y: f.y - rand(30, 150), vx: 0, vy: 0, g: 0, life: 12, color: 'rgba(255,255,255,0.9)', r: 2, streak: true });
+          addFx('lightdash', from, oy - 90, { life: 10, x2: f.x }); sfx('slash');
+        });
+        sl(22, () => { addFx('redline', ox, oy - 90, { life: 40 }); popText(ox, oy - 270, L('斬', 'SLASH!!'), '#c00', 110); hitstop = Math.max(hitstop, 10); finish(1.3, 6); });
+        break;
+      }
+      case 'magnet': {                                       // 磁：巨大なU字磁石が現れ、相手と周りの鉄くずを吸い寄せてぶつける
+        const d = ox >= f.x ? 1 : -1;
+        addFx('magnetbig', f.x + d * 60, f.y - 210, { life: 70, d }); sfx('zap');
+        for (let i = 0; i < 18; i++) sl(4 + i * 0.9, () => { const a = rand(0, TAU); addFx('scrap', ox + Math.cos(a) * 320, oy - 90 + Math.sin(a) * 220, { life: 12, tx: ox + rand(-20, 20), ty: oy - rand(60, 130), k: i % 3 }); });
+        for (let i = 0; i < 6; i++) sl(10 + i * 2, () => { sfx('clang'); hit(0.05, 0); });
+        sl(14, () => { if (landed && o.fx !== 'fly') T.vx = -d * 14; });
+        sl(26, () => finish(1.3, 10));
+        break;
+      }
+      case 'longthrust': {                                   // 矛：突くたびに長くなり、最後は画面の端まで突き通す
+        const d = ox >= f.x ? 1 : -1, dist = Math.abs(ox - f.x);
+        [0.5, 0.8, 1].forEach((k, i) => sl(3 + i * 7, () => {
+          f.atk = makeAttack(f, 'thrust'); f.atk.hit = true; f.atk.label = null;
+          addFx('hokothrust', f.x + d * 40, f.y - 100, { life: 12, d, len: i < 2 ? dist * k : W * 1.3, w, big2: i === 2 }); sfx('slash');
+          if (i < 2) hit(0.2, 4);
+        }));
+        sl(18, () => { finish(0.9, 26); addFx('ring', ox, oy - 90, { color: '#ffffff', life: 18, big: true }); });
+        break;
+      }
+      case 'noodleslap': {                                   // 𰻞：太くて平たい麺が何本も伸びて、相手をビタンビタンはたく
+        const d = ox >= f.x ? 1 : -1;
+        for (let i = 0; i < 6; i++) sl(i * 3, () => addFx('ribbon', f.x + d * 30, f.y - 110, { life: 14, d, tx: ox, ty: oy - rand(40, 150), up: i % 2 }));
+        for (let i = 0; i < 6; i++) sl(i * 3 + 4, () => { sfx('slap'); popText(ox + rand(-30, 30), oy - rand(150, 200), L('ビタン!', 'SLAP!'), '#c9a030', 26); hit(0.07, 1); });
+        sl(22, () => finish(0.55, 16));
+        break;
+      }
+      case 'sheep':                                          // 眠：ひつじが柵を次々に跳び越え、数えるうちに相手が眠る
+        addFx('fence', ox, GROUND, { life: 96 });
+        for (let i = 0; i < 5; i++) {
+          sl(2 + i * 4, () => addFx('sheepjump', ox, GROUND, { life: 18, d: ox >= f.x ? 1 : -1 }));
+          sl(6 + i * 4, () => { popText(ox, oy - 230 - i * 6, L(`ひつじが${i + 1}匹…`, `${i + 1} sheep…`), '#557', 24); hit(0.05, 0); });
+        }
+        sl(28, () => { finish(0.8, 0); T.sleep = Math.max(o.sleep || 0, 200); T.hitstun = 0; popText(ox, oy - 270, 'Zzz…', '#557', 44); });
+        break;
+      case 'idolstage':                                      // 推：ペンライトを持った観客が並んで応援し、うちわとハートが飛んでくる
+        addFx('crowd', ox, GROUND, { life: 96 });
+        popText(ox, oy - 250, L('キャーーッ!!', 'KYAAAH!!'), '#ff3d8a', 40); sfx('proc');
+        for (let i = 0; i < 12; i++) sl(4 + i * 1.6, () => addFx('uchiwa', ox + rand(-320, 320), GROUND + 30, { life: 14, tx: ox + rand(-30, 30), ty: oy - rand(60, 150), heart: i % 2 }));
+        for (let i = 0; i < 8; i++) sl(10 + i * 2, () => hit(0.05, 0.3));
+        sl(30, () => { finish(0.9, 6); T.swoon = Math.max(o.swoon || 0, 60); });
+        break;
+      case 'loveletter':                                     // 恋：巨大なラブレターが届き、開くとハートが爆発
+        addFx('letter', ox, oy - 130, { life: 44, x0: f.x, y0: f.y - 150 });
+        sl(15, () => {
+          sfx('proc'); addFx('explosion', ox, oy - 120, { life: 30, r: 160 });
+          for (let i = 0; i < 40; i++) particles.push({ x: ox, y: oy - 130, vx: rand(-10, 10), vy: rand(-12, 4), g: 0.25, life: 60, color: ['#ff3d7f', '#ff8fb8', '#ff5b9a'][i % 3], r: 4, ch: '♥' });
+          popText(ox, oy - 270, L('好きです!!', 'I LOVE YOU!!'), '#ff3d8a', 46);
+        });
+        sl(17, () => { finish(1.1, 10); T.charm = Math.max(o.charm || 0, 120); });
+        break;
+      case 'beartrap':                                       // 罠：トラバサミが次々にバチンと閉じる
+        for (let i = 0; i < 5; i++) sl(i * 3, () => addFx('trapjaw', ox + (i - 2) * 36, GROUND, { life: 50 - i * 3 }));
+        for (let i = 0; i < 5; i++) sl(i * 3 + 2.5, () => { sfx('clang'); popText(ox + (i - 2) * 36, GROUND - 70, L('バチン!', 'SNAP!'), '#555', 24); shake = Math.max(shake, 8); hit(0.08, 0); });
+        sl(18, () => { finish(0.9, 0); T.stunned = Math.max(o.stunned || 0, 70); T.vx = 0; });
+        break;
+      case 'sinkswamp':                                      // 沼：底なし沼に沈み、泡だけ浮かぶ。最後に吐き出される
+        addFx('mudpool', ox, GROUND, { life: 96, back: true }); addFx('mudpool', ox, GROUND, { life: 96, bub: true });
+        if (landed && o.fx !== 'fly') { T.vx = 0; T.bound = Math.max(o.bound || 0, 80); T.boundKind = 'sand'; for (let i = 0; i < 10; i++) sl(i * 1.2, () => { o.sinkDepth = Math.min(175, (i + 1) * 18); }); }
+        popText(ox, oy - 220, L('ズブズブ…', 'GLUG GLUG…'), '#6b5a2e', 30);
+        for (let i = 0; i < 5; i++) sl(12 + i * 2.5, () => hit(0.06, 0));
+        sl(29, () => {
+          if (landed) { o.sinkDepth = 0; if (o.fx !== 'fly') { T.vy = -20; T.onGround = false; o.y -= 1; } }
+          popText(ox, oy - 260, L('ペッ!', 'PTOOEY!'), '#6b5a2e', 44);
+          for (let i = 0; i < 30; i++) particles.push({ x: ox + rand(-40, 40), y: GROUND - 5, vx: rand(-5, 5), vy: rand(-14, -5), g: 0.4, life: 40, color: '#5e4a22', r: 5 });
+          finish(1, 6);
+        });
+        break;
+      case 'derby': {                                        // 馬：競馬のように馬群が駆け抜け、実況の文字が出る
+        const d = ox >= f.x ? 1 : -1;
+        addFx('horses', ox, GROUND, { life: 64, d }); sfx('boom');
+        L(['さあ最後の直線!', '外から一気に来た!', '差した差した!!', 'ゴーーール!!'], ['FINAL STRETCH!', 'HERE COMES THE OUTSIDE!', "NECK AND NECK!!", 'AND IT WINS!!'])
+          .forEach((t, i) => sl(i * 6, () => popText(ox, oy - 230 - i * 22, t, '#1a4a9a', 30 + i * 4)));
+        for (let i = 0; i < 6; i++) sl(9 + i * 2, () => { shake = Math.max(shake, 8); hit(0.06, 3); });
+        sl(24, () => { finish(0.9, 18); if (o.fx !== 'fly') { T.down = 50; T.downMax = 50; } });
+        break;
+      }
+      case 'elephant': {                                     // 象：巨大な象が鼻から水を噴き、最後に巨体で踏みつぶす
+        const d = ox >= f.x ? 1 : -1, ex = Math.max(120, Math.min(W - 120, f.x - d * 60));
+        addFx('elephant', ex, GROUND, { life: 32, d, back: true });
+        sl(6, () => { addFx('spray', ex + d * 190, GROUND - 120, { life: 18, tx: ox, ty: oy - 100 }); sfx('water'); popText(ex, GROUND - 330, L('パオーン!!', 'PAOOOON!!'), '#6b4a2b', 40); });
+        for (let i = 0; i < 5; i++) sl(8 + i * 2, () => { hit(0.06, 3); T.slip = Math.max(o.slip || 0, 60); });
+        sl(19.5, () => addFx('elephantjump', ex, GROUND, { life: 34, d, tx: ox }));
+        sl(29, () => { finish(1.1, 4); if (o.fx !== 'fly') { T.squash = 60; T.down = 60; T.downMax = 60; } shake = Math.max(shake, 26); sfx('boom'); cracks.push({ x: ox, life: 120, seed: Math.random() * 1000 }); });
+        break;
+      }
+      case 'snowroll':                                       // 雪：巨大な雪だるまが転がってきて、ぶつかる
+        addFx('rollman', ox, GROUND, { life: 40, d: ox >= f.x ? 1 : -1 }); sfx('swing', 120);
+        sl(10, () => { shake = Math.max(shake, 18); sfx('boom'); for (let i = 0; i < 30; i++) spark(ox, oy - 80, '#ffffff', 1, 9); finish(1.1, 26); T.frozen = Math.max(o.frozen || 0, 40); });
+        break;
+      case 'armorcharge':                                    // 鎧：鎧武者が何体も現れ、槍を構えて一斉に突撃
+        addFx('warriors', ox, GROUND, { life: 54, d: ox >= f.x ? 1 : -1 }); popText(f.x, f.y - 230, L('かかれーっ!!', 'CHAAARGE!!'), '#8a1c14', 38); sfx('vs');
+        for (let i = 0; i < 4; i++) sl(10 + i * 2.5, () => { sfx('slash'); shake = Math.max(shake, 8); hit(0.08, 3); });
+        sl(22, () => finish(0.9, 20));
+        break;
+      case 'bugcloud':                                       // 虫：虫の大群が黒い雲のように群がって、たかる
+        addFx('bees', ox, oy - 90, { life: 72, n: 70, ref: landed ? o : null, bug: true }); sfx('zap');
+        popText(ox, oy - 250, L('ワサワサワサ…', 'SKITTER SKITTER…'), '#333', 32);
+        for (let i = 0; i < 10; i++) sl(8 + i * 2, () => hit(0.05, 0));
+        sl(30, () => { finish(0.8, 6); T.poison = Math.max(o.poison || 0, 400); T.bugs = 400; });
+        break;
+      case 'bigtornado':                                     // 嵐：巨大な竜巻が画面を横切り、相手を巻き上げる
+        addFx('twister', f.x, GROUND, { life: 70, d: ox >= f.x ? 1 : -1, tx: ox }); sfx('vs');
+        sl(10, () => { if (landed && o.fx !== 'fly' && o.hp > 0) { T.twister = 1; T.twistCd = 150; T.vx = 0; T.vy = -28; T.onGround = false; o.y -= 1; T.hitstun = 90; } });
+        for (let i = 0; i < 5; i++) sl(10 + i * 2.5, () => hit(0.06, 0));
+        sl(26, () => finish(0.9, 0));
+        break;
+      case 'mysterybox': {                                   // 謎：「？」の箱が開いて、毎回違うもの（タライ・ハリセン・鳩）が出る
+        const item = ['tarai', 'harisen', 'hato'][Math.floor(Math.random() * 3)];
+        addFx('qbox', ox, oy - 270, { life: 60, item, hx: ox, hy: oy - 160 });
+        sl(6, () => sfx('proc'));
+        if (item === 'tarai') sl(10, () => { sfx('temple'); popText(ox, oy - 230, L('ゴーン…', 'BONNNG…'), '#888', 40); finish(1, 0); T.stunned = Math.max(o.stunned || 0, 60); });
+        if (item === 'harisen') sl(10, () => { sfx('slap'); popText(ox, oy - 230, L('スパーン!!', 'THWACK!!'), '#c0392b', 44); finish(1, 18); });
+        if (item === 'hato') { for (let i = 0; i < 6; i++) sl(8 + i, () => hit(0.06, 0.5)); sl(16, () => { popText(ox, oy - 230, L('ポッポー!!', 'COO COO!!'), '#557', 40); finish(0.8, 6); T.confused = Math.max(o.confused || 0, 90); }); }
+        break;
+      }
+      case 'surfer': {                                       // 波：大波に乗った字（サーファー）が突っ込んでくる
+        const d = ox >= f.x ? 1 : -1;
+        addFx('bigwave', f.x, GROUND, { life: 50, dir: d }); addFx('surfer', f.x, GROUND, { life: 50, dir: d, w }); sfx('water');
+        sl(12, () => { finish(1.4, 26); T.slip = Math.max(o.slip || 0, 200); popText(ox, oy - 260, L('ザッパーン!!', 'SPLAAASH!!'), '#2a6fb0', 44); });
+        break;
+      }
+      case 'hakiquake':                                      // 覇：覇気の衝撃波で地面が割れ、空まで割れる
+        popText(f.x, f.y - 240, L('ハァァッ!!', 'HAAAAH!!'), '#7a2a9a', 44); sfx('vs');
+        for (let i = 0; i < 4; i++) sl(i * 3, () => { addFx('ring', f.x, f.y - 90, { color: '#b070ff', life: 26, big: true }); shake = Math.max(shake, 12 + i * 3); });
+        for (let i = 0; i < 6; i++) sl(4 + i * 2, () => { cracks.push({ x: f.x + (ox - f.x) * (i / 5) + rand(-30, 30), life: 120, seed: Math.random() * 1000 }); hit(0.05, 1); });
+        sl(16, () => { addFx('skycrack', ox, 0, { life: 70 }); sfx('clang'); });
+        sl(22, () => { finish(0.8, 10); if (o.fx !== 'fly') { T.down = 30; T.downMax = 30; } popText(ox, oy - 240, L('ひれ伏せ!!', 'KNEEL!!'), '#7a2a9a', 40); });
+        break;
       // ---- 2026-11 に作り直した必殺技（その2：同じ演出だった字）----
       case 'hotpot':                                         // 辛：激辛スープの大鍋に落とされ、湯気と炎
         addFx('hotpot', ox, GROUND, { life: 96, back: true }); addFx('hotpot', ox, GROUND, { life: 96 });
@@ -1967,6 +2141,7 @@ const effectName = (e) => (EN ? EFFECT_NAME_EN[e] : EFFECT_NAME[e]);
         break;
       case 'moonwolves':                                     // 狼：満月が昇って遠吠えし、狼の群れが飛びかかる
         addFx('moonnight', ox, 0, { life: 90, back: true });
+        addFx('howlwolf', f.x - (ox >= f.x ? 1 : -1) * 110, GROUND, { life: 40, d: ox >= f.x ? 1 : -1 });
         sl(5, () => { popText(f.x, f.y - 230, L('アオーーン!!', 'AWOOOOO!!'), '#445', 40); sfx('vs'); });
         for (let i = 0; i < 5; i++) {
           sl(9 + i * 3, () => addFx('wolfleap', ox, oy, { life: 14, d: i % 2 ? 1 : -1 }));
@@ -3757,6 +3932,248 @@ const effectName = (e) => (EN ? EFFECT_NAME_EN[e] : EFFECT_NAME[e]);
           if (e.t >= 12 && !e.landed) { e.landed = true; shake = Math.max(shake, 24); spark(bx, GROUND - 4, '#c9a36b', 34, 10); }
           break;
         }
+        // ---- 2026-11 に作り直した必殺技の絵（その3）----
+        case 'volcano': {                                 // 怒：相手の足元から火山がせり上がって噴火
+          const k = Math.min(1, e.t / 8), fade = Math.min(1, (e.life - e.t) / 12), h = 150 * k;
+          ctx.globalAlpha = fade;
+          for (let i = 0; i < 9; i++) fire2(e.x + (i - 4) * 18, GROUND - h + 10, (200 + (i % 3) * 60) * Math.min(1, e.t / 12), 18, e.t + i * 5);
+          const g = ctx.createLinearGradient(0, GROUND - h, 0, GROUND); g.addColorStop(0, '#6a3a20'); g.addColorStop(1, '#3a2010');
+          ctx.fillStyle = g; ctx.beginPath(); ctx.moveTo(e.x - 210, GROUND + 4); ctx.lineTo(e.x - 50, GROUND - h); ctx.lineTo(e.x + 50, GROUND - h); ctx.lineTo(e.x + 210, GROUND + 4); ctx.closePath(); ctx.fill();
+          ctx.strokeStyle = '#ff6a1a'; ctx.lineWidth = 6; for (const dx of [-30, 14, 34]) { ctx.beginPath(); ctx.moveTo(e.x + dx, GROUND - h + 4); ctx.lineTo(e.x + dx * 2.2, GROUND - h * 0.4); ctx.stroke(); }   // 溶岩
+          if (e.t % 2 === 0) particles.push({ x: e.x + rand(-40, 40), y: GROUND - h, vx: rand(-6, 6), vy: rand(-16, -8), g: 0.45, life: 40, color: ['#ff6a1a', '#5a3a2a'][e.t % 4 ? 0 : 1], r: 6 });
+          break;
+        }
+        case 'cannon': {                                  // 砲：巨大な大砲がせり上がる
+          const k = Math.min(1, e.t / 10), fade = Math.min(1, (e.life - e.t) / 12), kick = e.t >= 23 && e.t < 30 ? (30 - e.t) * 3 : 0;
+          ctx.globalAlpha = fade; ctx.translate(e.x - e.d * kick, e.y + (1 - k) * 220); ctx.scale(e.d, 1);
+          ctx.save(); ctx.translate(40, -150); ctx.rotate(-0.12);
+          const g = ctx.createLinearGradient(0, -38, 0, 38); g.addColorStop(0, '#5a5a62'); g.addColorStop(0.4, '#2a2a30'); g.addColorStop(1, '#141418');
+          ctx.fillStyle = g; ctx.beginPath(); ctx.moveTo(-90, -46); ctx.lineTo(180, -32); ctx.lineTo(180, 32); ctx.lineTo(-90, 46); ctx.closePath(); ctx.fill();
+          ctx.fillStyle = '#1a1a1e'; ctx.fillRect(170, -40, 24, 80); ctx.fillStyle = '#c9a020'; for (const x of [-40, 40, 120]) ctx.fillRect(x, -44, 10, 88);
+          ctx.restore();
+          ctx.fillStyle = '#6b4a2b'; ctx.strokeStyle = '#3a2410'; ctx.lineWidth = 6;
+          for (const x of [-30, 90]) { ctx.beginPath(); ctx.arc(x, -55, 55, 0, TAU); ctx.fill(); ctx.stroke(); for (let i = 0; i < 8; i++) { const a = i * TAU / 8; ctx.beginPath(); ctx.moveTo(x, -55); ctx.lineTo(x + Math.cos(a) * 52, -55 + Math.sin(a) * 52); ctx.stroke(); } }
+          break;
+        }
+        case 'cannonball': {                              // 砲：特大の砲弾
+          const k = Math.min(1, e.t / (e.life - 1)), x = e.x + (e.tx - e.x) * k, y = e.y + (e.ty - e.y) * k;
+          ctx.fillStyle = 'rgba(200,200,200,0.5)'; for (let i = 1; i < 5; i++) { ctx.beginPath(); ctx.arc(x - (e.tx - e.x) * 0.06 * i, y - (e.ty - e.y) * 0.06 * i, 30 - i * 4, 0, TAU); ctx.fill(); }
+          const g = ctx.createRadialGradient(x - 14, y - 14, 4, x, y, 44); g.addColorStop(0, '#6a6a72'); g.addColorStop(1, '#101014');
+          ctx.fillStyle = g; ctx.beginPath(); ctx.arc(x, y, 44, 0, TAU); ctx.fill();
+          break;
+        }
+        case 'mouth': {                                   // 叫：巨大な口
+          const open = Math.min(1, e.t / 6) * (0.8 + Math.sin(e.t * 0.9) * 0.2), fade = Math.min(1, (e.life - e.t) / 10);
+          ctx.globalAlpha = fade; ctx.translate(e.x, e.y); ctx.scale(e.d * 1.5, 1.5);
+          const h = 10 + open * 60;
+          ctx.fillStyle = '#3a0508'; ctx.beginPath(); ctx.ellipse(0, 0, 70, h, 0, 0, TAU); ctx.fill();
+          ctx.fillStyle = '#ff7a8a'; ctx.beginPath(); ctx.ellipse(0, h * 0.55, 40, h * 0.35, 0, 0, TAU); ctx.fill();   // 舌
+          ctx.fillStyle = '#ffffff'; ctx.fillRect(-46, -h + 4, 92, 12); ctx.fillRect(-40, h - 14, 80, 10);           // 歯
+          ctx.strokeStyle = '#d01a2a'; ctx.lineWidth = 16; ctx.beginPath(); ctx.ellipse(0, 0, 74, h + 4, 0, 0, TAU); ctx.stroke();   // くちびる
+          break;
+        }
+        case 'soundwave': {                               // 叫：音の波紋が相手へ広がる
+          const r = 40 + e.t * 28; ctx.globalAlpha = 1 - p;
+          ctx.strokeStyle = '#ffffff'; ctx.lineWidth = 10; ctx.shadowColor = '#ff8080'; ctx.shadowBlur = 12;
+          ctx.beginPath(); ctx.arc(e.x, e.y, r, e.d > 0 ? -0.7 : Math.PI - 0.7, e.d > 0 ? 0.7 : Math.PI + 0.7); ctx.stroke();
+          break;
+        }
+        case 'slicecut': {                                // 薙：画面いっぱいの横一閃。切れ目から上がずれる
+          const Tm = ctx.getTransform(), sy = Tm.d * e.y + Tm.f, cw2 = canvas.width;
+          const grow = Math.min(1, e.t / 3), off = e.t < 4 ? 0 : Math.min(1, (e.t - 4) / 5) * 70 * Math.max(0, 1 - Math.max(0, e.t - 28) / 14);
+          ctx.save(); ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.globalAlpha = 1;
+          if (off > 0.5 && sy > 2) ctx.drawImage(canvas, 0, 0, cw2, sy, off, -off * 0.1, cw2, sy);
+          ctx.fillStyle = `rgba(255,255,255,${0.95 * Math.max(0.3, 1 - p)})`; ctx.shadowColor = '#bfe6ff'; ctx.shadowBlur = 20;
+          ctx.fillRect(0, sy - 4, cw2 * grow, 8);
+          ctx.restore();
+          break;
+        }
+        case 'redline': {                                 // 侍：遅れて走る赤い斬り筋
+          const k = Math.min(1, e.t / 4); ctx.globalAlpha = Math.min(1, (e.life - e.t) / 14);
+          ctx.translate(e.x, e.y); ctx.rotate(-0.5);
+          ctx.fillStyle = '#c0101a'; ctx.fillRect(-160, -5, 320 * k, 10);
+          ctx.fillStyle = '#ffffff'; ctx.fillRect(-160, -1.5, 320 * k, 3);
+          break;
+        }
+        case 'magnetbig': {                               // 磁：巨大なU字磁石（開いた側が相手を向く）
+          const k = Math.min(1, e.t / 8), fade = Math.min(1, (e.life - e.t) / 12);
+          ctx.globalAlpha = fade; ctx.translate(e.x, e.y); ctx.scale(e.d * 1.6 * k, 1.6 * k);
+          ctx.lineCap = 'butt'; ctx.strokeStyle = '#d02a2a'; ctx.lineWidth = 34;
+          ctx.beginPath(); ctx.arc(0, 0, 60, Math.PI / 2, Math.PI * 1.5); ctx.stroke();
+          ctx.beginPath(); ctx.moveTo(0, -60); ctx.lineTo(50, -60); ctx.moveTo(0, 60); ctx.lineTo(50, 60); ctx.stroke();
+          ctx.strokeStyle = '#d8dde6'; ctx.beginPath(); ctx.moveTo(50, -60); ctx.lineTo(84, -60); ctx.moveTo(50, 60); ctx.lineTo(84, 60); ctx.stroke();
+          ctx.strokeStyle = 'rgba(160,220,255,0.9)'; ctx.lineWidth = 3;                                         // 磁力の線
+          for (let i = 0; i < 4; i++) { ctx.beginPath(); ctx.moveTo(100, -60); ctx.quadraticCurveTo(150 + i * 30 + Math.sin(e.t + i) * 10, 0, 100, 60); ctx.stroke(); }
+          break;
+        }
+        case 'scrap': {                                   // 磁：吸い寄せられる鉄くず（歯車・ボルト・ナット）
+          const k = Math.min(1, e.t / 8), x = e.x + (e.tx - e.x) * k * k, y = e.y + (e.ty - e.y) * k * k;
+          ctx.globalAlpha = k < 1 ? 1 : Math.max(0, 1 - (e.t - 8) / 4);
+          ctx.translate(x, y); ctx.rotate(e.t * 0.5); ctx.fillStyle = '#9aa0aa'; ctx.strokeStyle = '#4a4e56'; ctx.lineWidth = 2;
+          if (e.k === 0) { ctx.beginPath(); for (let i = 0; i < 16; i++) { const a = i * TAU / 16, r = i % 2 ? 14 : 19; ctx.lineTo(Math.cos(a) * r, Math.sin(a) * r); } ctx.closePath(); ctx.fill(); ctx.stroke(); ctx.fillStyle = '#4a4e56'; ctx.beginPath(); ctx.arc(0, 0, 5, 0, TAU); ctx.fill(); }
+          else if (e.k === 1) { ctx.fillRect(-4, -18, 8, 30); ctx.strokeRect(-4, -18, 8, 30); ctx.fillRect(-10, -24, 20, 8); ctx.strokeRect(-10, -24, 20, 8); }
+          else { ctx.beginPath(); for (let i = 0; i < 6; i++) { const a = i * TAU / 6; ctx.lineTo(Math.cos(a) * 13, Math.sin(a) * 13); } ctx.closePath(); ctx.fill(); ctx.stroke(); ctx.fillStyle = '#4a4e56'; ctx.beginPath(); ctx.arc(0, 0, 5, 0, TAU); ctx.fill(); }
+          break;
+        }
+        case 'hokothrust': {                              // 矛：長い柄が伸びて、先の「矛」の字が突き刺さる
+          const ext = e.t < 3 ? e.t / 3 : Math.max(0, 1 - (e.t - 6) / 6), len = e.len * ext;
+          ctx.strokeStyle = '#7a4a1e'; ctx.lineWidth = e.big2 ? 14 : 10; ctx.beginPath(); ctx.moveTo(e.x, e.y); ctx.lineTo(e.x + e.d * len, e.y); ctx.stroke();
+          if (e.big2 && ext > 0.9) { ctx.fillStyle = 'rgba(255,255,255,0.8)'; ctx.fillRect(Math.min(e.x, e.x + e.d * len), e.y - 2, len, 4); }
+          Texture.draw(ctx, e.w.ch, e.x + e.d * (len + 40), e.y, e.big2 ? 130 : 90, weaponStyle(e.w), e.d * Math.PI / 2);
+          break;
+        }
+        case 'ribbon': {                                  // 𰻞：平たい太麺が伸びて、相手をはたく
+          const ext = e.t < 5 ? e.t / 5 : Math.max(0, 1 - (e.t - 8) / 6), mx = (e.x + e.tx) / 2, my = Math.min(e.y, e.ty) - (e.up ? 140 : -60);
+          const pt = (q) => [(1 - q) * (1 - q) * e.x + 2 * (1 - q) * q * mx + q * q * e.tx, (1 - q) * (1 - q) * e.y + 2 * (1 - q) * q * my + q * q * e.ty];
+          ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+          for (const [col, lw] of [['#b8892a', 26], ['#f2d36a', 20], ['#fff0b0', 4]]) { ctx.strokeStyle = col; ctx.lineWidth = lw; ctx.beginPath(); for (let j = 0; j <= 16; j++) { const [x, y] = pt(j / 16 * ext); j ? ctx.lineTo(x, y + Math.sin(j * 0.8 + e.t) * 3) : ctx.moveTo(x, y); } ctx.stroke(); }
+          break;
+        }
+        case 'fence': {                                   // 眠：ひつじが跳び越える木の柵
+          ctx.globalAlpha = Math.min(1, e.t / 6) * Math.min(1, (e.life - e.t) / 12);
+          ctx.fillStyle = '#c9934a'; ctx.strokeStyle = '#6b4a2b'; ctx.lineWidth = 3;
+          for (const dx of [-50, 0, 50]) { ctx.fillRect(e.x + dx - 6, GROUND - 70, 12, 72); ctx.strokeRect(e.x + dx - 6, GROUND - 70, 12, 72); }
+          for (const y of [-56, -28]) { ctx.fillRect(e.x - 66, GROUND + y, 132, 10); ctx.strokeRect(e.x - 66, GROUND + y, 132, 10); }
+          break;
+        }
+        case 'sheepjump': {                               // 眠：ひつじが柵を跳び越える
+          const k = e.t / e.life, x = e.x - e.d * 220 + e.d * 440 * k, y = GROUND - Math.sin(k * Math.PI) * 230;
+          ctx.translate(x, y); ctx.scale(e.d, 1); ctx.rotate(Math.sin(k * Math.PI * 2) * -0.25); drawSheep(1.4, e.t);
+          break;
+        }
+        case 'crowd': {                                   // 推：ペンライトを振る観客（手前のシルエット）
+          const k = Math.min(1, e.t / 8) * Math.min(1, (e.life - e.t) / 12);
+          ctx.globalAlpha = k;
+          for (let i = -8; i <= 8; i++) {
+            const x = e.x + i * 52, bob = Math.abs(Math.sin(e.t * 0.35 + i)) * 10, y = GROUND + 90 - bob, col = ['#ff5b9a', '#5bc0ff', '#ffd84d', '#9b6bff', '#5bff9a'][((i % 5) + 5) % 5];
+            ctx.save(); ctx.translate(x, y); ctx.rotate(Math.sin(e.t * 0.4 + i) * 0.5);
+            ctx.strokeStyle = col; ctx.shadowColor = col; ctx.shadowBlur = 14; ctx.lineWidth = 7; ctx.lineCap = 'round'; ctx.beginPath(); ctx.moveTo(14, -50); ctx.lineTo(24, -96); ctx.stroke();
+            ctx.restore();
+            ctx.fillStyle = '#20243a'; ctx.beginPath(); ctx.arc(x, y - 40, 20, 0, TAU); ctx.fill(); ctx.beginPath(); ctx.ellipse(x, y + 10, 32, 34, 0, Math.PI, TAU); ctx.fill(); ctx.fillRect(x - 32, y + 10, 64, 40);
+          }
+          break;
+        }
+        case 'uchiwa': {                                  // 推：飛んでくるうちわとハート
+          const k = Math.min(1, e.t / 8), x = e.x + (e.tx - e.x) * k, y = e.y + (e.ty - e.y) * k - Math.sin(k * Math.PI) * 120;
+          ctx.globalAlpha = k < 1 ? 1 : Math.max(0, 1 - (e.t - 8) / 5); ctx.translate(x, y); ctx.rotate(e.t * 0.4);
+          if (e.heart) { ctx.fillStyle = '#ff3d7f'; ctx.font = 'bold 44px sans-serif'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText('♥', 0, 0); }
+          else { ctx.fillStyle = '#ffffff'; ctx.fillRect(-3, 10, 6, 26); ctx.fillStyle = '#ff7eb6'; ctx.strokeStyle = '#c0306a'; ctx.lineWidth = 2; ctx.beginPath(); ctx.arc(0, -6, 22, 0, TAU); ctx.fill(); ctx.stroke(); ctx.fillStyle = '#fff'; ctx.font = 'bold 22px sans-serif'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText('♡', 0, -6); }
+          break;
+        }
+        case 'letter': {                                  // 恋：飛んできた巨大なラブレターが開く
+          const k = Math.min(1, e.t / 8), x = e.x0 + (e.x - e.x0) * k, y = e.y0 + (e.y - e.y0) * k - Math.sin(k * Math.PI) * 80;
+          const open = Math.max(0, Math.min(1, (e.t - 9) / 5));
+          ctx.globalAlpha = Math.min(1, (e.life - e.t) / 10); ctx.translate(x, y); ctx.rotate((1 - k) * -0.6); ctx.scale(2.2, 2.2);
+          ctx.fillStyle = '#fff6f8'; ctx.strokeStyle = '#d0507a'; ctx.lineWidth = 2;
+          ctx.fillRect(-40, -26, 80, 52); ctx.strokeRect(-40, -26, 80, 52);
+          ctx.beginPath(); ctx.moveTo(-40, 26); ctx.lineTo(0, 0); ctx.lineTo(40, 26); ctx.stroke();
+          ctx.fillStyle = '#ffe0ea'; ctx.beginPath(); ctx.moveTo(-40, -26); ctx.lineTo(0, -26 + 30 * (1 - open * 2)); ctx.lineTo(40, -26); ctx.closePath(); ctx.fill(); ctx.stroke();   // ふた
+          if (open < 0.5) { ctx.fillStyle = '#e8336d'; ctx.font = 'bold 20px sans-serif'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText('♥', 0, 2); }
+          break;
+        }
+        case 'trapjaw': {                                 // 罠：トラバサミがバチンと閉じる
+          const close = Math.min(1, Math.max(0, (e.t - 2) / 2)), a = (1 - close) * 1.1;
+          ctx.globalAlpha = Math.min(1, (e.life - e.t) / 10); ctx.translate(e.x, GROUND - 4);
+          ctx.fillStyle = '#5a5a62'; ctx.fillRect(-26, -4, 52, 8);
+          for (const side of [-1, 1]) {
+            ctx.save(); ctx.rotate(side * a); ctx.strokeStyle = '#3a3a40'; ctx.lineWidth = 6; ctx.beginPath(); ctx.arc(0, 0, 26, side > 0 ? -Math.PI / 2 : Math.PI, side > 0 ? 0 : -Math.PI / 2); ctx.stroke();
+            ctx.fillStyle = '#c8ccd4'; for (let i = 0; i < 4; i++) { const q = -Math.PI / 2 + side * (i + 0.5) * Math.PI / 8; const x = Math.cos(q) * 24 * side, y = Math.sin(q) * 24; ctx.beginPath(); ctx.moveTo(x - 3, y); ctx.lineTo(x - side * 6, y + 8); ctx.lineTo(x + 3, y); ctx.fill(); }
+            ctx.restore();
+          }
+          break;
+        }
+        case 'mudpool': {                                 // 沼：底なし沼（back：沼の面、前：ぶくぶくの泡）
+          const k = Math.min(1, e.t / 8), fade = Math.min(1, (e.life - e.t) / 12);
+          ctx.globalAlpha = fade;
+          if (!e.bub) { const g = ctx.createRadialGradient(e.x, GROUND, 4, e.x, GROUND, 150 * k); g.addColorStop(0, '#3a2a10'); g.addColorStop(0.7, '#5e4a22'); g.addColorStop(1, 'rgba(94,74,34,0)'); ctx.fillStyle = g; ctx.save(); ctx.translate(e.x, GROUND); ctx.scale(1, 0.22); ctx.beginPath(); ctx.arc(0, 0, 150 * k, 0, TAU); ctx.fill(); ctx.restore(); break; }
+          ctx.strokeStyle = '#8a7040'; ctx.fillStyle = 'rgba(120,96,50,0.85)'; ctx.lineWidth = 2;
+          for (let i = 0; i < 6; i++) { const q = ((e.t * 0.06 + i / 6) % 1), x = e.x + Math.sin(i * 2.3) * 70, y = GROUND - q * 30, r = 6 + q * 10; ctx.globalAlpha = fade * (1 - q); ctx.beginPath(); ctx.arc(x, y, r, 0, TAU); ctx.fill(); ctx.stroke(); }
+          break;
+        }
+        case 'horses': {                                  // 馬：馬群が駆け抜ける（土けむり付き）
+          const front = e.x - e.d * 700 + e.d * e.t * 34;
+          ctx.globalAlpha = Math.min(1, (e.life - e.t) / 8);
+          const cols = ['#7a4a2a', '#2a1a10', '#c9a070', '#5a3a20', '#e8e0d0', '#8a5a30'];
+          for (let i = 5; i >= 0; i--) {
+            const x = front - e.d * (i % 3) * 120 - e.d * Math.floor(i / 3) * 60, y = GROUND + (i % 2) * 20;
+            for (let j = 0; j < 2; j++) particles.push({ x: x - e.d * 60, y: GROUND - rand(0, 20), vx: -e.d * rand(1, 3), vy: -rand(0.5, 2), g: 0, life: 18, color: 'rgba(200,180,140,0.6)', r: 8 });
+            ctx.save(); ctx.translate(x, y); ctx.scale(e.d * 1.5, 1.5); drawHorse(cols[i], e.t * 0.9 + i); ctx.restore();
+          }
+          break;
+        }
+        case 'elephant': {                                // 象：巨大な象（水を噴く）
+          const k = Math.min(1, e.t / 6); ctx.globalAlpha = Math.min(1, (e.life - e.t) / 6);
+          ctx.translate(e.x, GROUND + (1 - k) * 40); ctx.scale(e.d * 2.4, 2.4); drawElephant(e.t, e.t > 8 && e.t < 26);
+          break;
+        }
+        case 'elephantjump': {                            // 象：象が跳び上がり、相手の上に落ちて踏みつぶす
+          const k = Math.min(1, e.t / 15), x = e.x + (e.tx - e.x) * k, y = GROUND - Math.sin(k * Math.PI) * 260;
+          ctx.globalAlpha = Math.min(1, (e.life - e.t) / 8);
+          ctx.translate(x, y); ctx.scale(e.d * 2.4 * (k >= 1 ? 1.08 : 1), 2.4 * (k >= 1 && e.t < 20 ? 0.9 : 1)); drawElephant(e.t, false);
+          if (e.t === 15) { spark(x, GROUND - 6, '#c9a36b', 36, 12); addFx('ring', x, GROUND - 10, { color: '#ffffff', life: 20, big: true }); }
+          break;
+        }
+        case 'spray': {                                   // 象：鼻から噴き出す水
+          const k = Math.min(1, e.t / 5), fade = Math.min(1, (e.life - e.t) / 6);
+          ctx.globalAlpha = fade;
+          for (let i = 0; i <= 14; i++) { const q = i / 14 * k, x = e.x + (e.tx - e.x) * q, y = e.y + (e.ty - e.y) * q - Math.sin(q * Math.PI) * 60, r = 10 + q * 26; ctx.fillStyle = i % 2 ? 'rgba(120,200,255,0.8)' : 'rgba(220,245,255,0.9)'; ctx.beginPath(); ctx.arc(x + Math.sin(e.t + i) * 4, y, r, 0, TAU); ctx.fill(); }
+          break;
+        }
+        case 'rollman': {                                 // 雪：巨大な雪だるまが転がってくる
+          const k = Math.min(1, e.t / 16), x = e.x - e.d * 900 * (1 - k) + (e.t > 16 ? -e.d * (e.t - 16) * 6 : 0);
+          ctx.globalAlpha = Math.min(1, (e.life - e.t) / 10);
+          ctx.translate(x, GROUND - 150); ctx.rotate(e.d * e.t * 0.35 * (e.t > 16 ? 0.2 : 1)); ctx.translate(0, 150); ctx.scale(2.6, 2.6);
+          drawSnowman(0, 0, e.d, e.t);
+          if (e.t < 16 && e.t % 2 === 0) spark(x, GROUND - 6, '#ffffff', 4, 4);
+          break;
+        }
+        case 'warriors': {                                // 鎧：鎧武者が槍を構えて一斉に突撃
+          const front = e.x - e.d * 640 + e.d * e.t * 30;
+          ctx.globalAlpha = Math.min(1, (e.life - e.t) / 8);
+          for (let i = 3; i >= 0; i--) { ctx.save(); ctx.translate(front - e.d * i * 90, GROUND + (i % 2) * 14); ctx.scale(e.d * 1.5, 1.5); drawWarrior(e.t + i * 3); ctx.restore(); }
+          break;
+        }
+        case 'twister': {                                 // 嵐：巨大な竜巻が画面を横切る
+          const k = Math.min(1, e.t / 16), x = e.x + (e.tx - e.x) * k + (e.t > 30 ? e.d * (e.t - 30) * 14 : 0);
+          ctx.globalAlpha = Math.min(1, e.t / 5) * Math.min(1, (e.life - e.t) / 12);
+          for (let j = 0; j < 16; j++) {
+            const q = j / 15, y = GROUND - q * 560, r = 26 + q * q * 170, wob = Math.sin(e.t * 0.3 + q * 4) * 30 * q;
+            ctx.strokeStyle = j % 2 ? 'rgba(150,160,175,0.75)' : 'rgba(210,215,225,0.8)'; ctx.lineWidth = 10;
+            ctx.beginPath(); ctx.ellipse(x + wob, y, r, 12 + q * 18, 0, (e.t * 0.5 + j) % TAU, (e.t * 0.5 + j) % TAU + 4.5); ctx.stroke();
+          }
+          for (let i = 0; i < 8; i++) { const a = e.t * 0.4 + i * 0.8, q = (i + 1) / 9; ctx.fillStyle = ['#6b4a2b', '#3a8a3a', '#888'][i % 3]; ctx.save(); ctx.translate(x + Math.cos(a) * (30 + q * 150), GROUND - q * 500 + Math.sin(a) * 10); ctx.rotate(a * 2); ctx.fillRect(-10, -4, 20, 8); ctx.restore(); }
+          break;
+        }
+        case 'qbox': {                                    // 謎：「？」のプレゼント箱が開き、何かが出てくる
+          const open = Math.max(0, Math.min(1, (e.t - 6) / 4)), fade = Math.min(1, (e.life - e.t) / 10);
+          ctx.globalAlpha = fade;
+          ctx.save(); ctx.translate(e.x, e.y); ctx.scale(1.6, 1.6);
+          ctx.fillStyle = '#7a3ab0'; ctx.strokeStyle = '#3a1060'; ctx.lineWidth = 3; ctx.fillRect(-36, -30, 72, 60); ctx.strokeRect(-36, -30, 72, 60);
+          ctx.fillStyle = '#ffd84d'; ctx.fillRect(-6, -30, 12, 60);
+          ctx.save(); ctx.translate(-40, -30); ctx.rotate(-open * 1.8); ctx.fillStyle = '#9b4dca'; ctx.fillRect(0, -14, 80, 14); ctx.strokeRect(0, -14, 80, 14); ctx.fillStyle = '#ffd84d'; ctx.fillRect(34, -14, 12, 14); ctx.restore();
+          ctx.fillStyle = '#ffffff'; ctx.font = '900 30px sans-serif'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText('？', -20, 4); ctx.fillText('？', 22, 4);
+          ctx.restore();
+          if (open > 0) {
+            if (e.item === 'tarai') { const k = Math.min(1, (e.t - 7) / 5), y = e.y + (e.hy - e.y) * k; ctx.save(); ctx.translate(e.x, y); ctx.rotate(e.t > 12 ? Math.sin(e.t) * 0.2 : 0); drawTarai(1.4); ctx.restore(); }
+            if (e.item === 'harisen') { const a = -1.6 + Math.min(1, (e.t - 7) / 4) * 2.4; ctx.save(); ctx.translate(e.x - 40, e.y + 20); ctx.rotate(a); drawHarisen(1.6); ctx.restore(); }
+            if (e.item === 'hato') for (let i = 0; i < 7; i++) { const a = i * 0.9 + 0.4, r = (e.t - 6) * 16; ctx.save(); ctx.translate(e.x + Math.cos(a) * r, e.y - 20 + Math.sin(a) * r * 0.5 - (e.t - 6) * 3); ctx.scale(Math.cos(a) > 0 ? 1 : -1, 1); drawDove(1.2, e.t + i); ctx.restore(); }
+          }
+          break;
+        }
+        case 'surfer': {                                  // 波：大波の上にサーフボードに乗った字
+          const x = e.dir > 0 ? -100 + p * (W + 300) : W + 100 - p * (W + 300);
+          ctx.globalAlpha = Math.min(1, (e.life - e.t) / 10);
+          ctx.translate(x - e.dir * 40, GROUND - 260); ctx.rotate(e.dir * 0.25);
+          ctx.fillStyle = '#ffd84d'; ctx.strokeStyle = '#c06a10'; ctx.lineWidth = 3; ctx.beginPath(); ctx.ellipse(0, 10, 70, 10, 0, 0, TAU); ctx.fill(); ctx.stroke();
+          ctx.fillStyle = '#e8321a'; ctx.fillRect(-60, 8, 120, 4);
+          Texture.draw(ctx, e.w.ch, 0, -48, 110, weaponStyle(e.w), 0);
+          break;
+        }
+        case 'howlwolf': {                                // 狼：満月に遠吠えする狼
+          const k = Math.min(1, e.t / 6); ctx.globalAlpha = k * Math.min(1, (e.life - e.t) / 10);
+          ctx.translate(e.x, GROUND); ctx.scale(e.d * 1.7, 1.7); drawWolfHowl(e.t);
+          break;
+        }
         // ---- 2026-11 に作り直した必殺技の絵（その2）----
         case 'hotpot': {                                  // 辛：激辛スープの大鍋（back：奥のふちとスープ、前：手前の鍋の壁と炎）
           const k = Math.min(1, e.t / 8), fade = Math.min(1, (e.life - e.t) / 12), rx = 130 * k, top = GROUND - 80 * k;
@@ -3827,7 +4244,7 @@ const effectName = (e) => (EN ? EFFECT_NAME_EN[e] : EFFECT_NAME[e]);
         case 'phoenix': {                                 // 蘇：炎の不死鳥が羽ばたいて飛ぶ
           const k = Math.min(1, e.t / 30), x = e.x + (e.tx - e.x) * k, y = e.y + (e.ty - e.y) * k - Math.sin(k * Math.PI) * 120;
           ctx.globalAlpha = Math.min(1, (e.life - e.t) / 10);
-          ctx.translate(x, y); ctx.scale(sign(e.tx - e.x) || 1, 1); drawPhoenix(2.4, e.t);
+          ctx.translate(x, y); ctx.scale(sign(e.tx - e.x) || 1, 1); drawPhoenix(1.35, e.t);
           if (e.t % 2 === 0) spark(x, y, '#ffb030', 3, 3, { g: 0.05 });
           break;
         }
@@ -3911,7 +4328,7 @@ const effectName = (e) => (EN ? EFFECT_NAME_EN[e] : EFFECT_NAME[e]);
           break;
         }
         case 'cats': {                                    // 猫：猫の群れが飛びついて肉球パンチ
-          if (!e.cs) e.cs = Array.from({ length: e.n }, (_, i) => ({ side: i % 2 ? 1 : -1, at: 2 + i * 1.2, a: i * TAU / e.n, col: ['#f0a040', '#f4f0e8', '#3a3a3a', '#c88a50'][i % 4] }));
+          if (!e.cs) e.cs = Array.from({ length: e.n }, (_, i) => ({ side: i % 2 ? 1 : -1, at: 2 + i * 1.2, a: i * TAU / e.n, col: ['#fbe3b8', '#fafafa', '#9a9aa2', '#f2b066'][i % 4] }));
           ctx.globalAlpha = Math.min(1, (e.life - e.t) / 10);
           for (const c of e.cs) {
             const ax = e.x + Math.cos(c.a + e.t * 0.08) * 80, ay = e.y - 100 + Math.sin(c.a + e.t * 0.08) * 70;
@@ -4040,7 +4457,7 @@ const effectName = (e) => (EN ? EFFECT_NAME_EN[e] : EFFECT_NAME[e]);
             let x, y;
             if (e.t < b.at) { const k = e.t / b.at, sx = b.side > 0 ? cx + W * 0.8 : cx - W * 0.8; x = sx + (ox2 - sx) * k; y = cy + b.y0 + (oy2 - cy - b.y0) * k; }
             else { x = ox2; y = oy2; }
-            drawBee(x, y, e.t < b.at ? -b.side : (Math.cos(a) * b.sp > 0 ? -1 : 1), e.t);
+            if (e.bug) drawBug(x, y, e.t + b.a0 * 10); else drawBee(x, y, e.t < b.at ? -b.side : (Math.cos(a) * b.sp > 0 ? -1 : 1), e.t);
           }
           break;
         }
@@ -4829,6 +5246,7 @@ const effectName = (e) => (EN ? EFFECT_NAME_EN[e] : EFFECT_NAME[e]);
   }
   function drawObj(obj, neta, s, seed) {
     if (obj === 'lawbook') { drawLawbook(s); return; }
+    if (obj === 'sword') { drawSword(s); return; }
     if (obj === 'rock') drawRock(s, seed || 1); else if (obj === 'negi') drawNegi(s); else if (obj === 'dumbbell') drawDumbbell(s); else if (obj === 'bill') drawInvoice(s); else drawSushi(neta, s);
   }
   // 法：六法全書（分厚い本。表紙は紺、背に金の字）
@@ -4873,50 +5291,232 @@ const effectName = (e) => (EN ? EFFECT_NAME_EN[e] : EFFECT_NAME[e]);
   }
   // 蘇：炎の不死鳥（原点＝胴、右向き）
   function drawPhoenix(s, t) {
-    ctx.save(); ctx.scale(s, s);
-    const flap = Math.sin(t * 0.6) * 0.6;
-    ctx.globalCompositeOperation = 'lighter';
-    for (const side of [-1, 1]) {                                                           // 翼（炎の羽）
-      ctx.save(); ctx.rotate(side * (0.3 + flap * 0.5)); 
-      for (let i = 0; i < 5; i++) { const g = ctx.createLinearGradient(0, 0, -40 + i * 10, -side * 90); g.addColorStop(0, 'rgba(255,240,160,0.9)'); g.addColorStop(1, 'rgba(230,60,20,0)'); ctx.fillStyle = g; ctx.beginPath(); ctx.moveTo(-10, 0); ctx.quadraticCurveTo(-30 + i * 8, -side * 50, -50 + i * 14, -side * (70 + i * 6)); ctx.quadraticCurveTo(-10 + i * 6, -side * 30, 14, 0); ctx.fill(); }
-      ctx.restore();
+    ctx.save(); ctx.scale(s, s); ctx.lineJoin = 'round'; ctx.lineCap = 'round';
+    ctx.shadowColor = 'rgba(255,120,30,0.8)'; ctx.shadowBlur = 14;
+    const g = ctx.createLinearGradient(0, -90, 0, 50); g.addColorStop(0, '#ff9a3a'); g.addColorStop(0.5, '#ec4a1c'); g.addColorStop(1, '#c8281a');
+    ctx.fillStyle = g; ctx.strokeStyle = g;
+    const flap = Math.sin(t * 0.5) * 0.35;
+    const wing = (back) => {                                     // 翼：先のとがった炎の羽が扇のように並ぶ
+      ctx.save(); ctx.translate(back ? -4 : 2, -6); ctx.rotate((back ? -0.25 : 0.1) + flap * (back ? 0.8 : 1)); ctx.globalAlpha *= back ? 0.75 : 1;
+      ctx.beginPath(); ctx.moveTo(0, 0);
+      for (let i = 0; i <= 6; i++) {
+        const a = -2.7 + i * 0.27, r = 92 - Math.abs(i - 2) * 9, a2 = a + 0.13, r2 = r * 0.62;
+        ctx.quadraticCurveTo(Math.cos(a - 0.1) * r * 0.7, Math.sin(a - 0.1) * r * 0.7, Math.cos(a) * r, Math.sin(a) * r);
+        ctx.lineTo(Math.cos(a2) * r2, Math.sin(a2) * r2);
+      }
+      ctx.quadraticCurveTo(14, -8, 8, 4); ctx.closePath(); ctx.fill(); ctx.restore();
+    };
+    wing(true);
+    for (let i = 0; i < 3; i++) {                                // 長い尾：うしろへ流れて、先がくるっと巻く
+      const sway = Math.sin(t * 0.3 + i) * 6, yy = 14 + i * 14;
+      ctx.lineWidth = 9 - i * 2;
+      ctx.beginPath(); ctx.moveTo(-14, 6); ctx.bezierCurveTo(-50, yy + sway, -92, yy + 30 + sway, -104 + i * 6, yy + 6); ctx.stroke();
+      ctx.beginPath(); ctx.arc(-96 + i * 6, yy + 2, 8 - i, 0.5, TAU - 0.8); ctx.lineWidth = 4; ctx.stroke();
     }
-    for (let i = 0; i < 3; i++) { const g = ctx.createLinearGradient(-10, 0, -110, 0); g.addColorStop(0, 'rgba(255,200,60,0.9)'); g.addColorStop(1, 'rgba(230,40,10,0)'); ctx.strokeStyle = g; ctx.lineWidth = 6 - i; ctx.beginPath(); ctx.moveTo(-10, 4); ctx.quadraticCurveTo(-60, 10 + i * 12 + Math.sin(t * 0.4 + i) * 8, -120, 4 + i * 18); ctx.stroke(); }   // 尾
-    ctx.globalCompositeOperation = 'source-over';
-    const g = ctx.createRadialGradient(4, 0, 2, 4, 0, 24); g.addColorStop(0, '#fff6c0'); g.addColorStop(0.6, '#ff8a1f'); g.addColorStop(1, '#c8281a');
-    ctx.fillStyle = g; ctx.beginPath(); ctx.ellipse(4, 0, 24, 13, 0, 0, TAU); ctx.fill();
-    ctx.beginPath(); ctx.arc(28, -8, 10, 0, TAU); ctx.fill();
-    ctx.fillStyle = '#ffd84d'; ctx.beginPath(); ctx.moveTo(36, -8); ctx.lineTo(48, -4); ctx.lineTo(36, -2); ctx.fill();   // くちばし
-    ctx.fillStyle = '#ff5a1a'; for (let i = 0; i < 3; i++) { ctx.beginPath(); ctx.moveTo(24 + i * 3, -16); ctx.lineTo(16 + i * 6, -34 - i * 3); ctx.lineTo(30 + i * 3, -16); ctx.fill(); }   // とさか
-    ctx.fillStyle = '#111'; ctx.beginPath(); ctx.arc(31, -10, 2, 0, TAU); ctx.fill();
+    ctx.beginPath(); ctx.ellipse(2, 2, 24, 13, -0.45, 0, TAU); ctx.fill();                 // 胴
+    ctx.lineWidth = 12; ctx.beginPath(); ctx.moveTo(10, -6); ctx.quadraticCurveTo(22, -14, 26, -26); ctx.stroke();   // 首
+    ctx.beginPath(); ctx.arc(28, -30, 9, 0, TAU); ctx.fill();                               // 頭
+    ctx.beginPath(); ctx.moveTo(35, -33); ctx.lineTo(48, -29); ctx.lineTo(35, -25); ctx.fill();   // くちばし
+    for (let i = 0; i < 3; i++) { ctx.beginPath(); ctx.moveTo(24, -36); ctx.quadraticCurveTo(18 - i * 6, -48 - i * 4, 8 - i * 8, -44 - i * 6); ctx.lineWidth = 4 - i; ctx.stroke(); }   // とさか
+    wing(false);
+    ctx.shadowBlur = 0; ctx.fillStyle = '#fff3c0'; ctx.beginPath(); ctx.arc(30, -32, 2.2, 0, TAU); ctx.fill();
     ctx.restore();
   }
+
   // 犬：柴犬（原点＝足元、右向き）
-  function drawDog(s, t) {
-    ctx.save(); ctx.scale(s, s); ctx.lineJoin = 'round'; ctx.strokeStyle = '#3a2210'; ctx.lineWidth = 2;
-    const leg = Math.sin(t * 1.2) * 6;
-    ctx.fillStyle = '#d9893a';
-    for (const [x, d] of [[-16, 1], [14, -1]]) { ctx.beginPath(); ctx.roundRect(x - 3 + leg * d * 0.4, -14, 7, 14, 3); ctx.fill(); ctx.stroke(); }
-    ctx.beginPath(); ctx.ellipse(0, -20, 26, 13, 0, 0, TAU); ctx.fill(); ctx.stroke();
-    ctx.fillStyle = '#fff4e0'; ctx.beginPath(); ctx.ellipse(4, -14, 16, 6, 0, 0, TAU); ctx.fill();
-    ctx.fillStyle = '#d9893a'; ctx.beginPath(); ctx.arc(-28, -34, 9, 0.5, TAU - 0.5); ctx.lineWidth = 6; ctx.strokeStyle = '#d9893a'; ctx.stroke(); ctx.lineWidth = 2; ctx.strokeStyle = '#3a2210';   // 巻いたしっぽ
-    ctx.beginPath(); ctx.arc(26, -34, 14, 0, TAU); ctx.fill(); ctx.stroke();                                 // 頭
-    ctx.beginPath(); ctx.moveTo(18, -44); ctx.lineTo(20, -58); ctx.lineTo(28, -46); ctx.fill(); ctx.stroke();
-    ctx.beginPath(); ctx.moveTo(28, -46); ctx.lineTo(34, -58); ctx.lineTo(37, -42); ctx.fill(); ctx.stroke();
-    ctx.fillStyle = '#fff4e0'; ctx.beginPath(); ctx.ellipse(34, -29, 9, 6, 0, 0, TAU); ctx.fill();
-    ctx.fillStyle = '#222'; ctx.beginPath(); ctx.arc(41, -31, 2.5, 0, TAU); ctx.fill(); ctx.beginPath(); ctx.arc(29, -37, 2, 0, TAU); ctx.fill();
+  function drawDog(s, t) {                                      // 座った柴犬（頭が大きいちびキャラ）
+    ctx.save(); ctx.scale(s, s); ctx.lineJoin = 'round'; ctx.lineCap = 'round';
+    const O = '#6b3e1e', B = '#e3a35c', C = '#fbeedb', P = '#ffb0b8';
+    ctx.strokeStyle = O; ctx.lineWidth = 2.5;
+    ctx.fillStyle = B; ctx.beginPath(); ctx.arc(-24, -24, 11, 0, TAU); ctx.fill(); ctx.stroke();          // 巻いたしっぽ
+    ctx.fillStyle = C; ctx.beginPath(); ctx.arc(-24, -24, 5, 0, TAU); ctx.fill();
+    ctx.fillStyle = B; ctx.beginPath(); ctx.ellipse(0, -24, 21, 25, 0, 0, TAU); ctx.fill(); ctx.stroke();  // 体
+    ctx.fillStyle = C; ctx.beginPath(); ctx.ellipse(5, -20, 11, 17, 0, 0, TAU); ctx.fill();
+    for (const x of [2, 14]) { ctx.fillStyle = B; ctx.beginPath(); ctx.roundRect(x - 4, -20, 9, 20, 4); ctx.fill(); ctx.stroke(); ctx.fillStyle = C; ctx.beginPath(); ctx.roundRect(x - 3, -6, 7, 5, 2); ctx.fill(); }   // 前足
+    for (const [a, b, c] of [[[-14, -78], [-12, -102], [3, -84]], [[13, -86], [27, -100], [29, -76]]]) {   // 耳
+      ctx.fillStyle = B; ctx.beginPath(); ctx.moveTo(...a); ctx.lineTo(...b); ctx.lineTo(...c); ctx.closePath(); ctx.fill(); ctx.stroke();
+      ctx.fillStyle = P; ctx.beginPath(); ctx.moveTo(a[0] * 0.7 + c[0] * 0.3, a[1] * 0.7 + c[1] * 0.3); ctx.lineTo(b[0], b[1] + 8); ctx.lineTo(a[0] * 0.3 + c[0] * 0.7, a[1] * 0.3 + c[1] * 0.7); ctx.closePath(); ctx.fill();
+    }
+    ctx.fillStyle = B; ctx.beginPath(); ctx.arc(7, -62, 27, 0, TAU); ctx.fill(); ctx.stroke();           // 頭
+    ctx.fillStyle = C; ctx.beginPath(); ctx.ellipse(9, -52, 20, 14, 0, 0, TAU); ctx.fill();
+    ctx.beginPath(); ctx.ellipse(-1, -72, 4, 2.6, 0, 0, TAU); ctx.ellipse(18, -72, 4, 2.6, 0, 0, TAU); ctx.fill();   // まゆ
+    ctx.fillStyle = P; ctx.globalAlpha *= 0.8; ctx.beginPath(); ctx.arc(-6, -53, 5, 0, TAU); ctx.arc(25, -53, 5, 0, TAU); ctx.fill(); ctx.globalAlpha /= 0.8;
+    ctx.fillStyle = '#3a2210'; ctx.beginPath(); ctx.ellipse(0, -62, 3.4, 4.2, 0, 0, TAU); ctx.ellipse(18, -62, 3.4, 4.2, 0, 0, TAU); ctx.fill();
+    ctx.beginPath(); ctx.ellipse(9, -55, 4.2, 3, 0, 0, TAU); ctx.fill();                               // 鼻
+    ctx.lineWidth = 2; ctx.beginPath(); ctx.moveTo(3, -49); ctx.quadraticCurveTo(6, -46, 9, -50); ctx.quadraticCurveTo(12, -46, 15, -49); ctx.stroke();   // 口
     ctx.restore();
   }
-  // 狼：跳びかかる灰色の狼（原点＝胴、右向き）
+
+  // 狼：跳びかかる灰色の狼（原点＝胴、右向き）。濃い灰・灰・白っぽい灰を重ね、黒いふちどり
   function drawWolf(s) {
-    ctx.save(); ctx.scale(s, s); ctx.fillStyle = '#5a6070'; ctx.strokeStyle = '#2a2e38'; ctx.lineWidth = 2; ctx.lineJoin = 'round';
-    ctx.beginPath(); ctx.moveTo(-40, -4); ctx.quadraticCurveTo(-70, -10, -80, 6); ctx.quadraticCurveTo(-60, 2, -38, 8); ctx.closePath(); ctx.fill(); ctx.stroke();   // しっぽ
-    ctx.beginPath(); ctx.ellipse(0, 0, 40, 15, 0, 0, TAU); ctx.fill(); ctx.stroke();
-    for (const [x, a] of [[-28, 0.9], [-20, 1.1], [26, -0.9], [32, -0.6]]) { ctx.save(); ctx.translate(x, 8); ctx.rotate(a); ctx.fillRect(-3, 0, 7, 24); ctx.restore(); }
-    ctx.beginPath(); ctx.moveTo(30, -12); ctx.lineTo(52, -20); ctx.lineTo(74, -8); ctx.lineTo(52, 2); ctx.lineTo(34, 8); ctx.closePath(); ctx.fill(); ctx.stroke();   // 頭と鼻先
-    ctx.beginPath(); ctx.moveTo(42, -16); ctx.lineTo(44, -34); ctx.lineTo(52, -20); ctx.fill(); ctx.stroke();
-    ctx.fillStyle = '#ffd84d'; ctx.beginPath(); ctx.arc(56, -12, 2.5, 0, TAU); ctx.fill();
-    ctx.fillStyle = '#fff'; ctx.beginPath(); ctx.moveTo(62, -2); ctx.lineTo(64, 4); ctx.lineTo(66, -2); ctx.fill();
+    ctx.save(); ctx.scale(s, s); ctx.lineJoin = 'round'; ctx.lineCap = 'round';
+    const D = '#4a4e58', M = '#7a7e88', W = '#c8cad0', K = '#15171c';
+    ctx.strokeStyle = K; ctx.lineWidth = 2.6;
+    const leg = (x, y, a, c) => { ctx.save(); ctx.translate(x, y); ctx.rotate(a); ctx.fillStyle = c; ctx.beginPath(); ctx.moveTo(-5, 0); ctx.lineTo(5, 0); ctx.lineTo(4, 24); ctx.lineTo(8, 28); ctx.lineTo(-5, 28); ctx.closePath(); ctx.fill(); ctx.stroke(); ctx.restore(); };
+    leg(-26, 6, 1.0, D); leg(24, 6, -1.0, D);                                         // 奥の足
+    ctx.fillStyle = M; ctx.beginPath(); ctx.moveTo(-36, -6); ctx.quadraticCurveTo(-66, -22, -86, -6); ctx.lineTo(-74, -2); ctx.lineTo(-82, 6); ctx.quadraticCurveTo(-60, 4, -36, 6); ctx.closePath(); ctx.fill(); ctx.stroke();   // ふさふさのしっぽ
+    ctx.fillStyle = W; ctx.beginPath(); ctx.moveTo(-80, -4); ctx.lineTo(-86, -6); ctx.lineTo(-78, 2); ctx.closePath(); ctx.fill();
+    ctx.fillStyle = M; ctx.beginPath(); ctx.moveTo(-40, -8); ctx.quadraticCurveTo(-10, -22, 26, -16); ctx.lineTo(36, -4); ctx.quadraticCurveTo(20, 14, -10, 12); ctx.quadraticCurveTo(-36, 12, -42, 2); ctx.closePath(); ctx.fill(); ctx.stroke();   // 胴
+    ctx.fillStyle = D; ctx.beginPath(); ctx.moveTo(-38, -8); ctx.quadraticCurveTo(-8, -22, 24, -16); ctx.lineTo(10, -8); ctx.lineTo(2, -12); ctx.lineTo(-8, -6); ctx.lineTo(-18, -10); ctx.lineTo(-28, -4); ctx.closePath(); ctx.fill();   // 背中の濃い毛
+    ctx.fillStyle = W; ctx.beginPath(); ctx.moveTo(-18, 12); ctx.quadraticCurveTo(8, 14, 26, 2); ctx.lineTo(18, 0); ctx.lineTo(12, 6); ctx.lineTo(2, 4); ctx.lineTo(-8, 8); ctx.closePath(); ctx.fill();   // おなかの白い毛
+    leg(-20, 8, 0.8, M); leg(30, 4, -1.2, M);                                          // 手前の足
+    ctx.fillStyle = W; ctx.beginPath(); ctx.moveTo(22, -14); ctx.lineTo(34, 8); ctx.lineTo(42, 0); ctx.lineTo(40, -10); ctx.closePath(); ctx.fill(); ctx.stroke();   // 首の白い毛
+    ctx.fillStyle = M; ctx.beginPath(); ctx.moveTo(28, -18); ctx.lineTo(40, -34); ctx.lineTo(46, -22); ctx.lineTo(54, -36); ctx.lineTo(58, -20); ctx.lineTo(80, -14); ctx.lineTo(82, -8); ctx.lineTo(62, -4); ctx.lineTo(76, 2); ctx.lineTo(56, 6); ctx.lineTo(40, 2); ctx.closePath(); ctx.fill(); ctx.stroke();   // 頭・耳・開いた口
+    ctx.fillStyle = D; ctx.beginPath(); ctx.moveTo(41, -30); ctx.lineTo(45, -23); ctx.lineTo(40, -22); ctx.closePath(); ctx.moveTo(54, -32); ctx.lineTo(57, -22); ctx.lineTo(52, -22); ctx.closePath(); ctx.fill();
+    ctx.fillStyle = W; ctx.beginPath(); ctx.moveTo(50, -10); ctx.lineTo(62, -4); ctx.lineTo(56, 4); ctx.lineTo(44, 0); ctx.closePath(); ctx.fill();   // ほお
+    ctx.fillStyle = '#7a1a22'; ctx.beginPath(); ctx.moveTo(62, -5); ctx.lineTo(80, -8); ctx.lineTo(74, 1); ctx.closePath(); ctx.fill();   // 口の中
+    ctx.fillStyle = '#fff'; ctx.beginPath(); ctx.moveTo(70, -7); ctx.lineTo(72, -2); ctx.lineTo(74, -7.5); ctx.moveTo(66, 0); ctx.lineTo(68, -4); ctx.lineTo(70, 0.5); ctx.fill();   // 牙
+    ctx.fillStyle = K; ctx.beginPath(); ctx.arc(81, -12, 2.6, 0, TAU); ctx.fill();          // 鼻
+    ctx.fillStyle = '#ffd84d'; ctx.beginPath(); ctx.moveTo(56, -19); ctx.lineTo(64, -18); ctx.lineTo(58, -15); ctx.closePath(); ctx.fill(); ctx.lineWidth = 1.2; ctx.stroke();   // つり目
+    ctx.restore();
+  }
+  // 狼：遠吠えする狼（原点＝足元、右向き、頭を上げて口を開ける）
+  function drawWolfHowl(t) {
+    ctx.save(); ctx.lineJoin = 'round'; ctx.lineCap = 'round';
+    const D = '#4a4e58', M = '#7a7e88', W = '#c8cad0', K = '#15171c';
+    ctx.strokeStyle = K; ctx.lineWidth = 2.6;
+    ctx.fillStyle = M; ctx.beginPath(); ctx.moveTo(-34, -20); ctx.quadraticCurveTo(-62, -12, -64, 0); ctx.lineTo(-52, -2); ctx.quadraticCurveTo(-44, -6, -30, -10); ctx.closePath(); ctx.fill(); ctx.stroke();   // しっぽ（下げる）
+    ctx.fillStyle = D; ctx.beginPath(); ctx.moveTo(-36, -30); ctx.quadraticCurveTo(-40, -6, -30, 0); ctx.lineTo(-18, 0); ctx.lineTo(-20, -16); ctx.lineTo(-8, -22); ctx.closePath(); ctx.fill(); ctx.stroke();   // うしろ足（座る）
+    ctx.fillStyle = M; ctx.beginPath(); ctx.moveTo(-38, -28); ctx.quadraticCurveTo(-30, -52, 4, -62); ctx.lineTo(18, -50); ctx.quadraticCurveTo(14, -20, -6, -18); ctx.quadraticCurveTo(-30, -14, -38, -28); ctx.closePath(); ctx.fill(); ctx.stroke();   // 胴（斜めに起こす）
+    ctx.fillStyle = D; ctx.beginPath(); ctx.moveTo(-36, -32); ctx.quadraticCurveTo(-28, -52, 4, -62); ctx.lineTo(-4, -50); ctx.lineTo(-14, -48); ctx.lineTo(-22, -40); ctx.closePath(); ctx.fill();
+    for (const x of [2, 12]) { ctx.fillStyle = x === 2 ? D : M; ctx.beginPath(); ctx.moveTo(x - 4, -40); ctx.lineTo(x + 5, -40); ctx.lineTo(x + 5, -4); ctx.lineTo(x + 10, 0); ctx.lineTo(x - 4, 0); ctx.closePath(); ctx.fill(); ctx.stroke(); }   // 前足（まっすぐ）
+    ctx.fillStyle = W; ctx.beginPath(); ctx.moveTo(4, -62); ctx.lineTo(24, -66); ctx.lineTo(22, -44); ctx.lineTo(14, -36); ctx.closePath(); ctx.fill(); ctx.stroke();   // 胸の白い毛
+    const op = 0.6 + Math.sin(t * 0.4) * 0.15;
+    ctx.save(); ctx.translate(14, -70); ctx.rotate(-0.9);                              // 頭を空へ向ける
+    ctx.fillStyle = M; ctx.beginPath(); ctx.moveTo(-10, 8); ctx.lineTo(-8, -10); ctx.lineTo(-2, -22); ctx.lineTo(4, -10); ctx.lineTo(10, -22); ctx.lineTo(14, -8); ctx.lineTo(38, -6 - op * 4); ctx.lineTo(18, 0); ctx.lineTo(36, 4 + op * 8); ctx.lineTo(14, 12); ctx.closePath(); ctx.fill(); ctx.stroke();
+    ctx.fillStyle = '#7a1a22'; ctx.beginPath(); ctx.moveTo(18, 0); ctx.lineTo(36, -5 - op * 4); ctx.lineTo(34, 3 + op * 8); ctx.closePath(); ctx.fill();
+    ctx.fillStyle = W; ctx.beginPath(); ctx.moveTo(4, 2); ctx.lineTo(16, 2); ctx.lineTo(12, 10); ctx.closePath(); ctx.fill();
+    ctx.fillStyle = K; ctx.beginPath(); ctx.arc(38, -7 - op * 4, 2.4, 0, TAU); ctx.fill();
+    ctx.lineWidth = 2; ctx.beginPath(); ctx.moveTo(10, -6); ctx.lineTo(17, -5); ctx.stroke();   // 閉じた目
+    ctx.restore();
+    ctx.restore();
+  }
+  // 剣：まっすぐな西洋剣（原点＝剣先、柄が上）
+  function drawSword(s) {
+    ctx.save(); ctx.scale(s, s); ctx.lineJoin = 'round';
+    const g = ctx.createLinearGradient(-5, 0, 5, 0); g.addColorStop(0, '#9aa6b4'); g.addColorStop(0.5, '#f4f8fc'); g.addColorStop(1, '#8a96a4');
+    ctx.fillStyle = g; ctx.strokeStyle = '#3a4250'; ctx.lineWidth = 1.4;
+    ctx.beginPath(); ctx.moveTo(0, 0); ctx.lineTo(5, -10); ctx.lineTo(5, -46); ctx.lineTo(-5, -46); ctx.lineTo(-5, -10); ctx.closePath(); ctx.fill(); ctx.stroke();   // 刃
+    ctx.strokeStyle = 'rgba(80,90,110,0.6)'; ctx.beginPath(); ctx.moveTo(0, -6); ctx.lineTo(0, -44); ctx.stroke();
+    ctx.fillStyle = '#d8b24a'; ctx.strokeStyle = '#6a5010'; ctx.beginPath(); ctx.roundRect(-14, -50, 28, 5, 2); ctx.fill(); ctx.stroke();   // つば
+    ctx.fillStyle = '#5a2a1a'; ctx.fillRect(-2.5, -62, 5, 12); ctx.strokeRect(-2.5, -62, 5, 12);   // 柄
+    ctx.fillStyle = '#d8b24a'; ctx.beginPath(); ctx.arc(0, -65, 4, 0, TAU); ctx.fill(); ctx.stroke();
+    ctx.restore();
+  }
+  // 眠：もこもこの羊（原点＝胴の中心、右向き）
+  function drawSheep(s, t) {
+    ctx.save(); ctx.scale(s, s); ctx.lineJoin = 'round'; ctx.lineCap = 'round';
+    ctx.strokeStyle = '#3a3a44'; ctx.lineWidth = 3;
+    const run = Math.sin(t * 0.8) * 0.4;
+    for (const [x, a] of [[-12, run], [12, -run]]) { ctx.save(); ctx.translate(x, 10); ctx.rotate(a); ctx.beginPath(); ctx.moveTo(0, 0); ctx.lineTo(0, 16); ctx.stroke(); ctx.restore(); }
+    ctx.fillStyle = '#fbfbf6'; ctx.strokeStyle = '#b8b8b0'; ctx.lineWidth = 1.5;
+    ctx.beginPath(); for (let i = 0; i < 10; i++) { const a = i / 10 * TAU; ctx.moveTo(Math.cos(a) * 18 + 9, Math.sin(a) * 11); ctx.arc(Math.cos(a) * 18, Math.sin(a) * 11, 9, 0, TAU); } ctx.fill();
+    ctx.beginPath(); ctx.ellipse(0, 0, 20, 13, 0, 0, TAU); ctx.fill();
+    ctx.fillStyle = '#3a3a44'; ctx.beginPath(); ctx.ellipse(24, -6, 8, 10, 0.3, 0, TAU); ctx.fill();   // 顔
+    ctx.beginPath(); ctx.ellipse(18, -12, 6, 3, -0.6, 0, TAU); ctx.fill();                         // 耳
+    ctx.fillStyle = '#fbfbf6'; ctx.beginPath(); ctx.arc(20, -14, 5, 0, TAU); ctx.fill();            // 頭の毛
+    ctx.strokeStyle = '#fff'; ctx.lineWidth = 1.5; ctx.beginPath(); ctx.moveTo(24, -7); ctx.quadraticCurveTo(26, -5, 28, -7); ctx.stroke();   // 眠そうな目
+    ctx.restore();
+  }
+  // 馬：走る競走馬（原点＝ひづめの高さ、右向き）。col は胴の色
+  function drawHorse(col, t) {
+    ctx.save(); ctx.lineJoin = 'round'; ctx.lineCap = 'round';
+    const g = Math.sin(t * 0.9), K = '#20140c';
+    ctx.strokeStyle = K; ctx.lineWidth = 2;
+    const leg = (x, y, a, c) => { ctx.save(); ctx.translate(x, y); ctx.rotate(a); ctx.fillStyle = c; ctx.beginPath(); ctx.roundRect(-3, 0, 6, 30, 2); ctx.fill(); ctx.stroke(); ctx.fillStyle = K; ctx.fillRect(-3.5, 26, 7, 5); ctx.restore(); };
+    const dark = 'rgba(0,0,0,0.25)';
+    leg(-22, -34, 0.6 * g, col); leg(20, -34, -0.6 * g, col);                          // 奥の足
+    ctx.fillStyle = col; ctx.beginPath(); ctx.ellipse(0, -42, 30, 13, -0.05, 0, TAU); ctx.fill(); ctx.stroke();   // 胴
+    ctx.beginPath(); ctx.moveTo(18, -50); ctx.lineTo(34, -76); ctx.lineTo(46, -72); ctx.lineTo(34, -42); ctx.closePath(); ctx.fill(); ctx.stroke();   // 首
+    ctx.beginPath(); ctx.moveTo(32, -78); ctx.lineTo(56, -66); ctx.lineTo(54, -60); ctx.lineTo(40, -64); ctx.closePath(); ctx.fill(); ctx.stroke();   // 頭
+    ctx.beginPath(); ctx.moveTo(34, -78); ctx.lineTo(36, -86); ctx.lineTo(39, -77); ctx.fill(); ctx.stroke();   // 耳
+    ctx.fillStyle = K; ctx.beginPath(); ctx.moveTo(32, -78); ctx.quadraticCurveTo(20, -68, 18, -50); ctx.lineTo(24, -52); ctx.quadraticCurveTo(26, -66, 36, -74); ctx.closePath(); ctx.fill();   // たてがみ
+    ctx.beginPath(); ctx.moveTo(-28, -46); ctx.quadraticCurveTo(-46, -46 + g * 6, -50, -30 + g * 4); ctx.lineTo(-44, -32); ctx.quadraticCurveTo(-40, -40, -28, -40); ctx.closePath(); ctx.fill();   // しっぽ
+    ctx.beginPath(); ctx.arc(44, -72, 1.8, 0, TAU); ctx.fill();
+    ctx.fillStyle = '#fff'; ctx.beginPath(); ctx.roundRect(-8, -56, 16, 10, 2); ctx.fill();    // ゼッケン
+    leg(-16, -34, -0.7 * g, col); leg(26, -34, 0.7 * g, col);                           // 手前の足
+    ctx.fillStyle = dark; ctx.beginPath(); ctx.ellipse(0, -36, 22, 4, 0, 0, TAU); ctx.fill();
+    ctx.restore();
+  }
+  // 象：平たい色の横向きの象（原点＝足元、右向き）。spray=true で鼻を上げる
+  function drawElephant(t, spray) {
+    ctx.save(); ctx.lineJoin = 'round'; ctx.lineCap = 'round';
+    const A = '#9a8f8c', B = '#857a77', IV = '#f3ead6', step = Math.sin(t * 0.5) * 3;
+    for (const [x, c, d] of [[-24, B, step], [20, B, -step]]) { ctx.fillStyle = c; ctx.beginPath(); ctx.roundRect(x - 8, -26 + d * 0.3, 16, 26 - d * 0.3, 4); ctx.fill(); }   // 奥の足
+    ctx.fillStyle = A; ctx.beginPath(); ctx.moveTo(-44, -30); ctx.quadraticCurveTo(-44, -74, -4, -76); ctx.quadraticCurveTo(30, -76, 36, -52); ctx.lineTo(36, -22); ctx.quadraticCurveTo(0, -16, -40, -20); ctx.closePath(); ctx.fill();   // 胴
+    ctx.beginPath(); ctx.moveTo(-44, -54); ctx.quadraticCurveTo(-52, -44, -50, -34); ctx.lineTo(-47, -34); ctx.quadraticCurveTo(-48, -44, -42, -50); ctx.closePath(); ctx.fill();   // しっぽ
+    for (const [x, d] of [[-32, -step], [10, step]]) { ctx.beginPath(); ctx.roundRect(x - 9, -30 + d * 0.3, 18, 30 - d * 0.3, 5); ctx.fill(); ctx.fillStyle = IV; for (let i = 0; i < 3; i++) { ctx.beginPath(); ctx.arc(x - 5 + i * 5, -2, 1.8, Math.PI, TAU); ctx.fill(); } ctx.fillStyle = A; }   // 手前の足とつめ
+    ctx.beginPath(); ctx.ellipse(40, -58, 22, 20, 0, 0, TAU); ctx.fill();                    // 頭
+    ctx.beginPath();                                                                         // 鼻
+    if (spray) { ctx.moveTo(52, -56); ctx.quadraticCurveTo(76, -60, 74, -88); ctx.quadraticCurveTo(72, -102, 80, -104); ctx.lineTo(84, -98); ctx.quadraticCurveTo(80, -94, 82, -86); ctx.quadraticCurveTo(84, -50, 54, -44); }
+    else { ctx.moveTo(52, -60); ctx.quadraticCurveTo(66, -50, 64, -22); ctx.quadraticCurveTo(64, -10, 72, -10); ctx.lineTo(72, -4); ctx.quadraticCurveTo(56, -2, 56, -20); ctx.quadraticCurveTo(56, -40, 46, -46); }
+    ctx.closePath(); ctx.fill();
+    ctx.fillStyle = B; ctx.beginPath(); ctx.moveTo(30, -74); ctx.quadraticCurveTo(4, -80, 2, -56); ctx.quadraticCurveTo(2, -32, 22, -34); ctx.quadraticCurveTo(34, -40, 34, -56); ctx.closePath(); ctx.fill();   // 大きな耳
+    ctx.fillStyle = IV; ctx.beginPath(); ctx.moveTo(48, -46); ctx.quadraticCurveTo(60, -36, 72, -42); ctx.quadraticCurveTo(62, -32, 46, -40); ctx.closePath(); ctx.fill();   // 象牙
+    ctx.fillStyle = '#2a2220'; ctx.beginPath(); ctx.arc(46, -64, 2.6, 0, TAU); ctx.fill();   // 目
+    ctx.restore();
+  }
+  // 鎧：赤い当世具足の武者（原点＝足元、右向き、槍を構える）
+  function drawWarrior(t) {
+    ctx.save(); ctx.lineJoin = 'round'; ctx.lineCap = 'round';
+    const R = '#b8261e', RD = '#7a1410', K = '#1a0c08', G = '#e0b43c', run = Math.sin(t * 0.8) * 0.5;
+    ctx.strokeStyle = K; ctx.lineWidth = 2;
+    for (const [x, a] of [[-6, run], [6, -run]]) { ctx.save(); ctx.translate(x, -30); ctx.rotate(a); ctx.fillStyle = '#2a2a30'; ctx.fillRect(-4, 0, 8, 30); ctx.strokeRect(-4, 0, 8, 30); ctx.restore(); }   // 足
+    ctx.strokeStyle = '#6a4020'; ctx.lineWidth = 3; ctx.beginPath(); ctx.moveTo(-30, -36); ctx.lineTo(60, -58); ctx.stroke();   // 槍の柄
+    ctx.fillStyle = '#e8eef4'; ctx.strokeStyle = K; ctx.lineWidth = 1.2; ctx.beginPath(); ctx.moveTo(58, -61); ctx.lineTo(80, -64); ctx.lineTo(60, -55); ctx.closePath(); ctx.fill(); ctx.stroke();
+    ctx.lineWidth = 2;
+    for (let i = 0; i < 3; i++) { ctx.fillStyle = i % 2 ? RD : R; ctx.beginPath(); ctx.roundRect(-16, -40 + i * 5, 32, 7, 2); ctx.fill(); ctx.stroke(); }   // 草摺
+    ctx.fillStyle = R; ctx.beginPath(); ctx.roundRect(-14, -66, 28, 28, 4); ctx.fill(); ctx.stroke();   // 胴
+    ctx.strokeStyle = G; ctx.lineWidth = 1.2; for (let i = 0; i < 3; i++) { ctx.beginPath(); ctx.moveTo(-12, -60 + i * 8); ctx.lineTo(12, -60 + i * 8); ctx.stroke(); }
+    ctx.strokeStyle = K; ctx.lineWidth = 2;
+    for (const d of [-1, 1]) { ctx.fillStyle = RD; ctx.beginPath(); ctx.roundRect(d > 0 ? 12 : -24, -68, 12, 16, 2); ctx.fill(); ctx.stroke(); }   // 袖
+    ctx.fillStyle = '#e8c8a0'; ctx.beginPath(); ctx.arc(2, -76, 9, 0, TAU); ctx.fill(); ctx.stroke();   // 顔
+    ctx.fillStyle = K; ctx.fillRect(-6, -76, 16, 8);                                          // 面頬
+    ctx.fillStyle = '#2a1a14'; ctx.beginPath(); ctx.arc(2, -80, 12, Math.PI, TAU); ctx.lineTo(16, -78); ctx.lineTo(-12, -78); ctx.closePath(); ctx.fill(); ctx.stroke();   // 兜
+    ctx.fillStyle = R; ctx.beginPath(); ctx.moveTo(-14, -78); ctx.lineTo(-20, -66); ctx.lineTo(-6, -72); ctx.closePath(); ctx.fill(); ctx.stroke();   // しころ
+    ctx.fillStyle = G; ctx.beginPath(); ctx.moveTo(2, -90); ctx.quadraticCurveTo(-14, -104, -18, -112); ctx.quadraticCurveTo(-4, -102, 2, -94); ctx.quadraticCurveTo(8, -102, 22, -112); ctx.quadraticCurveTo(18, -104, 2, -90); ctx.fill(); ctx.stroke();   // 金の鍬形
+    ctx.restore();
+  }
+  // 虫：小さな羽虫（絶対座標に描く）
+  function drawBug(x, y, t) {
+    ctx.save(); ctx.translate(x, y);
+    const f = Math.sin(t * 2.6) * 0.6;
+    ctx.fillStyle = 'rgba(220,230,210,0.7)'; ctx.beginPath(); ctx.ellipse(-3, -5, 5, 2.5, -0.6 + f, 0, TAU); ctx.ellipse(3, -5, 5, 2.5, 0.6 - f, 0, TAU); ctx.fill();
+    ctx.fillStyle = '#2a3418'; ctx.beginPath(); ctx.ellipse(0, 0, 4, 6, 0, 0, TAU); ctx.fill();
+    ctx.fillStyle = '#5a6a24'; ctx.beginPath(); ctx.arc(0, -6, 3, 0, TAU); ctx.fill();
+    ctx.strokeStyle = '#2a3418'; ctx.lineWidth = 1; ctx.beginPath(); for (const d of [-1, 1]) for (let i = 0; i < 3; i++) { ctx.moveTo(d * 3, -2 + i * 3); ctx.lineTo(d * 7, i * 3); } ctx.stroke();
+    ctx.restore();
+  }
+  // 謎：金だらい（原点＝中心）
+  function drawTarai(s) {
+    ctx.save(); ctx.scale(s, s);
+    const g = ctx.createLinearGradient(-30, 0, 30, 0); g.addColorStop(0, '#a87a2a'); g.addColorStop(0.45, '#f6d47a'); g.addColorStop(1, '#9a6a1a');
+    ctx.fillStyle = g; ctx.strokeStyle = '#5a3a08'; ctx.lineWidth = 2;
+    ctx.beginPath(); ctx.moveTo(-32, -6); ctx.lineTo(32, -6); ctx.lineTo(22, 12); ctx.lineTo(-22, 12); ctx.closePath(); ctx.fill(); ctx.stroke();
+    ctx.beginPath(); ctx.ellipse(0, -6, 34, 6, 0, 0, TAU); ctx.fill(); ctx.stroke();
+    ctx.fillStyle = 'rgba(255,255,255,0.5)'; ctx.fillRect(-16, -2, 6, 10);
+    ctx.restore();
+  }
+  // 謎：ハリセン（原点＝持ち手、扇が +x へ広がる）
+  function drawHarisen(s) {
+    ctx.save(); ctx.scale(s, s); ctx.lineJoin = 'round';
+    ctx.fillStyle = '#fbf6e6'; ctx.strokeStyle = '#8a7a5a'; ctx.lineWidth = 1.5;
+    ctx.beginPath(); ctx.moveTo(10, -4); ctx.lineTo(60, -18); ctx.lineTo(60, 18); ctx.lineTo(10, 4); ctx.closePath(); ctx.fill(); ctx.stroke();
+    ctx.beginPath(); for (let i = 1; i < 6; i++) { const y = -18 + i * 6; ctx.moveTo(12, y * 0.2); ctx.lineTo(60, y); } ctx.stroke();
+    ctx.fillStyle = '#c8281a'; ctx.strokeStyle = '#5a0f08'; ctx.beginPath(); ctx.roundRect(-4, -5, 16, 10, 2); ctx.fill(); ctx.stroke();   // 持ち手のテープ
+    ctx.restore();
+  }
+  // 謎：白いハト（原点＝胴、右向き）
+  function drawDove(s, t) {
+    ctx.save(); ctx.scale(s, s); ctx.lineJoin = 'round';
+    const f = Math.sin(t * 1.6);
+    ctx.fillStyle = '#ffffff'; ctx.strokeStyle = '#8a8a96'; ctx.lineWidth = 1.2;
+    ctx.beginPath(); ctx.moveTo(-4, -2); ctx.quadraticCurveTo(-8, -18 * f - 4, -20, -20 * f - 6); ctx.quadraticCurveTo(-6, -8 * f, 4, -2); ctx.closePath(); ctx.fill(); ctx.stroke();   // 翼
+    ctx.beginPath(); ctx.ellipse(0, 0, 12, 6, -0.1, 0, TAU); ctx.fill(); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(-10, 0); ctx.lineTo(-20, -3); ctx.lineTo(-20, 4); ctx.closePath(); ctx.fill(); ctx.stroke();
+    ctx.beginPath(); ctx.arc(12, -4, 5, 0, TAU); ctx.fill(); ctx.stroke();
+    ctx.fillStyle = '#f0a020'; ctx.beginPath(); ctx.moveTo(16, -5); ctx.lineTo(21, -3); ctx.lineTo(16, -2); ctx.fill();
+    ctx.fillStyle = '#222'; ctx.beginPath(); ctx.arc(13, -5, 1, 0, TAU); ctx.fill();
     ctx.restore();
   }
   // 牙：巨大なあご（dir=1 下あご・歯が上向き、-1 上あご）
@@ -4937,21 +5537,31 @@ const effectName = (e) => (EN ? EFFECT_NAME_EN[e] : EFFECT_NAME[e]);
     ctx.restore();
   }
   // 猫（原点が中心、右向き）。paw=true で肉球パンチ
-  function drawCat(s, col, paw, t) {
-    ctx.save(); ctx.scale(s, s); ctx.fillStyle = col; ctx.strokeStyle = '#3a2a20'; ctx.lineWidth = 2; ctx.lineJoin = 'round';
-    ctx.beginPath(); ctx.moveTo(-18, 6); ctx.quadraticCurveTo(-40, -6 + Math.sin(t * 0.5) * 6, -34, -26); ctx.lineWidth = 5; ctx.strokeStyle = col; ctx.stroke(); ctx.lineWidth = 2; ctx.strokeStyle = '#3a2a20';   // しっぽ
-    ctx.beginPath(); ctx.ellipse(-4, 8, 20, 14, 0, 0, TAU); ctx.fill(); ctx.stroke();
-    ctx.beginPath(); ctx.arc(14, -10, 15, 0, TAU); ctx.fill(); ctx.stroke();
-    for (const x of [4, 20]) { ctx.beginPath(); ctx.moveTo(x - 6, -20); ctx.lineTo(x, -34); ctx.lineTo(x + 6, -20); ctx.fill(); ctx.stroke(); }
-    ctx.fillStyle = '#222'; ctx.beginPath(); ctx.arc(10, -12, 2, 0, TAU); ctx.arc(21, -12, 2, 0, TAU); ctx.fill();
-    ctx.strokeStyle = '#3a2a20'; ctx.lineWidth = 1.2; ctx.beginPath(); ctx.moveTo(15, -6); ctx.lineTo(13, -3); ctx.moveTo(15, -6); ctx.lineTo(17, -3); ctx.stroke();
-    ctx.fillStyle = col; ctx.strokeStyle = '#3a2a20'; ctx.lineWidth = 2;
-    const px = paw ? 40 : 22, py = paw ? -4 : 14;                                           // 前足（パンチ）
-    ctx.beginPath(); ctx.moveTo(8, 4); ctx.lineTo(px, py); ctx.lineWidth = 9; ctx.strokeStyle = col; ctx.stroke(); ctx.lineWidth = 2; ctx.strokeStyle = '#3a2a20';
-    ctx.beginPath(); ctx.arc(px, py, 7, 0, TAU); ctx.fill(); ctx.stroke();
-    ctx.fillStyle = '#ff9ab8'; ctx.beginPath(); ctx.arc(px + 2, py + 1, 2.6, 0, TAU); ctx.fill();
+  function drawCat(s, col, paw, t) {                           // 座った丸っこい猫（しま模様）。paw=true で肉球パンチ
+    ctx.save(); ctx.scale(s, s); ctx.lineJoin = 'round'; ctx.lineCap = 'round';
+    const O = '#7a4a2a', ST = { '#fbe3b8': '#f2a35c', '#fafafa': '#b8b8c0', '#9a9aa2': '#5a5a64', '#f2b066': '#d07a2a' }[col] || '#d08a4a', P = '#ffb0b8';
+    ctx.strokeStyle = O; ctx.lineWidth = 2.5;
+    ctx.beginPath(); ctx.moveTo(-16, 22); ctx.quadraticCurveTo(-36, 18, -34, 0); ctx.quadraticCurveTo(-32, -10 + Math.sin(t * 0.4) * 3, -24, -8); ctx.lineWidth = 9; ctx.strokeStyle = O; ctx.stroke(); ctx.lineWidth = 6; ctx.strokeStyle = col; ctx.stroke();   // しっぽ
+    ctx.strokeStyle = O; ctx.lineWidth = 2.5; ctx.fillStyle = col;
+    ctx.beginPath(); ctx.ellipse(0, 16, 19, 18, 0, 0, TAU); ctx.fill(); ctx.stroke();                     // 体
+    ctx.strokeStyle = ST; ctx.lineWidth = 3; for (const y of [10, 18]) { ctx.beginPath(); ctx.moveTo(14, y); ctx.lineTo(19, y + 2); ctx.stroke(); }
+    ctx.strokeStyle = O; ctx.lineWidth = 2.5;
+    if (!paw) for (const x of [-7, 7]) { ctx.beginPath(); ctx.moveTo(x, 22); ctx.lineTo(x, 33); ctx.stroke(); }
+    for (const d of [-1, 1]) { ctx.fillStyle = col; ctx.beginPath(); ctx.moveTo(d * 24, -22); ctx.lineTo(d * 22, -44); ctx.lineTo(d * 6, -32); ctx.closePath(); ctx.fill(); ctx.stroke(); ctx.fillStyle = P; ctx.beginPath(); ctx.moveTo(d * 20, -26); ctx.lineTo(d * 20, -38); ctx.lineTo(d * 11, -31); ctx.closePath(); ctx.fill(); }   // 耳
+    ctx.fillStyle = col; ctx.beginPath(); ctx.ellipse(0, -14, 27, 22, 0, 0, TAU); ctx.fill(); ctx.stroke();   // 頭
+    ctx.strokeStyle = ST; ctx.lineWidth = 3.5; for (const x of [-6, 0, 6]) { ctx.beginPath(); ctx.moveTo(x, -34); ctx.lineTo(x * 1.1, -26); ctx.stroke(); }   // しま
+    ctx.fillStyle = P; ctx.globalAlpha *= 0.8; ctx.beginPath(); ctx.arc(-15, -8, 5, 0, TAU); ctx.arc(15, -8, 5, 0, TAU); ctx.fill(); ctx.globalAlpha /= 0.8;
+    ctx.fillStyle = '#4a2a14'; ctx.beginPath(); ctx.ellipse(-9, -15, 4, 5, 0, 0, TAU); ctx.ellipse(9, -15, 4, 5, 0, 0, TAU); ctx.fill();
+    ctx.fillStyle = '#fff'; ctx.beginPath(); ctx.arc(-8, -17, 1.4, 0, TAU); ctx.arc(10, -17, 1.4, 0, TAU); ctx.fill();
+    ctx.strokeStyle = O; ctx.lineWidth = 2; ctx.beginPath(); ctx.moveTo(-5, -6); ctx.quadraticCurveTo(-2.5, -3, 0, -6); ctx.quadraticCurveTo(2.5, -3, 5, -6); ctx.stroke();   // 口
+    ctx.lineWidth = 1.5; for (const d of [-1, 1]) for (const k of [-1, 0, 1]) { ctx.beginPath(); ctx.moveTo(d * 20, -10 + k * 4); ctx.lineTo(d * 34, -12 + k * 6); ctx.stroke(); }   // ひげ
+    if (paw) {                                                  // 肉球パンチ
+      ctx.lineWidth = 2.5; ctx.fillStyle = col; ctx.beginPath(); ctx.ellipse(28, 6, 9, 8, 0, 0, TAU); ctx.fill(); ctx.stroke();
+      ctx.fillStyle = P; ctx.beginPath(); ctx.arc(30, 8, 3, 0, TAU); ctx.arc(26, 2, 1.6, 0, TAU); ctx.arc(31, 1, 1.6, 0, TAU); ctx.arc(35, 4, 1.6, 0, TAU); ctx.fill();
+    }
     ctx.restore();
   }
+
   // 酔：一升瓶（原点が中心）
   function drawBottle(s) {
     ctx.save(); ctx.scale(s, s);
