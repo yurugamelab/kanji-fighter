@@ -27,7 +27,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Noto+Sans+JP:wght@900&family=Yuji+Boku&family=Anton&display=swap">
-<link rel="stylesheet" href="style.css?v=202611220059">
+<link rel="stylesheet" href="style.css?v=202611230034">
 </head>
 <body>
 <div id="wrap">
@@ -66,6 +66,7 @@
     </div>
     <div id="dex-grid" class="dex-grid"></div>
     <p id="dex-seal" class="hint"></p>
+    <button id="btn-cert" class="btn hidden" data-en="View your trophy">完成のトロフィーを見る</button>
     <button id="btn-dex-back" class="btn btn-sub" data-en="Back">もどる</button>
   </section>
 
@@ -168,6 +169,8 @@
       <a id="btn-share" class="btn btn-x" href="https://x.com/intent/post" target="_blank" rel="noopener" data-en="Share on 𝕏">𝕏 でシェア</a>
     </div>
     <button id="btn-result-dex" class="link-btn" data-en="Open Kanjidex ›">漢字図鑑を見る ›</button>
+    <!-- アプリ版への入口（Web版だけ。APP_URL が入るまでは出さない） -->
+    <a id="btn-app" class="link-btn app-link hidden" target="_blank" rel="noopener" data-en="Get the app ›">アプリ版はこちら ›</a>
   </section>
 
   <!-- 画像の保存（アーティファクトの中ではダウンロードできないので、長押しで保存してもらう） -->
@@ -182,14 +185,14 @@
   <button id="btn-sound" class="sound-btn" aria-label="音を消す">🔊</button>
 </div>
 
-<script src="i18n.js?v=202611220059"></script>
-<script src="sound.js?v=202611220059"></script>
-<script src="kanji-data.js?v=202611220059"></script>
-<script src="kanji-meanings.js?v=202611220059"></script>
-<script src="kanji-shapes.js?v=202611220059"></script>
-<script src="weapon.js?v=202611220059"></script>
-<script src="texture.js?v=202611220059"></script>
-<script src="game.js?v=202611220059"></script>
-<script type="module" src="char3d.js?v=202611220059"></script>
+<script src="i18n.js?v=202611230034"></script>
+<script src="sound.js?v=202611230034"></script>
+<script src="kanji-data.js?v=202611230034"></script>
+<script src="kanji-meanings.js?v=202611230034"></script>
+<script src="kanji-shapes.js?v=202611230034"></script>
+<script src="weapon.js?v=202611230034"></script>
+<script src="texture.js?v=202611230034"></script>
+<script src="game.js?v=202611230034"></script>
+<script type="module" src="char3d.js?v=202611230034"></script>
 </body>
 </html>

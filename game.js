@@ -96,6 +96,7 @@
     if (Array.isArray(v)) found = new Set(v.filter((c) => SPECIAL_SET.has(c)));
   } catch (e) {}
   const allFound = () => found.size >= TOTAL;
+  const COMPLETE_KEY = 'kanji-fighter-complete';   // 図鑑が完成した日（認定証に出す）
   const inDex = (ch) => (ch === '龘' ? Weapon.isSpecial('龘') : found.has(ch));   // 図鑑に入っているか（龘は100字そろうと入る）
   Weapon.setUnlocked(allFound());
   function recordFound(ch) {
@@ -105,7 +106,7 @@
     found.add(ch);
     try { localStorage.setItem(FOUND_KEY, JSON.stringify([...found])); } catch (e) {}
     const unlockedNow = !before && allFound();
-    if (unlockedNow) Weapon.setUnlocked(true);
+    if (unlockedNow) { Weapon.setUnlocked(true); try { localStorage.setItem(COMPLETE_KEY, today()); } catch (e) {} }
     return { ch, count: found.size, unlockedNow };
   }
   function updateHint() { $('found-hint').textContent = L(`特別な漢字 発見 ${found.size}／${TOTAL}　図鑑を見る ›`, `Special kanji found: ${found.size}/${TOTAL}  Open Kanjidex ›`); }
@@ -6526,6 +6527,7 @@ const effectName = (e) => (EN ? EFFECT_NAME_EN[e] : EFFECT_NAME[e]);
   function buildDex() {
     $('dex-count').textContent = L(`発見 ${found.size}／${TOTAL}`, `Found ${found.size}/${TOTAL}`);
     $('dex-seal').textContent = allFound() ? L('隠し字『龘』の封印が解けている', 'The secret kanji 龘 is unsealed') : L(`あと${TOTAL - found.size}字見つけると、隠し字の封印が解ける`, `Find ${TOTAL - found.size} more to unseal the secret kanji`);
+    $('btn-cert').classList.toggle('hidden', !allFound());
     const grid = $('dex-grid');
     grid.innerHTML = '';
     const list = [...Weapon.SPECIAL_LIST];
@@ -6548,6 +6550,83 @@ const effectName = (e) => (EN ? EFFECT_NAME_EN[e] : EFFECT_NAME[e]);
       grid.appendChild(b);
     }
     $('dex-info').classList.add('hidden');
+  }
+  // ---------- 図鑑完成のトロフィー（101字そろったときのお祝い。スクショすると、そのまま自慢の証拠になるように）----------
+  // 金のトロフィー（オリジナルの絵）・お祝いの言葉・そろえた101字・完成した日を1画面に収める。ボタンは下に分けて置く
+  const TROPHY_SVG = '<svg class="tr-svg" viewBox="0 0 220 250" aria-hidden="true">'
+    + '<defs><linearGradient id="trg" x1="0" x2="1"><stop offset="0" stop-color="#e0a414"/><stop offset="0.45" stop-color="#ffd640"/><stop offset="1" stop-color="#d89a10"/></linearGradient>'
+    + '<clipPath id="trc"><path d="M48 52 H172 Q170 128 110 142 Q50 128 48 52 Z"/></clipPath></defs>'
+    // 取っ手
+    + '<path d="M52 66 Q14 64 22 98 Q30 124 70 120" fill="none" stroke="#b8820c" stroke-width="15" stroke-linecap="round"/>'
+    + '<path d="M52 66 Q14 64 22 98 Q30 124 70 120" fill="none" stroke="#f5c42c" stroke-width="9" stroke-linecap="round"/>'
+    + '<path d="M168 66 Q206 64 198 98 Q190 124 150 120" fill="none" stroke="#b8820c" stroke-width="15" stroke-linecap="round"/>'
+    + '<path d="M168 66 Q206 64 198 98 Q190 124 150 120" fill="none" stroke="#f5c42c" stroke-width="9" stroke-linecap="round"/>'
+    // 足と台
+    + '<path d="M98 140 H122 Q120 158 132 170 H88 Q100 158 98 140 Z" fill="#e8b020" stroke="#a8760a" stroke-width="3"/>'
+    + '<path d="M76 168 H144 L150 182 H70 Z" fill="#e0a414" stroke="#a8760a" stroke-width="3"/>'
+    + '<path d="M58 182 H162 L170 244 H50 Z" fill="#7b6048" stroke="#4a3626" stroke-width="3"/>'
+    + '<rect x="80" y="198" width="60" height="32" rx="3" fill="#f2d070" stroke="#b8860b" stroke-width="2"/>'
+    + '<rect x="85" y="203" width="50" height="22" rx="2" fill="none" stroke="#d4aa40" stroke-width="1.5"/>'
+    + '<text x="110" y="220" text-anchor="middle" font-family="Dela Gothic One, sans-serif" font-size="15" fill="#7a5208">101</text>'
+    // カップ（しま模様）
+    + '<path d="M48 52 H172 Q170 128 110 142 Q50 128 48 52 Z" fill="url(#trg)" stroke="#a8760a" stroke-width="3"/>'
+    + '<g clip-path="url(#trc)" opacity="0.5"><rect x="66" y="40" width="14" height="110" fill="#fff6c0"/><rect x="100" y="40" width="9" height="110" fill="#fff6c0"/><rect x="136" y="40" width="16" height="110" fill="#c88a08"/></g>'
+    + '<ellipse cx="110" cy="52" rx="62" ry="9" fill="#f7cf3a" stroke="#a8760a" stroke-width="3"/><ellipse cx="110" cy="53" rx="52" ry="5" fill="#c08a0c"/>'
+    // リボン
+    + '<path d="M110 146 L84 132 Q70 140 76 156 L100 152 Z M110 146 L136 132 Q150 140 144 156 L120 152 Z" fill="#e2261c" stroke="#9e1410" stroke-width="2"/>'
+    + '<path d="M104 150 L88 182 L96 180 L100 190 L110 156 Z M116 150 L132 182 L124 180 L120 190 L110 156 Z" fill="#c81e16" stroke="#9e1410" stroke-width="2"/>'
+    + '<rect x="102" y="140" width="16" height="14" rx="4" fill="#f03a2c" stroke="#9e1410" stroke-width="2"/>'
+    + '</svg>';
+  const SPARK = '<svg viewBox="-10 -10 20 20"><path d="M0 -10 Q1.5 -1.5 10 0 Q1.5 1.5 0 10 Q-1.5 1.5 -10 0 Q-1.5 -1.5 0 -10 Z" fill="#ffe46a"/></svg>';
+  function showCert(fresh) {
+    return new Promise((resolve) => {
+      const anim = (el, frames, opt) => (el.animate ? el.animate(frames, opt).finished.catch(() => {}) : Promise.resolve());
+      const glyph = (ch, size, style) => { const c = document.createElement('canvas'); c.width = c.height = size; Texture.draw(c.getContext('2d'), ch, size / 2, size / 2, size * 0.7, style); return c; };
+      let date = null; try { date = localStorage.getItem(COMPLETE_KEY); } catch (e) {}
+      if (!date) { date = (dex['龘'] && dex['龘'].first) || today(); try { localStorage.setItem(COMPLETE_KEY, date); } catch (e) {} }
+      const root = document.createElement('div');
+      root.className = 'tr-wrap'; root.setAttribute('role', 'dialog'); root.setAttribute('aria-label', L('漢字図鑑 完成', 'Kanjidex complete'));
+      const sparks = [[8, 14, 1], [84, 10, 0.8], [90, 52, 0.7], [4, 58, 0.6], [74, 78, 0.55]].map(([x, y, k], i) =>
+        `<i class="tr-spark" style="left:${x}%;top:${y}%;width:${k * 16}%;animation-delay:${i * 0.35}s">${SPARK}</i>`).join('');
+      root.innerHTML = '<div class="tr-rays" aria-hidden="true"></div><div class="tr-fx" aria-hidden="true"></div>'
+        + '<div class="tr-card">'
+        + `<p class="tr-head">${L('漢字図鑑 完成！', 'KANJIDEX COMPLETE!')}</p>`
+        + `<p class="tr-sub">${L('今日からキミも漢字マスターだ！', 'From today, you are a Kanji Master!')}</p>`
+        + `<div class="tr-cup">${TROPHY_SVG}${sparks}</div>`
+        + '<div class="tr-grid"></div>'
+        + `<p class="tr-date">${L('漢字ファイター', 'Kanji Fighter')}　${showDate(date)}</p>`
+        + '</div><div class="tr-btns"></div>';
+      const grid = root.querySelector('.tr-grid'), cells = [];
+      for (const ch of ['龘', ...Weapon.SPECIAL_LIST]) { const c = glyph(ch, 56, ch === '神' || ch === '龘' ? 'gold' : 'red'); grid.appendChild(c); cells.push(c); }
+      const btns = root.querySelector('.tr-btns');
+      const share = document.createElement('a'); share.className = 'btn btn-x'; share.target = '_blank'; share.rel = 'noopener';
+      share.href = 'https://x.com/intent/post?text=' + encodeURIComponent(L('漢字ファイターで漢字図鑑101字をコンプリート！今日から漢字マスターだ', 'I completed all 101 kanji in the Kanji Fighter Kanjidex! I am now a Kanji Master')
+        + '\n' + L('#漢字ファイター', '#KanjiFighter') + '\n' + GAME_URL);
+      share.textContent = L('𝕏 で自慢する', 'Brag on 𝕏');
+      const close = document.createElement('button'); close.className = 'btn btn-sub'; close.textContent = L('閉じる', 'Close');
+      btns.append(share, close);
+      $('wrap').appendChild(root);
+      close.addEventListener('click', async () => { sfx('click'); await anim(root, [{ opacity: 1 }, { opacity: 0 }], { duration: 200, fill: 'forwards' }); root.remove(); resolve(); }, { once: true });
+      anim(root, [{ opacity: 0 }, { opacity: 1 }], { duration: 300, fill: 'forwards' });
+      if (!fresh) return;
+      // 完成した瞬間だけ：トロフィーが降りてきて、字が順に並び、紙吹雪
+      sfx('cutin');
+      const cup = root.querySelector('.tr-svg');
+      anim(cup, [{ transform: 'translateY(-60vh) scale(0.6)', opacity: 0 }, { transform: 'translateY(0) scale(1.08)', opacity: 1, offset: 0.75 }, { transform: 'none', opacity: 1 }], { duration: 900, easing: 'cubic-bezier(.2,.8,.3,1)', fill: 'backwards' });
+      for (const el of root.querySelectorAll('.tr-head, .tr-sub')) anim(el, [{ transform: 'scale(0.4)', opacity: 0 }, { transform: 'scale(1.1)', opacity: 1, offset: 0.7 }, { transform: 'none', opacity: 1 }], { duration: 450, delay: 1000, fill: 'backwards' });
+      cells.forEach((c, i) => anim(c, [{ transform: 'scale(0)', opacity: 0 }, { transform: 'scale(1.3)', opacity: 1, offset: 0.6 }, { transform: 'none', opacity: 1 }], { duration: 240, delay: 1400 + i * 10, fill: 'backwards' }));
+      setTimeout(() => {
+        sfx('unlock'); sfx('superhit');
+        const fx = root.querySelector('.tr-fx');
+        for (let i = 0; i < 70; i++) {
+          const p = document.createElement('i'); p.className = 'tr-confetti';
+          p.style.left = (Math.random() * innerWidth) + 'px'; p.style.background = ['#ffd84d', '#e8321a', '#ffffff', '#f6a623'][i % 4];
+          fx.appendChild(p);
+          anim(p, [{ transform: 'translateY(-20px) rotate(0deg)' }, { transform: `translateY(${innerHeight + 40}px) translateX(${(Math.random() - 0.5) * 160}px) rotate(${Math.random() * 720}deg)` }],
+            { duration: 1800 + Math.random() * 1600, delay: Math.random() * 400, easing: 'cubic-bezier(.3,.2,.6,1)' }).then(() => p.remove());
+        }
+      }, 800);
+    });
   }
   // ---------- 図鑑に登録される演出 ----------
   // 新しく勝った字が、図鑑のマスへ飛んでいって埋まる（あと何字か・次のヒントも出して、ほかの字も探したくなるように）
@@ -6689,7 +6768,7 @@ const effectName = (e) => (EN ? EFFECT_NAME_EN[e] : EFFECT_NAME[e]);
       } else next.textContent = L('100字すべて見つけた！', 'All 100 found!');
       next.classList.add('show');
       // ボタン（神・龘は自慢用のシェアも）
-      if (item.divine) {
+      if (item.ch === '神') {
         const a = document.createElement('a'); a.className = 'btn btn-x'; a.target = '_blank'; a.rel = 'noopener';
         const text = item.ch === '神'
           ? L(`漢字ファイターで勝ち抜き${item.wins || 10}連勝！『神』の封印を解いて「漢字ファイターの神」になった`, `${item.wins || 10} wins in a row in Kanji Fighter! I broke the seal on 神 and became a Kanji Fighter God`)
@@ -6698,12 +6777,19 @@ const effectName = (e) => (EN ? EFFECT_NAME_EN[e] : EFFECT_NAME[e]);
         a.textContent = L('𝕏 で自慢する', 'Brag on 𝕏');
         btns.appendChild(a);
       }
-      const ok = document.createElement('button'); ok.className = 'btn' + (item.divine ? ' btn-sub' : ''); ok.textContent = L('閉じる', 'Close');
+      const toCert = item.ch === '龘';
+      const ok = document.createElement('button'); ok.className = 'btn' + (item.divine && !toCert ? ' btn-sub' : ''); ok.textContent = toCert ? L('トロフィーを受け取る', 'Get your trophy') : L('閉じる', 'Close');
       btns.appendChild(ok);
       btns.classList.add('show');
       await new Promise((r) => ok.addEventListener('click', () => { sfx('click'); r(); }, { once: true }));
-      await anim(root, [{ opacity: 1 }, { opacity: 0 }], { duration: 200, fill: 'forwards' });
-      root.remove();
+      if (toCert) {                                                    // トロフィーを上に重ねてから消す（間に図鑑の画面が一瞬見えないように）
+        const cert = showCert(true);
+        setTimeout(() => root.remove(), 400);
+        await cert;
+      } else {
+        await anim(root, [{ opacity: 1 }, { opacity: 0 }], { duration: 200, fill: 'forwards' });
+        root.remove();
+      }
     }
     async function run() {
       if (busy) return;
@@ -6754,6 +6840,7 @@ const effectName = (e) => (EN ? EFFECT_NAME_EN[e] : EFFECT_NAME[e]);
   $('found-hint').addEventListener('click', () => { sfx('click'); openDex('screen-input'); });
   $('btn-result-dex').addEventListener('click', () => { sfx('click'); openDex('screen-result'); });
   $('btn-dex-back').addEventListener('click', () => { sfx('click'); showScreen(dexFrom); });
+  $('btn-cert').addEventListener('click', () => { sfx('click'); showCert(false); });
   $('btn-credits').addEventListener('click', () => { sfx('click'); showScreen('screen-credits'); $('screen-credits').scrollTop = 0; });
   $('btn-credits-back').addEventListener('click', () => { sfx('click'); showScreen('screen-title'); });
   $('btn-change').addEventListener('click', () => { sfx('click'); mode.step = 1; openInput(); });
@@ -6763,6 +6850,12 @@ const effectName = (e) => (EN ? EFFECT_NAME_EN[e] : EFFECT_NAME[e]);
   $('btn-lang').textContent = EN ? '日本語' : 'English';
   $('btn-lang').addEventListener('click', () => { sfx('click'); I18N.setLang(EN ? 'ja' : 'en'); });
 
+  // アプリの中（iOS版）かどうか。アプリでは「写真に保存」を残し、Web版ではアプリ版への入口を出す
+  const IN_APP = !!(window.Capacitor && (typeof Capacitor.isNativePlatform !== 'function' || Capacitor.isNativePlatform()));
+  // App Store のページのURL。アプリが公開されたらここに入れると、結果画面に「アプリ版はこちら」が出る
+  const APP_URL = '';
+  if (!IN_APP) $('btn-save').classList.add('hidden');
+  if (APP_URL && !IN_APP) { $('btn-app').href = APP_URL; $('btn-app').classList.remove('hidden'); $('btn-app').addEventListener('click', () => sfx('click')); }
   // 結果を画像で保存
   //  1) claude.ai のアーティファクトでは「downloads」機能で保存の確認を出す（スマホでも保存できる）
   //  2) index.html を直接開いたときは、ふつうにダウンロード
